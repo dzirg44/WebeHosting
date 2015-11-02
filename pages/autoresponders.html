@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hosting panel</title>
+    <link href="../css/layout.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".tabs-menu a").click(function (event) {
+                event.preventDefault();
+                $(this).parent().addClass("current");
+                $(this).parent().siblings().removeClass("current");
+                var tab = $(this).attr("href");
+                $(".tab-content").not(tab).css("display", "none");
+                $(tab).fadeIn();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id='cssmenu' class="inner">
+        <ul>
+            <li>
+                <a href='../index.html' class="logo-style"><img src="../images/WeBeHosting.png" class="logo"></a>
+            </li>
+            <li class='kop'>
+                <a href='../index.html'><img src="../images/home.jpg" class="nav-img"><span class="hidden-xs">Dashboard</span>
+                </a>
+            </li>
+
+            <li class='kop'>
+                <a href='#'><img src="../images/cdn.jpg" class="nav-img"><span class="hidden-xs">Domeinen</span></a>
+            </li>
+            <li class='kop'>
+                <a href='#'><img src="../images/mail.png" class="nav-img"><span class="hidden-xs">E-mail</span></a>
+                <ul>
+                    <li><a href='#' class="subkop">Mail Account</a></li>
+                    <li><a href='#' class="subkop">Forward Mail</a></li>
+                    <li><a href='autoresponders.html' class="subkop">Autoresponders</a></li>
+                    <li><a href='#' class="subkop">Aliasses</a></li>
+                </ul>
+            </li>
+            <li class='kop'>
+                <a href='#'><img src="../images/dedicated.png" class="nav-img"><span class="hidden-xs">Database</span></a>
+            </li>
+            <li class='kop'>
+                <a href='#'><img src="../images/cloud.jpg" class="nav-img"><span class="hidden-xs">Server</span></a>
+            </li>
+            <li class='kop'>
+                <a href='#'><img src="../images/logout.jpg" class="nav-img"><span class="hidden-xs">Logout</span></a>
+            </li>
+        </ul>
+    </div>
+    <div id="nav" class="inner line-color">
+    </div>
+    <div class="content">
+        <p class="red">
+            <img src="../images/kruis-red.png" class="red-icon"> CRITICAL EVENTS
+        </p>
+        <p class="green">
+            <img src="../images/green-vink.png" class="green-icon"> ACTIVE TICKET
+        </p>
+        <p class="orange">
+            <img src="../images/orange-server.png" class="orange-icon"> DEDICATED SERVER
+        </p>
+        <p class="blue">
+            <img src="../images/blue-cloud.png" class="blue-icon"> CLOUD SERVER
+        </p>
+
+        <div id="tabs-container">
+            <ul class="tabs-menu">
+                <li class="current"><a href="#tab-1">Autoresponders</a></li>
+                <li><a href="#tab-2">Add Responder</a></li>
+            </ul>
+            <div class="tab">
+                <div id="tab-1" class="tab-content">
+                    <h3>Current Autoresponders</h3>
+                    <p class="elf">Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali testausteksti jo 1500-luvulta asti.</p>
+                    <input type="text" name="" id="site-search-input" autocomplete="off" Placeholder="Search">
+                    <span id="g-search-button"></span>
+                    <table class="auto">
+                        <tr>
+                            <th class="th">E-mail</th>
+                            <th class="th">Subject</th>
+                            <th class="th">action</th>
+                        </tr>
+                        <tr>
+                            <td class="elf">There are no autoresponders yet.</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="tab-2" class="tab-content">
+                    <div class="div">
+                        <h3>Character</h3>
+                        <select>
+                            <option value="">...</option>
+                            <option value="">...</option>
+                            <option value="">...</option>
+                            <option value="">...</option>
+                        </select>
+                        <p class="elf">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
+                        <h3>Interval</h3>
+                        <select>
+                            <option value="">...</option>
+                            <option value="">...</option>
+                            <option value="">...</option>
+                            <option value="">...</option>
+                        </select>
+                        <p class="elf">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
+                        <h3>E-mail</h3>
+                        <input type="email" name="email" placeholder="Email@example.com" class="input">
+                        <h3>Domein</h3>
+                        <select>
+                            <option value="">...</option>
+                            <option value="">...</option>
+                            <option value="">...</option>
+                            <option value="">...</option>
+                        </select>
+                        <h3>From</h3>
+                        <input type="text" name="from" placeholder="" class="input">
+                        <h3>Subject</h3>
+                        <input type="text" name="subject" placeholder="" class="input">
+                    </div>
+                    <div class="div" style="position: absolute;">
+                        <h3>Body</h3>
+                        <input type="text" name="subject" placeholder="Type hier u notitie" class="inputt">
+                        <h3>Start</h3>
+                        <form action="" class="float-left">
+                            <input type="radio" name="" value="" checked>Immidiatly
+                            <br>
+                            <input type="radio" name="" value="">Custom
+                        </form>
+                        <h3>Stop</h3>
+                        <form action="" class="float-right">
+                            <input type="radio" name="" value="" checked>Immidiatly
+                            <br>
+                            <input type="radio" name="" value="">Custom
+                        </form>
+                        <button class="blue-button">Create / Modify</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>
