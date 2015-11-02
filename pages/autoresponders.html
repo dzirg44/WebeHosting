@@ -27,33 +27,34 @@
     <div id='cssmenu' class="inner">
         <ul>
             <li>
-                <a href='../index.html' class="logo-style"><img src="../images/WeBeHosting.png" class="logo"></a>
+                <img src="../images/WeBeHosting.png" class="logo">
             </li>
             <li class='kop'>
-                <a href='../index.html'><img src="../images/home.jpg" class="nav-img"><span class="hidden-xs">Dashboard</span>
+                <a href='../index.html'><img src="../images/home.jpg" class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
                 </a>
             </li>
+            <li class='kop'>
+                <a href='#'><img src="../images/.jpg" class="nav-img"><span class="hidden-xs menu-text">Domeinen</span></a>
+            </li>
+            <li class='kop'>
+                <a href='#' class="active"><img src="../images/mail.png" class="nav-img"><span class="hidden-xs menu-text">E-mail</span></a>
+            </li>
+            <li class="subkop1" style="padding-top: 20px; padding-bottom: 10px; padding-left: 15px;"><a href='#' class="subkop" style="font-size: 13px; font-weight: bold; ">Mail Account</a></li>
+            <li class="subkop1" style="padding-top: 10px; padding-bottom: 10px; padding-left: 15px;"><a href='#' class="subkop" style="font-size: 13px; font-weight: bold; ">Forward Mail</a></li>
+            <li class="subkop1" style="padding-top: 10px; padding-bottom: 10px; padding-left: 15px;"><a href='autoresponders.html' class="active" style="font-size: 13px; font-weight: bold; ">Autoresponders</a></li>
+            <li class="subkop1" style="padding-top: 10px; padding-bottom: 20px; padding-left: 15px;"><a href='#' class="subkop" style="font-size: 13px; font-weight: bold; ">Aliasses</a></li>
 
             <li class='kop'>
-                <a href='#'><img src="../images/cdn.jpg" class="nav-img"><span class="hidden-xs">Domeinen</span></a>
+                <a href='#'><img src="../images/dedicated.png" class="nav-img"><span class="hidden-xs menu-text">Database</span></a>
             </li>
             <li class='kop'>
-                <a href='#' class="active"><img src="../images/mail.png" class="nav-img"><span class="hidden-xs">E-mail</span></a>
-                <ul>
-                    <li><a href='#' class="subkop">Mail Account</a></li>
-                    <li><a href='#' class="subkop">Forward Mail</a></li>
-                    <li><a href='autoresponders.html' class="subkop">Autoresponders</a></li>
-                    <li><a href='#' class="subkop">Aliasses</a></li>
-                </ul>
+                <a href='#'><img src="../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
             </li>
             <li class='kop'>
-                <a href='#'><img src="../images/dedicated.png" class="nav-img"><span class="hidden-xs">Database</span></a>
+                <a href='#'><img src="../images/account.png" class="nav-img"><span class="hidden-xs menu-text">Mijn account</span></a>
             </li>
             <li class='kop'>
-                <a href='#'><img src="../images/cloud.jpg" class="nav-img"><span class="hidden-xs">Server</span></a>
-            </li>
-            <li class='kop'>
-                <a href='#'><img src="../images/logout.jpg" class="nav-img"><span class="hidden-xs">Logout</span></a>
+                <a href='#'><img src="../images/logout.jpg" class="nav-img"><span class="hidden-xs menu-text">Uitloggen</span></a>
             </li>
         </ul>
     </div>
@@ -80,18 +81,23 @@
             </ul>
             <div class="tab">
                 <div id="tab-1" class="tab-content">
-                    <h3>Current Autoresponders</h3>
+                    <h2>Current Autoresponders</h2>
                     <p class="elf">Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali testausteksti jo 1500-luvulta asti.</p>
-                    <input type="text" name="" id="site-search-input" autocomplete="off" Placeholder="Search">
-                    <span id="g-search-button"></span>
+                    <input type='text' placeholder='Search' id='search-text-input' />
+                    <div id='button-holder'>
+                        <img src='../images/search.png' />
+                    </div>
                     <table class="auto">
                         <tr>
-                            <th class="th">E-mail</th>
-                            <th class="th">Subject</th>
-                            <th class="th">action</th>
+                            <th class="th">
+                                <h3>E-mail</h3></th>
+                            <th class="th">
+                                <h3>Subject</h3></th>
+                            <th class="th">
+                                <h3>action</h3></th>
                         </tr>
                         <tr>
-                            <td class="elf">There are no autoresponders yet.</td>
+                            <td class="elf padding-elf">There are no autoresponders yet.</td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -102,48 +108,39 @@
                     <div class="div">
                         <h3>Character</h3>
                         <select>
-                            <option value="">...</option>
-                            <option value="">...</option>
-                            <option value="">...</option>
-                            <option value="">...</option>
+                            <option value="">UTF-8</option>
                         </select>
                         <p class="elf">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
                         <h3>Interval</h3>
                         <select>
-                            <option value="">...</option>
-                            <option value="">...</option>
-                            <option value="">...</option>
-                            <option value="">...</option>
+                            <option value="">Hours</option>
                         </select>
                         <p class="elf">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
                         <h3>E-mail</h3>
                         <input type="email" name="email" placeholder="Email@example.com" class="input">
                         <h3>Domein</h3>
                         <select>
-                            <option value="">...</option>
-                            <option value="">...</option>
-                            <option value="">...</option>
-                            <option value="">...</option>
+                            <option value="">Nildomain</option>
                         </select>
                         <h3>From</h3>
-                        <input type="text" name="from" placeholder="" class="input">
+                        <input type="text" name="from" placeholder="Abraham Lincoln" class="input">
                         <h3>Subject</h3>
-                        <input type="text" name="subject" placeholder="" class="input">
+                        <input type="text" name="subject" placeholder="The White House" class="input">
                     </div>
                     <div class="div" style="position: absolute;">
                         <h3>Body</h3>
-                        <input type="text" name="subject" placeholder="Type hier u notitie" class="inputt">
+                        <textarea type="text" name="subject" placeholder="Type hier u notitie" class="inputt"></textarea>
                         <h3>Start</h3>
-                        <form action="" class="float-left">
-                            <input type="radio" name="" value="" checked>Immidiatly
+                        <form action="" class="subtext">
+                            <input type="radio" name="" value="" checked> Immidiatly
                             <br>
-                            <input type="radio" name="" value="">Custom
+                            <input type="radio" name="" value=""> Custom
                         </form>
                         <h3>Stop</h3>
-                        <form action="" class="float-right">
-                            <input type="radio" name="" value="" checked>Immidiatly
+                        <form action="" class="subtext">
+                            <input type="radio" name="" value="" checked> Immidiatly
                             <br>
-                            <input type="radio" name="" value="">Custom
+                            <input type="radio" name="" value=""> Custom
                         </form>
                         <button class="blue-button">Create / Modify</button>
                     </div>
