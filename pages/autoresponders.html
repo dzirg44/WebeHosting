@@ -37,15 +37,16 @@
                 <a href='#'><img src="../images/.jpg" class="nav-img"><span class="hidden-xs menu-text">Domeinen</span></a>
             </li>
             <li class='kop'>
-                <a href='#' class="active"><img src="../images/mail.png" class="nav-img"><span class="hidden-xs menu-text">E-mail</span></a>
+                <a href='#'><img src="../images/mail.png" class="nav-img"><span class="hidden-xs menu-text">E-mail</span></a>
+                <ul>
+                    <li><a href='#' class="subkop">Mail Account</a></li>
+                    <li><a href='#' class="subkop">Forward Mail</a></li>
+                    <li><a href='#' class="subkop">Autoresponders</a></li>
+                    <li><a href='#' class="subkop">Aliasses</a></li>
+                </ul>
             </li>
-            <li class="subkop1" style="padding-top: 20px; padding-bottom: 10px; padding-left: 15px;"><a href='#' class="subkop" style="font-size: 13px; font-weight: bold; ">Mail Account</a></li>
-            <li class="subkop1" style="padding-top: 10px; padding-bottom: 10px; padding-left: 15px;"><a href='#' class="subkop" style="font-size: 13px; font-weight: bold; ">Forward Mail</a></li>
-            <li class="subkop1" style="padding-top: 10px; padding-bottom: 10px; padding-left: 15px;"><a href='autoresponders.html' class="active" style="font-size: 13px; font-weight: bold; ">Autoresponders</a></li>
-            <li class="subkop1" style="padding-top: 10px; padding-bottom: 20px; padding-left: 15px;"><a href='#' class="subkop" style="font-size: 13px; font-weight: bold; ">Aliasses</a></li>
-
             <li class='kop'>
-                <a href='#'><img src="../images/dedicated.png" class="nav-img"><span class="hidden-xs menu-text">Database</span></a>
+                <a href='#'><img src="../images/dedicated.png" class="nav-img"><span class="hidden-xs menu-text">Databases</span></a>
             </li>
             <li class='kop'>
                 <a href='#'><img src="../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
@@ -90,14 +91,17 @@
                     <table class="auto">
                         <tr>
                             <th class="th">
-                                <h3>E-mail</h3></th>
+                                <p class="elf-table">E-mail</p>
+                            </th>
                             <th class="th">
-                                <h3>Subject</h3></th>
+                                <p class="elf-table">Subject</p>
+                            </th>
                             <th class="th">
-                                <h3>action</h3></th>
+                                <p class="elf-table">Action</p>
+                            </th>
                         </tr>
                         <tr>
-                            <td class="elf padding-elf">There are no autoresponders yet.</td>
+                            <td class="negen padding-elf">There are no autoresponders yet.</td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -107,19 +111,19 @@
                 <div id="tab-2" class="tab-content">
                     <div class="div">
                         <h3>Character</h3>
-                        <select>
+                        <select class="background-grey">
                             <option value="">UTF-8</option>
                         </select>
-                        <p class="elf">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
+                        <p class="negen">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
                         <h3>Interval</h3>
-                        <select>
+                        <select class="background-white">
                             <option value="">Hours</option>
                         </select>
-                        <p class="elf">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
+                        <p class="negen">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
                         <h3>E-mail</h3>
                         <input type="email" name="email" placeholder="Email@example.com" class="input">
                         <h3>Domein</h3>
-                        <select>
+                        <select class="background-grey">
                             <option value="">Nildomain</option>
                         </select>
                         <h3>From</h3>
@@ -129,7 +133,7 @@
                     </div>
                     <div class="div" style="position: absolute;">
                         <h3>Body</h3>
-                        <textarea type="text" name="subject" placeholder="Type hier u notitie" class="inputt"></textarea>
+                        <textarea type="text" name="subject" placeholder="Type hier u notitie"></textarea>
                         <h3>Start</h3>
                         <form action="" class="subtext">
                             <input type="radio" name="" value="" checked> Immidiatly
