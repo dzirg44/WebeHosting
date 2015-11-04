@@ -9,13 +9,6 @@
     <link href="css/layout.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="js/script.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".kopdown").click(function () {
-                $(".subdown").slideToggle();
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -25,23 +18,26 @@
                 <img src="images/WeBeHosting.png" class="logo">
             </li>
             <li class='kop'>
-                <a href='#'><img src="images/home.jpg" class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
+                <a href='#' class="dashboard active"><img src="images/home.jpg" class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
                 </a>
             </li>
             <li class='kop'>
                 <a href='#'><img src="images/.jpg" class="nav-img"><span class="hidden-xs menu-text">Domeinen</span></a>
             </li>
-            <li class='kop'>
-                <a href='#'><img src="images/mail.png" class="nav-img"><span class="hidden-xs menu-text kopdown">E-mail</span></a>
-                <ul class="subdown">
+            <li class='kop index-email-kopdown'>
+                <a href='#'><img src="images/mail.png" class="nav-img"><span class="hidden-xs menu-text index-email-kopdownn">E-mail</span></a>
+                <ul class="index-email-subdown">
                     <li><a href='#' class="subkop">Mail Account</a></li>
                     <li><a href='#' class="subkop">Forward Mail</a></li>
-                    <li><a href='pages/autoresponders.html' class="subkop">Autoresponders</a></li>
+                    <li><a href='pages/autoresponders.php' class="subkop">Autoresponders</a></li>
                     <li><a href='#' class="subkop">Aliasses</a></li>
                 </ul>
             </li>
-            <li class='kop'>
-                <a href='#'><img src="images/dedicated.png" class="nav-img"><span class="hidden-xs menu-text">Databases</span></a>
+            <li class='kop index-databases-kopdown'>
+                <a href='#'><img src="images/dedicated.png" class="nav-img"><span class="hidden-xs menu-text index-databases-kopdownn">Databases</span></a>
+                <ul class="index-databases-subdown">
+                    <li><a href='#' class="subkop">Subkop</a></li>
+                </ul>
             </li>
             <li class='kop'>
                 <a href='#'><img src="images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
@@ -127,22 +123,22 @@
                 <td class="right">JAN 15</td>
             </tr>
         </table>
-        <div class="aanbieding">
-            <p class="aanbieding-float">NEW CDN
+        <div class="offer">
+            <p class="offer-float">NEW CDN
                 <br>SERVICE</p>
-            <p class="aanbieding-padding hidden-xs">From
+            <p class="offer-padding hidden-xs">From
                 <br> $0.01/GB</p>
             <p>
-                <button class="aanbieding-button button">ORDER NOW</button>
+                <button class="offer-button button">ORDER NOW</button>
             </p>
         </div>
-        <div class="aanbieding">
-            <p class="aanbieding-float">NEW CDN
+        <div class="offer">
+            <p class="offer-float">NEW CDN
                 <br>SERVICE</p>
-            <p class="aanbieding-padding hidden-xs">From
+            <p class="offer-padding hidden-xs">From
                 <br> $0.01/GB</p>
             <p>
-                <button class="aanbieding-button button">ORDER NOW</button>
+                <button class="offer-button button">ORDER NOW</button>
             </p>
         </div>
     </div>

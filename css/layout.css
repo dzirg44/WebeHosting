@@ -19,18 +19,26 @@ body {
     text-align: right;
 }
 
-.negen {
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.nine {
     font-size: 9px;
     margin-top: -12px;
     color: #9B9B9B;
 }
 
-.elf {
+.eleven {
     font-size: 11px;
     color: #000;
 }
 
-.elf-table {
+.eleven-table {
     font-size: 11px;
     color: #000;
     margin-bottom: -1px;
@@ -53,14 +61,8 @@ h3 {
     font-size: 11px;
 }
 
-a {}
-
 
 /* Navigation */
-
-.active {
-    color: #fabcd1;
-}
 
 #cssmenu,
 #cssmenu ul,
@@ -70,10 +72,11 @@ a {}
     padding: 0;
     border: 0;
     list-style: none;
-    font-weight: normal;
+    font-family: "helvetica";
+    font-weight: bold;
     text-decoration: none;
     line-height: 2;
-    font-size: 14px;
+    font-size: 11px;
     position: relative;
 }
 
@@ -95,13 +98,21 @@ a {}
 
 #cssmenu ul ul a {
     display: inline-block;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: bold;
+}
+
+span.active {
+    color: #e88a38;
+}
+
+a.active {
+    color: #E88A38;
 }
 
 @media (max-width: 920px) {
     .hidden-xs {
-        display: none !important;
+        display: none;
     }
 }
 
@@ -393,7 +404,7 @@ table.t02 tr:nth-child(odd) {
 /* index
    Aanbiedingen */
 
-.aanbieding {
+.offer {
     min-width: 42%;
     height: 70px;
     display: inline-block;
@@ -401,7 +412,7 @@ table.t02 tr:nth-child(odd) {
     margin: 12px;
     color: #fff;
     border-radius: 5px;
-    background: url(http://praktijkhyacintenlaan.nl/wp-content/uploads/2015/04/Fading-Blue-Dots-abstract-wallpapers-dots-illusions-polish-shape-abstract-1440x900.jpg);
+    background: #000;
 }
 
 .button {
@@ -414,27 +425,27 @@ table.t02 tr:nth-child(odd) {
     float: right;
 }
 
-.aanbieding-float {
+.offer-float {
     float: left;
     padding-left: 5px;
     text-align: center;
 }
 
-.aanbieding-padding {
+.offer-padding {
     padding-left: 150px;
-    width: 215.96875px !important;
+    width: 215.96875px;
 }
 
-.aanbieding-button {
+.offer-button {
     margin-top: -55px;
 }
 
-div.aanbieding {
+div.offer {
     margin-right: 0;
 }
 
 @media (max-width: 415px) {
-    .aanbieding {
+    .offer {
         width: 190px;
         height: 70px;
         display: inline-block;
@@ -442,12 +453,12 @@ div.aanbieding {
         margin: 12px;
         color: #fff;
         border-radius: 5px;
-        background: url(http://praktijkhyacintenlaan.nl/wp-content/uploads/2015/04/Fading-Blue-Dots-abstract-wallpapers-dots-illusions-polish-shape-abstract-1440x900.jpg);
+        background: #000;
     }
 }
 
 @media (max-width: 480px) {
-    .aanbieding {
+    .offer {
         width: 200px;
         height: 70px;
         display: inline-block;
@@ -455,12 +466,12 @@ div.aanbieding {
         margin: 12px;
         color: #fff;
         border-radius: 5px;
-        background: url(http://praktijkhyacintenlaan.nl/wp-content/uploads/2015/04/Fading-Blue-Dots-abstract-wallpapers-dots-illusions-polish-shape-abstract-1440x900.jpg);
+        background: #000;
     }
 }
 
 @media (max-width: 508px) {
-    .aanbieding {
+    .offer {
         width: 200px;
         height: 70px;
         display: inline-block;
@@ -468,59 +479,53 @@ div.aanbieding {
         margin: 12px;
         color: #fff;
         border-radius: 5px;
-        background: url(http://praktijkhyacintenlaan.nl/wp-content/uploads/2015/04/Fading-Blue-Dots-abstract-wallpapers-dots-illusions-polish-shape-abstract-1440x900.jpg);
+        background: #000;
     }
 }
 
 @media (max-width: 415px) {
-    .aanbieding-button {
+    .offer-button {
         margin-top: 0px;
     }
 }
 
 @media (max-width: 480px) {
-    .aanbieding-button {
+    .offer-button {
         margin-top: 0px;
     }
 }
 
 @media (max-width: 568px) {
-    .aanbieding-button {
+    .offer-button {
         margin-top: 0px;
     }
 }
 
 @media (max-width: 667px) {
-    .aanbieding-button {
+    .offer-button {
         margin-top: 0px;
     }
 }
 
 @media (max-width: 736px) {
-    .aanbieding-button {
+    .offer-button {
         margin-top: 0px;
     }
 }
 
 @media (max-width: 768px) {
-    .aanbieding-button {
+    .offer-button {
         margin-top: 0px;
     }
 }
 
 @media (max-width: 918px) {
-    .aanbieding-button {
+    .offer-button {
         margin-top: 0px;
     }
 }
 
-.legt {
-    float: left;
-}
 
-.float {
-    float: right;
-}
 
 
 /* autoresponder
@@ -588,7 +593,8 @@ div.aanbieding {
 
 select {
     width: 100%;
-    height: 30px !important;
+    height: 30px;
+    padding: 10px;
     margin-bottom: 20px;
     margin-top: -20px;
     font-size: 10px;
@@ -649,7 +655,6 @@ tr {
     margin: .8em 0 0 0;
     outline: 0;
     padding: .4em 0 .4em .6em;
-    width: 183px;
     margin-bottom: 20px;
 }
 

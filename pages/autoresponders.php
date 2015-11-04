@@ -8,46 +8,7 @@
     <title>Hosting panel</title>
     <link href="../css/layout.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="../js/scriptjs"></script>
-    <script>
-        $(document).ready(function () {
-            $(".tabs-menu a").click(function (event) {
-                event.preventDefault();
-                $(this).parent().addClass("current");
-                $(this).parent().siblings().removeClass("current");
-                var tab = $(this).attr("href");
-                $(".tab-content").not(tab).css("display", "none");
-                $(tab).fadeIn();
-            });
-        });
-
-
-
-        $(document).ready(function () {
-            $(".een").click(function () {
-                $(".een").addClass("intr");
-            });
-        });
-
-
-
-        $(document).ready(function () {
-            $(".kopdown").click(function () {
-                $(".subdown").slideToggle();
-            });
-        });
-    </script>
-    <style>
-        .intro {
-            font-size: 120%;
-            color: red;
-        }
-        
-        .intr {
-            font-size: 120%;
-            color: green;
-        }
-    </style>
+    <script src="../js/script.js"></script>
 </head>
 
 <body>
@@ -57,31 +18,34 @@
                 <img src="../images/WeBeHosting.png" class="logo">
             </li>
             <li class='kop'>
-                <a href='../index.html' class="een"><img src="../images/home.jpg" class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
+                <a href='../index.php'><img src="../images/home.jpg" class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
                 </a>
             </li>
-            <li class='kop twee'>
-                <a href='#'><img src="../images/.jpg" class="nav-img"><span class="hidden-xs menu-text">Domeinen</span></a>
-            </li>
             <li class='kop'>
-                <a href='#'><img src="../images/mail.png" class="nav-img"><span class="hidden-xs menu-text kopdown trigger">E-mail</span></a>
-                <ul class="subdown">
+                <a href='#'><img src="../images/.jpg" class="nav-img"><span class="hidden-xs menu-text ">Domeinen</span></a>
+            </li>
+            <li class='kop auto-email-kopdown'>
+                <a href='#'><img src="../images/mail.png" class="nav-img"><span class="hidden-xs menu-text auto-email-kopdownn active">E-mail</span></a>
+                <ul class="auto-email-subdown">
                     <li><a href='#' class="subkop">Mail Account</a></li>
                     <li><a href='#' class="subkop">Forward Mail</a></li>
-                    <li><a href='#' class="subkop">Autoresponders</a></li>
+                    <li><a href='#' class="active subkop">Autoresponders</a></li>
                     <li><a href='#' class="subkop">Aliasses</a></li>
                 </ul>
             </li>
-            <li class='kop vier'>
-                <a href='#'><img src="../images/dedicated.png" class="nav-img"><span class="hidden-xs menu-text">Databases</span></a>
+            <li class='kop auto-databases-kopdown'>
+                <a href='#'><img src="../images/dedicated.png" class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
+                <ul class="auto-databases-subdown">
+                    <li><a href='#' class="subkop">Subkop</a></li>
+                </ul>
             </li>
-            <li class='kop vijf'>
+            <li class='kop'>
                 <a href='#'><img src="../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
             </li>
-            <li class='kop zes'>
+            <li class='kop'>
                 <a href='#'><img src="../images/account.png" class="nav-img"><span class="hidden-xs menu-text">Mijn account</span></a>
             </li>
-            <li class='kop zeven'>
+            <li class='kop'>
                 <a href='#'><img src="../images/logout.jpg" class="nav-img"><span class="hidden-xs menu-text">Uitloggen</span></a>
             </li>
         </ul>
@@ -110,7 +74,7 @@
             <div class="tab">
                 <div id="tab-1" class="tab-content">
                     <h2>Current Autoresponders</h2>
-                    <p class="elf">Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali testausteksti jo 1500-luvulta asti.</p>
+                    <p class="eleven">Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali testausteksti jo 1500-luvulta asti.</p>
                     <input type='text' placeholder='Search' id='search-text-input' />
                     <div id='button-holder'>
                         <img src='../images/search.png' />
@@ -118,17 +82,17 @@
                     <table class="auto">
                         <tr>
                             <th class="th">
-                                <p class="elf-table">E-mail</p>
+                                <p class="eleven-table">E-mail</p>
                             </th>
                             <th class="th">
-                                <p class="elf-table">Subject</p>
+                                <p class="eleven-table">Subject</p>
                             </th>
                             <th class="th">
-                                <p class="elf-table">Action</p>
+                                <p class="eleven-table">Action</p>
                             </th>
                         </tr>
                         <tr>
-                            <td class="negen padding-elf">There are no autoresponders yet.</td>
+                            <td class="nine padding-elf">There are no autoresponders yet.</td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -141,12 +105,12 @@
                         <select class="background-grey">
                             <option value="">UTF-8</option>
                         </select>
-                        <p class="negen">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
+                        <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
                         <h3>Interval</h3>
                         <select class="background-white">
-                            <option value="">Hours</option>
+                            <option value="" type="ee">Hours</option>
                         </select>
-                        <p class="negen">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
+                        <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
                         <h3>E-mail</h3>
                         <input type="email" name="email" placeholder="Email@example.com" class="input">
                         <h3>Domein</h3>
@@ -163,15 +127,15 @@
                         <textarea type="text" name="subject" placeholder="Type hier u notitie"></textarea>
                         <h3>Start</h3>
                         <form action="" class="subtext">
-                            <input type="radio" name="" value="" checked> Immidiatly
+                            <input type="radio" name="start" value="immidiatly" checked> Immidiatly
                             <br>
-                            <input type="radio" name="" value=""> Custom
+                            <input type="radio" name="start" value="custom"> Custom
                         </form>
                         <h3>Stop</h3>
                         <form action="" class="subtext">
-                            <input type="radio" name="" value="" checked> Immidiatly
+                            <input type="radio" name="stop" value="immidiatly" checked> Immidiatly
                             <br>
-                            <input type="radio" name="" value=""> Custom
+                            <input type="radio" name="stop" value="custom"> Custom
                         </form>
                         <button class="blue-button">Create / Modify</button>
                     </div>
