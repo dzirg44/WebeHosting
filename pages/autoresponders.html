@@ -8,7 +8,7 @@
     <title>Hosting panel</title>
     <link href="../css/layout.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/scriptjs"></script>
     <script>
         $(document).ready(function () {
             $(".tabs-menu a").click(function (event) {
@@ -20,7 +20,34 @@
                 $(tab).fadeIn();
             });
         });
+
+
+
+        $(document).ready(function () {
+            $(".een").click(function () {
+                $(".een").addClass("intr");
+            });
+        });
+
+
+
+        $(document).ready(function () {
+            $(".kopdown").click(function () {
+                $(".subdown").slideToggle();
+            });
+        });
     </script>
+    <style>
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+        
+        .intr {
+            font-size: 120%;
+            color: green;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,31 +57,31 @@
                 <img src="../images/WeBeHosting.png" class="logo">
             </li>
             <li class='kop'>
-                <a href='../index.html'><img src="../images/home.jpg" class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
+                <a href='../index.html' class="een"><img src="../images/home.jpg" class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
                 </a>
             </li>
-            <li class='kop'>
+            <li class='kop twee'>
                 <a href='#'><img src="../images/.jpg" class="nav-img"><span class="hidden-xs menu-text">Domeinen</span></a>
             </li>
             <li class='kop'>
-                <a href='#'><img src="../images/mail.png" class="nav-img"><span class="hidden-xs menu-text">E-mail</span></a>
-                <ul>
+                <a href='#'><img src="../images/mail.png" class="nav-img"><span class="hidden-xs menu-text kopdown trigger">E-mail</span></a>
+                <ul class="subdown">
                     <li><a href='#' class="subkop">Mail Account</a></li>
                     <li><a href='#' class="subkop">Forward Mail</a></li>
                     <li><a href='#' class="subkop">Autoresponders</a></li>
                     <li><a href='#' class="subkop">Aliasses</a></li>
                 </ul>
             </li>
-            <li class='kop'>
+            <li class='kop vier'>
                 <a href='#'><img src="../images/dedicated.png" class="nav-img"><span class="hidden-xs menu-text">Databases</span></a>
             </li>
-            <li class='kop'>
+            <li class='kop vijf'>
                 <a href='#'><img src="../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
             </li>
-            <li class='kop'>
+            <li class='kop zes'>
                 <a href='#'><img src="../images/account.png" class="nav-img"><span class="hidden-xs menu-text">Mijn account</span></a>
             </li>
-            <li class='kop'>
+            <li class='kop zeven'>
                 <a href='#'><img src="../images/logout.jpg" class="nav-img"><span class="hidden-xs menu-text">Uitloggen</span></a>
             </li>
         </ul>

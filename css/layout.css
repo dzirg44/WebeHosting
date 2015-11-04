@@ -53,12 +53,14 @@ h3 {
     font-size: 11px;
 }
 
-a {
-    color: #fff;
-}
+a {}
 
 
 /* Navigation */
+
+.active {
+    color: #fabcd1;
+}
 
 #cssmenu,
 #cssmenu ul,
@@ -149,7 +151,7 @@ a {
     background: #fff;
     margin-bottom: 20px;
     margin-top: 30px;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .li {
@@ -160,6 +162,7 @@ a {
 .kop {
     background-color: #76818E;
     border: 1px solid #094f68;
+    color: #fff;
 }
 
 .subkop1 {
