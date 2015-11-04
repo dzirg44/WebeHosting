@@ -1,0 +1,17 @@
+{
+    "name": "webehosting/webehosting",
+    "description": "WebeHosting",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Serge Schalkwijk",
+            "email": "serge.schalkwijk@webecreative.nl"
+        }
+    ],
+    "require": {
+    	"swiftmailer/swiftmailer": "^5.4",
+        "defuse/php-encryption": "^1.2"
+    }
+}
