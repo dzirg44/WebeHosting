@@ -29,7 +29,7 @@
                 <ul class="index-email-subdown">
                     <li><a href='#' class="subkop">Mail Account</a></li>
                     <li><a href='#' class="subkop">Forward Mail</a></li>
-                    <li><a href='pages/autoresponders.php' class="subkop">Autoresponders</a></li>
+                    <li><a href='pages/email/autoresponders.php' class="subkop">Autoresponders</a></li>
                     <li><a href='#' class="subkop">Aliasses</a></li>
                 </ul>
             </li>

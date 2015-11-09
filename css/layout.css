@@ -48,12 +48,11 @@ h2 {
     font-size: 24px;
 }
 
-h3 {
+label {
     color: #666666;
     font-weight: normal;
     margin: 0;
     margin-top: 20px;
-    padding-bottom: 5px;
     font-size: 12px;
 }
 
@@ -688,12 +687,13 @@ textarea {
 
 .background-grey {
     background: #EFEFEF;
-    height: 30px;
+    height: 20px;
     border: none;
+    padding-top: 5px;
 }
 
 .background-white {
     background: #fff;
-    height: 30px;
+    height: 20px;
     border: none;
 }
