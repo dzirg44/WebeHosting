@@ -1,4 +1,4 @@
-CREATE TABLE `email-add` (
+CREATE TABLE `email` (
 `id_email` int(11) NOT NULL AUTO_INCREMENT,
 `character` varchar(45) NOT NULL,
 `interval` varchar(45) NOT NULL,

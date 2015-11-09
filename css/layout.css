@@ -697,3 +697,11 @@ textarea {
     height: 20px;
     border: none;
 }
+
+.ed {
+    float: right;
+}
+
+.ed-padding {
+    padding-right: 20px;
+}

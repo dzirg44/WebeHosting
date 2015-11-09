@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stop = $_POST["stop"];
     }
 
-    $sql = "INSERT INTO email_toevoegen (characterr, intervall, email, domein, fromm, subject, body, start, stop)
+    $sql = "INSERT INTO email (characterr, intervall, email, domein, fromm, subject, body, start, stop)
 VALUES ('$characterr', '$intervall', '$email', '$domein', '$fromm', '$subject', '$body', '$start', '$stop')";
 
 
@@ -89,7 +89,7 @@ VALUES ('$characterr', '$intervall', '$email', '$domein', '$fromm', '$subject', 
     }
 
 }
-$result = mysqli_query($conn, 'SELECT * FROM email_toevoegen');
+$result = mysqli_query($conn, 'SELECT * FROM email');
 $row = mysqli_fetch_array($result);
 mysqli_close($conn);
 
@@ -104,7 +104,7 @@ mysqli_close($conn);
     <title>Hosting panel</title>
     <link href="../../css/layout.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="../js/script.js"></script>
+    <script src="../../js/script.js"></script>
 </head>
 
 <body>
@@ -114,7 +114,7 @@ mysqli_close($conn);
                 <img src="../../images/WeBeHosting.png" class="logo">
             </li>
             <li class='kop'>
-                <a href='../index.php'><img src="../../images/home.jpg" class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
+                <a href='../../index.php'><img src="../../images/home.jpg" class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
                 </a>
             </li>
             <li class='kop'>
@@ -192,7 +192,8 @@ mysqli_close($conn);
                             echo '<tr>';
                             echo '<td class="nine padding-elf">' . $row["email"] . '</td>';
                             echo '<td class="nine padding-elf">' . $row["subject"] . '</td>';
-                            echo '<td class="nine padding-elf">' . $row["body"] . '</td>';
+                            echo '<td class="ed"><a href="bewerken.php?id=" class="ed-padding"><img src="../../images/edit.png"></a><a href="delete.php"><img src="../../images/brullenbak.png"></a></td>';
+                            echo '<td>' . $row['id_email'] . '</td>';
                             echo '</tr>';
                         }
                         ?>
