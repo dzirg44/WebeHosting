@@ -89,9 +89,9 @@ VALUES ('$characterr', '$intervall', '$email', '$domein', '$fromm', '$subject', 
     }
 
 }
-$result = mysqli_query($conn, 'SELECT * FROM email');
+$sql = mysqli_query($conn, 'SELECT * FROM email');
+$result = $sql;
 $row = mysqli_fetch_array($result);
-mysqli_close($conn);
 
 ?>
 <!DOCTYPE html>
@@ -193,7 +193,6 @@ mysqli_close($conn);
                             echo '<td class="nine padding-elf">' . $row["email"] . '</td>';
                             echo '<td class="nine padding-elf">' . $row["subject"] . '</td>';
                             echo '<td class="ed"><a href="bewerken.php?id=" class="ed-padding"><img src="../../images/edit.png"></a><a href="delete.php"><img src="../../images/brullenbak.png"></a></td>';
-                            echo '<td>' . $row['id_email'] . '</td>';
                             echo '</tr>';
                         }
                         ?>

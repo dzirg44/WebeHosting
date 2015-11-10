@@ -4,19 +4,20 @@ $username = "root";
 $password = "";
 $dbname = "WebeHosting";
 
-// Create connection
+// connectie maken
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
+// check connectie
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = 'DELETE FROM email WHERE id_email = ' . $id_email;
+$sql = "DELETE FROM email WHERE idemail";
+
 
 if (mysqli_query($conn, $sql)) {
-    echo "Record delete successfully <a href='../../index.php'>home</a>";
+    echo "Je gegevens zijn verwijderd <br /><br /><a href='autoresponders.php'>Home >></a>";
 } else {
-    echo "Error delete record: " . mysqli_error($conn);
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 mysqli_close($conn);

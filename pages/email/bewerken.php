@@ -15,9 +15,8 @@ if (!$conn) {
 
 $characterrErr = $intervallErr = $emailErr = $domeinErr = $frommErr = $subjectErr = $bodyErr = $startErr = $stopErr = "";
 
-$id_email = $_GET['id'];
-$sql = 'SELECT characterr, intervall, email, domein, fromm, subject, body, start, stop FROM email WHERE id_email = ' . $id_email;
-
+$idemail = $_POST['id'];
+$sql = 'SELECT characterr, intervall, email, domein, fromm, subject, body, start, stop FROM email WHERE idemail = ' . $idemail;
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 
@@ -38,49 +37,58 @@ if ($row) {
 ?>
 
 
-    <!DOCTYPE HTML>
-    <html>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" type="css" href="style.css">
+</head>
 
-    <head>
+<body>
 
-    </head>
-
-    <body>
-        <form action="edit.php" method="post">
-            <div>
-                <p><strong>ID:</strong>
-                    <?php echo $id_email; ?>
-                </p>
-                <tabel>
-                    <tr>
-                        <td>Character</td>
-                        <td>
-                            <select name="characterr">
-                                <option value="utf-8">utf-8</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Interval</td>
-                        <td>
-                            <select name="intervall">
-                                <option value="hours">hours</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="email">email</label>
-                        </td>
-                        <td>
-                            <input type="text" name="email" id="email" value="<?php echo $email; ?>"><span class="error">* <?php echo $emailErr;?></span>
-
-                        </td>
-                    </tr>
-                </tabel>
-                <input type="submit" name="submit" value="Submit">
+<div id="tab-2" class="tab-content">
+        <form method="post" class="form" action="edit.php" enctype="multipart/form-data">
+            <div class="div">
+                <label for="characterr">Character</label><?php echo $characterrErr; ?>
+                    <select class="background-grey" id="characterr" name="characterr">
+                        <option value="utf-8">UTF-8</option>
+                    </select>
+                <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
+                <label for="intervall">Interval</label><?php echo $intervallErr; ?>
+                    <select class="background-white" id="intervall" name="intervall">
+                        <option value="hours">Hours</option>
+                    </select>
+                <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
+                <label for="email">E-mail</label><?php echo $emailErr; ?>
+                    <input type="email" id="email" name="email" placeholder="Email@example.com" class="input" value="<?php echo $email; ?>">
+                <label for="domein">Domein</label><?php echo $domeinErr; ?>
+                    <select name="domein" class="background-grey" id="domein">
+                        <option value="Nildomain">Nildomain</option>
+                    </select>
+                <label for="fromm">From</label><?php echo $frommErr; ?>
+                    <input id="fromm" type="text" name="fromm" placeholder="Abraham Lincoln" class="input" value="<?php echo $fromm; ?>">
+                <label for="subject">Subject</label><?php echo $subjectErr; ?>
+                    <input type="text" id="subject" name="subject" placeholder="The White House" class="input" value="<?php echo $subject; ?>">
+            </div>
+            <div class="div" style="position: absolute;">
+                <label for="body">Body</label><?php echo $bodyErr; ?>
+                    <textarea id="body" type="text" name="body" placeholder="Type hier u notitie" value="<?php echo $body; ?>"></textarea>
+                <label for="start">Start</label><?php echo $startErr; ?>
+                <br>
+                    <input id="start" type="radio" name="start" value="immidiatly"> Immidiatly
+                <br>
+                    <input type="radio" name="start" value="custom"> Custom
+                <br><br>
+                <label for="stop">Stop</label><?php echo $stopErr; ?>
+                <br>
+                    <input id="stop" type="radio" name="stop" value="immidiatly"> Immidiatly
+                <br>
+                    <input type="radio" name="stop" value="custom"> Custom
+                <br>
+                <input class="blue-button" type="submit" value="Edit / Modify" name="submit" />
             </div>
         </form>
-    </body>
+</div>
 
-    </html>
+</body>
+</html>
+

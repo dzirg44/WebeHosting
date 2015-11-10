@@ -1,4 +1,15 @@
 <?php
+
+$characterr = $_POST['characterr'];
+$intervall = $_POST['intervall'];
+$email = $_POST['email'];
+$domein = $_POST['domein'];
+$fromm = $_POST['fromm'];
+$subject = $_POST['subject'];
+$body = $_POST['body'];
+
+$idemail = $_POST['idemail'];
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,11 +22,11 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "UPDATE email SET   WHERE id_email = " . $id_email;
+$sql = "UPDATE email SET characterr='$characterr', intervall='$intervall', email='$email', domein='$domein', fromm='$fromm', subject='$subject', body='$body' WHERE idemail='$idemail'";
 
 
 if (mysqli_query($conn, $sql)) {
-    echo "Record updated successfully";
+    echo "Record updated successfully <a href='autoresponders.php'>home</a>";
 } else {
     echo "Error updating record: " . mysqli_error($conn);
 }
