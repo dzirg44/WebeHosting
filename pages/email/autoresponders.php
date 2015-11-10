@@ -11,23 +11,23 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$characterrErr = $intervallErr = $emailErr = $domeinErr = $frommErr = $subjectErr = $bodyErr = $startErr = $stopErr = "";
+$fontErr = $breakErr = $emailErr = $domeinErr = $belongErr = $subjectErr = $bodyErr = $startErr = $stopErr = "";
 
-$characterr = $intervall = $email = $domein = $fromm = $subject = $body = $start = $stop = "";
+$font = $break = $email = $domein = $belong = $subject = $body = $start = $stop = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     /* character */
-    if (empty($_POST["characterr"])) {
-        $characterrErr = " filling in";
+    if (empty($_POST["font"])) {
+        $fontErr = " filling in";
     } else {
-        $characterr = $_POST["characterr"];
+        $font = $_POST["font"];
     }
 
     /* interval */
-    if (empty($_POST["intervall"])) {
-        $intervallErr = " filling in";
+    if (empty($_POST["break"])) {
+        $breakErr = " filling in";
     } else {
-        $intervall = $_POST["intervall"];
+        $break = $_POST["break"];
     }
 
     /* email */
@@ -45,10 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     /* form */
-    if (empty($_POST["fromm"])) {
-        $frommErr = " filling in";
+    if (empty($_POST["belong"])) {
+        $belongErr = " filling in";
     } else {
-        $fromm = $_POST["fromm"];
+        $belong = $_POST["belong"];
     }
 
     /* subject */
@@ -79,8 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stop = $_POST["stop"];
     }
 
-    $sql = "INSERT INTO email (characterr, intervall, email, domein, fromm, subject, body, start, stop)
-VALUES ('$characterr', '$intervall', '$email', '$domein', '$fromm', '$subject', '$body', '$start', '$stop')";
+    $sql = "INSERT INTO email (font, break, email, domein, belong, subject, body, start, stop)
+VALUES ('$font', '$break', '$email', '$domein', '$belong', '$subject', '$body', '$start', '$stop')";
 
 
     if (mysqli_query($conn, $sql)) {
@@ -90,10 +90,9 @@ VALUES ('$characterr', '$intervall', '$email', '$domein', '$fromm', '$subject', 
 
 }
 $sql = mysqli_query($conn, 'SELECT * FROM email');
-$result = $sql;
-$row = mysqli_fetch_array($result);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -188,7 +187,7 @@ $row = mysqli_fetch_array($result);
                             </th>
                         </tr>
                         <?php
-                        while($row = mysqli_fetch_array($result)) {
+                        while($row = mysqli_fetch_array($sql)) {
                             echo '<tr>';
                             echo '<td class="nine padding-elf">' . $row["email"] . '</td>';
                             echo '<td class="nine padding-elf">' . $row["subject"] . '</td>';
@@ -202,13 +201,13 @@ $row = mysqli_fetch_array($result);
                 <div id="tab-2" class="tab-content">
                     <div class="div">
                         <form method="post" class="form" action="" enctype="multipart/form-data">
-                        <label for="characterr">Character</label><?php echo $characterrErr; ?>
-                        <select class="background-grey" id="characterr" name="characterr">
+                        <label for="font">Character</label><?php echo $fontErr; ?>
+                        <select class="background-grey" id="font" name="font">
                             <option value="utf-8">UTF-8</option>
                         </select>
                         <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
-                        <label for="intervall">Interval</label><?php echo $intervallErr; ?>
-                        <select class="background-white" id="intervall" name="intervall">
+                        <label for="break">Interval</label><?php echo $breakErr; ?>
+                        <select class="background-white" id="break" name="break">
                             <option value="hours">Hours</option>
                         </select>
                         <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
@@ -218,8 +217,8 @@ $row = mysqli_fetch_array($result);
                             <select name="domein" class="background-grey" id="domein">
                                 <option value="Nildomain">Nildomain</option>
                             </select>
-                        <label for="fromm">From</label><?php echo $frommErr; ?>
-                        <input id="fromm" type="text" name="fromm" placeholder="Abraham Lincoln" class="input">
+                        <label for="belong">From</label><?php echo $belongErr; ?>
+                        <input id="belong" type="text" name="belong" placeholder="Abraham Lincoln" class="input">
                         <label for="subject">Subject</label><?php echo $subjectErr; ?>
                         <input type="text" id="subject" name="subject" placeholder="The White House" class="input">
                     </div>

@@ -1,10 +1,10 @@
 CREATE TABLE `email` (
 `id_email` int(11) NOT NULL AUTO_INCREMENT,
-`character` varchar(45) NOT NULL,
-`interval` varchar(45) NOT NULL,
+`font` varchar(45) NOT NULL,
+`break` varchar(45) NOT NULL,
 `email` varchar(45) NOT NULL,
 `domein` varchar(45) NOT NULL,
-`from` varchar(45) NOT NULL,
+`belong` varchar(45) NOT NULL,
 `subject` varchar(45) NOT NULL,
 `body` varchar(45) NOT NULL,
 `start` varchar(45) NOT NULL,

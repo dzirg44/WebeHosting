@@ -13,24 +13,18 @@ if (!$conn) {
 }
 
 
-$characterrErr = $intervallErr = $emailErr = $domeinErr = $frommErr = $subjectErr = $bodyErr = $startErr = $stopErr = "";
+$fontErr = $breakErr = $emailErr = $domeinErr = $belongErr = $subjectErr = $bodyErr = $startErr = $stopErr = "";
 
-$idemail = $_POST['id'];
-$sql = 'SELECT characterr, intervall, email, domein, fromm, subject, body, start, stop FROM email WHERE idemail = ' . $idemail;
+$id_email = $_GET['id'];
+$sql = "SELECT font, break, email, domein, belong, subject, body, start, stop FROM email WHERE id_email = '$id_email'";
 $result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_array($result);
 
 
-if ($row) {
-    $characterr = $row["characterr"];
-    $intervall = $row["intervall"];
-    $email = $row["email"];
-    $domein = $row["domein"];
-    $formm = $row["fromm"];
-    $subject = $row["subject"];
-    $body = $row["body"];
-    $start = $row["start"];
-    $stop = $row["stop"];
+if ($result) {
+    $email = $result["email"];
+    $belong = $result["belong"];
+    $subject = $result["subject"];
+    $body = $result["body"];
 }
 
 
@@ -46,26 +40,26 @@ if ($row) {
 <body>
 
 <div id="tab-2" class="tab-content">
-        <form method="post" class="form" action="" enctype="multipart/form-data">
+        <form method="post" class="form" action="edit.php" enctype="multipart/form-data">
             <div class="div">
-                <label for="characterr">Character</label><?php echo $characterrErr; ?>
-                    <select class="background-grey" id="characterr" name="characterr">
+                <label for="font">Character</label><?php echo $fontErr; ?>
+                    <select class="background-grey" id="font" name="font">
                         <option value="utf-8">UTF-8</option>
                     </select>
                 <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
-                <label for="intervall">Interval</label><?php echo $intervallErr; ?>
-                    <select class="background-white" id="intervall" name="intervall">
+                <label for="break">Interval</label><?php echo $breakErr; ?>
+                    <select class="background-white" id="break" name="break">
                         <option value="hours">Hours</option>
                     </select>
                 <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
                 <label for="email">E-mail</label><?php echo $emailErr; ?>
-                    <input type="email" id="email" name="email" placeholder="Email@example.com" class="input" value="<?php echo $email; ?>">
+                    <input type="email" id="email" name="email" placeholder="Email@example.com" value="<?php echo $email; ?>">
                 <label for="domein">Domein</label><?php echo $domeinErr; ?>
                     <select name="domein" class="background-grey" id="domein">
                         <option value="Nildomain">Nildomain</option>
                     </select>
-                <label for="fromm">From</label><?php echo $frommErr; ?>
-                    <input id="fromm" type="text" name="fromm" placeholder="Abraham Lincoln" class="input" value="<?php echo $fromm; ?>">
+                <label for="belong">From</label><?php echo $belongErr; ?>
+                    <input id="belong" type="text" name="belong" placeholder="Abraham Lincoln" class="input" value="<?php echo $belong; ?>">
                 <label for="subject">Subject</label><?php echo $subjectErr; ?>
                     <input type="text" id="subject" name="subject" placeholder="The White House" class="input" value="<?php echo $subject; ?>">
             </div>

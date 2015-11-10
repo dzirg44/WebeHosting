@@ -11,11 +11,13 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "DELETE FROM email WHERE idemail";
+
+$id_email = $_GET['id'];
+$sql = "DELETE FROM email WHERE id_email = $id_email";
 
 
 if (mysqli_query($conn, $sql)) {
-    echo "Je gegevens zijn verwijderd <br /><br /><a href=''>Home >></a>";
+    echo "Je gegevens zijn verwijderd <br /><br /><a href='autoresponders.php'>Home >></a>";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
