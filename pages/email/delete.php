@@ -15,7 +15,7 @@ $sql = "DELETE FROM email WHERE idemail";
 
 
 if (mysqli_query($conn, $sql)) {
-    echo "Je gegevens zijn verwijderd <br /><br /><a href='autoresponders.php'>Home >></a>";
+    echo "Je gegevens zijn verwijderd <br /><br /><a href=''>Home >></a>";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

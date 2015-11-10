@@ -26,7 +26,7 @@ $sql = "UPDATE email SET characterr='$characterr', intervall='$intervall', email
 
 
 if (mysqli_query($conn, $sql)) {
-    echo "Record updated successfully <a href='autoresponders.php'>home</a>";
+    echo "Record updated successfully <a href=''>home</a>";
 } else {
     echo "Error updating record: " . mysqli_error($conn);
 }

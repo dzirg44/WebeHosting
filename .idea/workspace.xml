@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59ca154f-a6c0-468c-a1a8-31282af116f0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/email/autoresponders.php" afterPath="$PROJECT_DIR$/pages/email/autoresponders.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/email/bewerken.php" afterPath="$PROJECT_DIR$/pages/email/bewerken.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/email/delete.php" afterPath="$PROJECT_DIR$/pages/email/delete.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/email/edit.php" afterPath="$PROJECT_DIR$/pages/email/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hosting_panel:projectmatrix.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autoresponders.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="autoresponders.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/email/autoresponders.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="44.166668">
+            <state vertical-scroll-proportion="-1.1336899">
               <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
               <folding>
                 <element signature="n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -52,13 +50,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bewerken.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bewerken.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/email/bewerken.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+            <state vertical-scroll-proportion="-16.25">
+              <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
               <folding>
-                <marker date="1447149565000" expanded="true" signature="439:545" placeholder="SELECT voorn..medewerkers..." />
+                <marker date="1447152956000" expanded="true" signature="439:545" placeholder="SELECT voorn..medewerkers..." />
               </folding>
             </state>
           </provider>
@@ -67,11 +65,11 @@
       <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/email/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.375">
-              <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+            <state vertical-scroll-proportion="-10.625">
+              <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
               <folding>
-                <marker date="1447151199000" expanded="true" signature="283:307" placeholder="DELETE FROM ..." />
-                <marker date="1447151199000" expanded="true" signature="283:314" placeholder="DELETE FROM ..." />
+                <marker date="1447152967000" expanded="true" signature="283:307" placeholder="DELETE FROM ..." />
+                <marker date="1447152967000" expanded="true" signature="283:314" placeholder="DELETE FROM ..." />
               </folding>
             </state>
           </provider>
@@ -80,10 +78,10 @@
       <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/email/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            <state vertical-scroll-proportion="-17.5">
+              <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
               <folding>
-                <marker date="1447149401000" expanded="true" signature="523:697" placeholder="UPDATE medew..." />
+                <marker date="1447152972000" expanded="true" signature="523:697" placeholder="UPDATE medew..." />
               </folding>
             </state>
           </provider>
@@ -119,10 +117,10 @@
         <option value="$PROJECT_DIR$/pages/email::/bewerken.php" />
         <option value="$PROJECT_DIR$/pages/autoresponders.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/pages/email/edit.php" />
-        <option value="$PROJECT_DIR$/pages/email/bewerken.php" />
         <option value="$PROJECT_DIR$/pages/email/autoresponders.php" />
+        <option value="$PROJECT_DIR$/pages/email/bewerken.php" />
         <option value="$PROJECT_DIR$/pages/email/delete.php" />
+        <option value="$PROJECT_DIR$/pages/email/edit.php" />
       </list>
     </option>
   </component>
@@ -381,45 +379,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/email/delete.php">
+    <entry file="file://$PROJECT_DIR$/pages/email/bewerken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375">
-          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+        <state vertical-scroll-proportion="-16.25">
+          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
           <folding>
-            <marker date="1447151199000" expanded="true" signature="283:307" placeholder="DELETE FROM ..." />
-            <marker date="1447151199000" expanded="true" signature="283:314" placeholder="DELETE FROM ..." />
+            <marker date="1447152956000" expanded="true" signature="439:545" placeholder="SELECT voorn..medewerkers..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/email/autoresponders.php">
+    <entry file="file://$PROJECT_DIR$/pages/email/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="44.166668">
-          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
           <folding>
-            <element signature="n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1447150794000" expanded="true" signature="1855:2054" placeholder="INSERT INTO ..." />
-            <marker date="1447150794000" expanded="true" signature="2208:2227" placeholder="SELECT * FRO..email..." />
+            <marker date="1447152967000" expanded="true" signature="283:307" placeholder="DELETE FROM ..." />
+            <marker date="1447152967000" expanded="true" signature="283:314" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/email/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state vertical-scroll-proportion="-17.5">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
           <folding>
-            <marker date="1447149401000" expanded="true" signature="523:697" placeholder="UPDATE medew..." />
+            <marker date="1447152972000" expanded="true" signature="523:697" placeholder="UPDATE medew..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/email/bewerken.php">
+    <entry file="file://$PROJECT_DIR$/pages/email/autoresponders.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        <state vertical-scroll-proportion="-1.1336899">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
           <folding>
-            <marker date="1447149565000" expanded="true" signature="439:545" placeholder="SELECT voorn..medewerkers..." />
+            <element signature="n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1447150794000" expanded="true" signature="1855:2054" placeholder="INSERT INTO ..." />
+            <marker date="1447150794000" expanded="true" signature="2208:2227" placeholder="SELECT * FRO..email..." />
           </folding>
         </state>
       </provider>

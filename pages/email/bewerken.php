@@ -46,7 +46,7 @@ if ($row) {
 <body>
 
 <div id="tab-2" class="tab-content">
-        <form method="post" class="form" action="edit.php" enctype="multipart/form-data">
+        <form method="post" class="form" action="" enctype="multipart/form-data">
             <div class="div">
                 <label for="characterr">Character</label><?php echo $characterrErr; ?>
                     <select class="background-grey" id="characterr" name="characterr">
