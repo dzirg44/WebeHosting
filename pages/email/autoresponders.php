@@ -79,8 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stop = $_POST["stop"];
     }
 
-    $sql = "INSERT INTO email (font, break, email, domein, belong, subject, body, start, stop)
-VALUES ('$font', '$break', '$email', '$domein', '$belong', '$subject', '$body', '$start', '$stop')";
+//    $sql = "INSERT INTO email (font, break, email, domein, belong, subject, body, start, stop)
+//VALUES ('$font', '$break', '$email', '$domein', '$belong', '$subject', '$body', '$start', '$stop')";
 
 
     if ($conn->query($sql)) {
