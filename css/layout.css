@@ -1,10 +1,10 @@
 /* Body & text */
 
 body {
-    height: 100%;
-    margin: 0;
     background: #fff;
     font-family: 'helvetica';
+    height: 100%;
+    margin: 0;
 }
 
 .left {
@@ -28,19 +28,19 @@ body {
 }
 
 .nine {
+    color: #9B9B9B;
     font-size: 9px;
     margin-top: -12px;
-    color: #9B9B9B;
 }
 
 .eleven {
-    font-size: 11px;
     color: #000;
+    font-size: 11px;
 }
 
 .eleven-table {
-    font-size: 11px;
     color: #000;
+    font-size: 11px;
     margin-bottom: -1px;
 }
 
@@ -50,16 +50,15 @@ h2 {
 
 label {
     color: #666666;
+    font-size: 12px;
     font-weight: normal;
     margin: 0;
     margin-top: 20px;
-    font-size: 12px;
 }
 
 .subtext {
     font-size: 11px;
 }
-
 
 /* Navigation */
 
@@ -67,28 +66,28 @@ label {
 #cssmenu ul,
 #cssmenu li,
 #cssmenu a {
+    border: 0;
+    font-family: "helvetica";
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 2;
+    list-style: none;
     margin: 0;
     padding: 0;
-    border: 0;
-    list-style: none;
-    font-family: "helvetica";
-    font-weight: bold;
-    text-decoration: none;
-    line-height: 2;
-    font-size: 11px;
     position: relative;
+    text-decoration: none;
 }
 
 #cssmenu {
-    width: 200px;
     background: #6b7885;
     display: inline-block;
+    width: 200px;
 }
 
 #cssmenu ul ul {
-    padding: 10px 15px;
-    display: none;
     background: #F3F3F3;
+    display: none;
+    padding: 10px 15px;
 }
 
 #cssmenu ul ul li {
@@ -116,30 +115,30 @@ a.active {
 }
 
 #nav {
-    width: 200px;
     max-height: 100%;
-    position: absolute;
     opacity: 0.7;
+    position: absolute;
+    width: 200px;
 }
 
 .inner {
-    width: 100%;
-    max-width: 15%;
-    margin: 0 auto;
-    position: relative;
     float: none;
+    margin: 0 auto;
+    max-width: 15%;
     padding-top: 10px;
+    position: relative;
+    width: 100%;
 }
 
 .line-color {
-    width: 100%;
-    height: 100%;
     background: #6b7885;
+    height: 100%;
+    width: 100%;
 }
 
 ul {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 a {
@@ -147,26 +146,26 @@ a {
 }
 
 .logo-style {
-    text-align: center;
-    opacity: 0.8;
-    width: 100%;
     height: 50px;
+    opacity: 0.8;
+    text-align: center;
+    width: 100%;
 }
 
 .logo {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-    width: 100%;
     background: #fff;
     margin-bottom: 20px;
     margin-top: 30px;
     opacity: 0.9;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
 }
 
 .li {
-    padding-top: 20px;
     padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .kop {
@@ -185,9 +184,9 @@ a {
 
 .nav-img {
     height: 20px;
-    width: 20px;
-    padding-top: 15px;
     padding-left: 20px;
+    padding-top: 15px;
+    width: 20px;
 }
 
 .menu-text {
@@ -199,31 +198,29 @@ a {
     padding-right: 10px;
 }
 
-
 /* Content */
 
 .content {
+    display: inline-block;
     margin-top: 30px;
     padding-left: 5%;
-    width: 78%;
-    display: inline-block;
     position: absolute;
+    width: 78%;
 }
-
 
 /* Felle kleuren */
 
 .red {
-    border: 1px solid #dd6262;
     background: #C0392B;
+    border: 1px solid #dd6262;
     color: #fff;
     float: left;
-    width: 300px;
     height: 112px;
     margin: 10px;
-    margin-top: 0;
     margin-bottom: 50px;
+    margin-top: 0;
     text-align: center;
+    width: 300px;
 }
 
 .red-icon {
@@ -231,16 +228,16 @@ a {
 }
 
 .green {
-    border: 1px solid #78a144;
     background: #2ECC71;
+    border: 1px solid #78a144;
     color: #fff;
     float: left;
-    width: 300px;
     height: 112px;
     margin: 10px;
-    margin-top: 0;
     margin-bottom: 50px;
+    margin-top: 0;
     text-align: center;
+    width: 300px;
 }
 
 .green-icon {
@@ -248,16 +245,16 @@ a {
 }
 
 .blue {
-    border: 1px solid #4983a6;
     background: #3498DB;
+    border: 1px solid #4983a6;
     color: #fff;
     float: left;
-    width: 300px;
     height: 112px;
     margin: 10px;
-    margin-top: 0;
     margin-bottom: 50px;
+    margin-top: 0;
     text-align: center;
+    width: 300px;
 }
 
 .blue-icon {
@@ -265,16 +262,16 @@ a {
 }
 
 .orange {
-    border: 1px solid #bd6536;
     background: #E67E22;
+    border: 1px solid #bd6536;
     color: #fff;
     float: left;
-    width: 300px;
     height: 112px;
     margin: 10px;
-    margin-top: 0;
     margin-bottom: 50px;
+    margin-top: 0;
     text-align: center;
+    width: 300px;
 }
 
 .orange-icon {
@@ -282,11 +279,11 @@ a {
 }
 
 .icon {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
     height: 68px;
     min-width: 30%;
     text-align: center;
-    border-bottom-left-radius: 2px;
-    border-top-left-radius: 2px;
 }
 
 @media screen and (max-width: 900px) {
@@ -313,14 +310,13 @@ a {
     }
 }
 
-
 /* index
     tabelen */
 
 table {
     border: 2px solid #d6d6d6;
-    margin: 10px;
     border-radius: 5px;
+    margin: 10px;
 }
 
 .t01 {
@@ -328,24 +324,24 @@ table {
 }
 
 .t02 {
-    width: 44%;
     display: inline-block;
+    width: 44%;
 }
 
 table tr td {
-    height: 40px;
     border: 0;
+    height: 40px;
     padding: 15px;
 }
 
 .table-numbers {
-    width: 120px;
     color: #10617d;
+    width: 120px;
 }
 
 .table-getal {
-    width: 87%;
     color: #10617d;
+    width: 87%;
 }
 
 table.t02 tr td:nth-child(2) {
@@ -373,9 +369,9 @@ table.t02 tr:nth-child(odd) {
     border: 1px solid #d6d6d6;
     color: #0a516a;
     height: 20px;
-    width: 20px;
     padding: 3px;
     padding-top: 6px;
+    width: 20px;
 }
 
 .table-padding-icon {
@@ -390,8 +386,8 @@ table.t02 tr:nth-child(odd) {
 
 @media (max-width: 415px) {
     .t02 {
-        min-width: 218px;
         display: inline-block;
+        min-width: 218px;
     }
 }
 
@@ -399,19 +395,18 @@ table.t02 tr:nth-child(odd) {
     padding: 20px;
 }
 
-
 /* index
    Aanbiedingen */
 
 .offer {
-    min-width: 42%;
-    height: 70px;
-    display: inline-block;
-    padding: 15px;
-    margin: 12px;
-    color: #fff;
-    border-radius: 5px;
     background: #000;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    height: 70px;
+    margin: 12px;
+    min-width: 42%;
+    padding: 15px;
 }
 
 .button {
@@ -419,9 +414,9 @@ table.t02 tr:nth-child(odd) {
     border: 0;
     border-radius: 1px;
     box-shadow: 0px 0px 0px 6px rgba(0, 0, 0, 0.3);
-    padding: 10px;
     color: #fff;
     float: right;
+    padding: 10px;
 }
 
 .offer-float {
@@ -445,40 +440,40 @@ div.offer {
 
 @media (max-width: 415px) {
     .offer {
-        width: 190px;
-        height: 70px;
-        display: inline-block;
-        padding: 15px;
-        margin: 12px;
-        color: #fff;
-        border-radius: 5px;
         background: #000;
+        border-radius: 5px;
+        color: #fff;
+        display: inline-block;
+        height: 70px;
+        margin: 12px;
+        padding: 15px;
+        width: 190px;
     }
 }
 
 @media (max-width: 480px) {
     .offer {
-        width: 200px;
-        height: 70px;
-        display: inline-block;
-        padding: 15px;
-        margin: 12px;
-        color: #fff;
-        border-radius: 5px;
         background: #000;
+        border-radius: 5px;
+        color: #fff;
+        display: inline-block;
+        height: 70px;
+        margin: 12px;
+        padding: 15px;
+        width: 200px;
     }
 }
 
 @media (max-width: 508px) {
     .offer {
-        width: 200px;
-        height: 70px;
-        display: inline-block;
-        padding: 15px;
-        margin: 12px;
-        color: #fff;
-        border-radius: 5px;
         background: #000;
+        border-radius: 5px;
+        color: #fff;
+        display: inline-block;
+        height: 70px;
+        margin: 12px;
+        padding: 15px;
+        width: 200px;
     }
 }
 
@@ -524,38 +519,35 @@ div.offer {
     }
 }
 
-
-
-
 /* autoresponder
    tabs*/
 
 .tabs-menu {
-    height: 30px;
-    float: left;
     clear: both;
+    float: left;
+    height: 30px;
     list-style-type: none;
 }
 
 .tabs-menu li {
+    background-color: none;
+    float: left;
     height: 30px;
     line-height: 30px;
-    float: left;
     margin-right: 10px;
-    background-color: none;
 }
 
 .tabs-menu li.current {
     background-color: #fff;
     border-bottom: 1px solid #fff;
-    border-top: 2px solid #DDDDDD;
     border-left: 2px solid #ddd;
     border-right: 2px solid #ddd;
+    border-top: 2px solid #DDDDDD;
 }
 
 .tabs-menu li a {
-    padding: 10px;
     color: #9b9b9b;
+    padding: 10px;
     text-decoration: none;
 }
 
@@ -565,10 +557,10 @@ div.offer {
 
 .tab {
     background-color: #fff;
+    border-top: 1px solid #ddd;
     float: left;
     margin-bottom: 20px;
     width: 90%;
-    border-top: 1px solid #ddd;
 }
 
 .tab-content {
@@ -579,30 +571,29 @@ div.offer {
     display: block;
 }
 
-
 /* autoresponder
    formulier*/
 
 .input {
-    width: 100%;
+    font-size: 10px;
     height: 30px;
     margin-bottom: 20px;
-    font-size: 10px;
+    width: 100%;
 }
 
 select {
-    width: 100%;
+    font-size: 10px;
     height: 30px;
-    padding: 10px;
     margin-bottom: 20px;
     margin-top: -20px;
-    font-size: 10px;
+    padding: 10px;
+    width: 100%;
 }
 
 .auto {
     border: 0;
-    width: 100%;
     margin: 0;
+    width: 100%;
 }
 
 .th {
@@ -612,32 +603,39 @@ select {
     width: 33%;
 }
 
+.thIcon {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
+    text-align: center;
+    width: 9%;
+}
+
 tr {
     margin: 0;
 }
 
 .div {
-    width: 35%;
     display: inline-block;
     padding: 25px;
+    width: 35%;
 }
 
 .blue-button {
     background: #48A2DE;
-    border-radius: 5px;
     border: none;
-    padding: 20px;
+    border-radius: 5px;
     color: #fff;
-    margin-top: 20px;
     font-size: 18px;
     height: 40px;
+    margin-top: 20px;
+    padding: 20px;
     padding-top: 10px;
 }
 
 #site-search-input {
+    height: 20px;
     padding-left: 7px;
     width: 190px;
-    height: 20px;
 }
 
 .search {
@@ -645,22 +643,22 @@ tr {
 }
 
 #search-text-input {
-    border-top: 1px solid #e5e5e5;
-    border-right: 0;
     border-bottom: 1px solid #e5e5e5;
     border-left: 1px solid #e5e5e5;
+    border-right: 0;
+    border-top: 1px solid #e5e5e5;
     float: left;
     height: 17px;
     margin: .8em 0 0 0;
+    margin-bottom: 20px;
     outline: 0;
     padding: .4em 0 .4em .6em;
-    margin-bottom: 20px;
 }
 
 #button-holder {
-    border-top: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
     float: left;
     height: 25px;
     margin: 9px 0 0 0;
@@ -679,23 +677,23 @@ tr {
 }
 
 textarea {
-    padding: 10px;
     border: 1px solid #CCCCCC;
     height: 150px;
+    padding: 10px;
     width: 100%;
 }
 
 .background-grey {
     background: #EFEFEF;
-    height: 20px;
     border: none;
+    height: 20px;
     padding-top: 5px;
 }
 
 .background-white {
     background: #fff;
-    height: 20px;
     border: none;
+    height: 20px;
 }
 
 .ed {

@@ -18,6 +18,7 @@ $sql = "DELETE FROM email WHERE id_email = $id_email";
 
 if (mysqli_query($conn, $sql)) {
     echo "Je gegevens zijn verwijderd <br /><br /><a href='autoresponders.php'>Home >></a>";
+    header('location: autoresponders.php');
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

@@ -5,7 +5,7 @@ $password = "";
 $dbname = "WebeHosting";
 
 /* connectie maken */
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 /* check connectie */
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -83,13 +83,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 VALUES ('$font', '$break', '$email', '$domein', '$belong', '$subject', '$body', '$start', '$stop')";
 
 
-    if (mysqli_query($conn, $sql)) {
+    if ($conn->query($sql)) {
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 
 }
-$sql = mysqli_query($conn, 'SELECT * FROM email');
+//$sql = $conn->query('SELECT * FROM email') or die(mysqli_error($conn));
+
+
+$domainSql = "SELECT id, mailAddress FROM mailbox";
+$domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 
 ?>
 
@@ -104,10 +108,11 @@ $sql = mysqli_query($conn, 'SELECT * FROM email');
     <link href="../../css/layout.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="../../js/script.js"></script>
+    <script type="text/javascript"></script>
 </head>
 
 <body>
-    <div id='cssmenu' class="inner">
+    <nav id='cssmenu' class="inner">
         <ul>
             <li>
                 <img src="../../images/WeBeHosting.png" class="logo">
@@ -144,7 +149,7 @@ $sql = mysqli_query($conn, 'SELECT * FROM email');
                 <a href='#'><img src="../../images/logout.jpg" class="nav-img"><span class="hidden-xs menu-text">Uitloggen</span></a>
             </li>
         </ul>
-    </div>
+    </nav>
     <div id="nav" class="inner line-color">
     </div>
     <div class="content">
@@ -182,19 +187,22 @@ $sql = mysqli_query($conn, 'SELECT * FROM email');
                             <th class="th">
                                 <p class="eleven-table">Subject</p>
                             </th>
-                            <th class="th">
+                            <th class="thIcon">
                                 <p class="eleven-table">Action</p>
                             </th>
                         </tr>
-                        <?php
-                        while($row = mysqli_fetch_array($sql)) {
-                            echo '<tr>';
-                            echo '<td class="nine padding-elf">' . $row["email"] . '</td>';
-                            echo '<td class="nine padding-elf">' . $row["subject"] . '</td>';
-                            echo '<td class="ed"><a href="bewerken.php?id=" class="ed-padding"><img src="../../images/edit.png"></a><a href="delete.php"><img src="../../images/brullenbak.png"></a></td>';
-                            echo '</tr>';
-                        }
-                        ?>
+                        <?php while($row = mysqli_fetch_array($domainSql)): ?>
+                            <tr>
+                                <td class="nine padding-elf"><?= $row["email"] ?></td>
+                                <td class="nine padding-elf"><?= $row["subject"] ?></td>
+                                <td class="ed">
+                                    <a href="edit.php?id=<?=$row['id_email']?>" class="ed-padding">
+                                        <img src="../../images/edit.png"></a>
+                                    <a href="delete.php?id=<?=$row['id_email']?>" onclick="return confirm_delete();">
+                                        <img src="../../images/brullenbak.png"></a>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
                     </table>
                 </div>
 
@@ -203,19 +211,35 @@ $sql = mysqli_query($conn, 'SELECT * FROM email');
                         <form method="post" class="form" action="" enctype="multipart/form-data">
                         <label for="font">Character</label><?php echo $fontErr; ?>
                         <select class="background-grey" id="font" name="font">
+                            <option value="0" selected disabled>Please select a character</option>
                             <option value="utf-8">UTF-8</option>
                         </select>
                         <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
                         <label for="break">Interval</label><?php echo $breakErr; ?>
                         <select class="background-white" id="break" name="break">
+                            <option value="0" selected disabled>Please select a interval</option>
                             <option value="hours">Hours</option>
                         </select>
                         <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
-                        <label for="email">E-mail</label><?php echo $emailErr; ?>
-                        <input type="email" id="email" name="email" placeholder="Email@example.com" class="input">
-                        <label for="domein">Domein</label><?php echo $domeinErr; ?>
+                            <label for="domein">Domein</label><?php echo $domeinErr; ?>
                             <select name="domein" class="background-grey" id="domein">
+                                <option value="0" selected disabled>Please select a domain</option>
                                 <option value="Nildomain">Nildomain</option>
+                            </select>
+                        <label for="email">E-mail</label><?php echo $emailErr; ?>
+                            <select name="email" class="background-grey" id="email">
+                                <option value="0" selected disabled>Please select a email</option>
+
+                                <?php
+                                    if($domainResult->num_rows > 0):
+                                        while($row = $domainResult->fetch_array(MYSQLI_ASSOC)):
+                                ?>
+                                            <option value="<?=$row['id']?>"><?=$row['mailAddress']?></option>
+                                <?php
+                                        endwhile;
+                                    endif;
+                                ?>
+
                             </select>
                         <label for="belong">From</label><?php echo $belongErr; ?>
                         <input id="belong" type="text" name="belong" placeholder="Abraham Lincoln" class="input">
@@ -232,10 +256,7 @@ $sql = mysqli_query($conn, 'SELECT * FROM email');
                             <input type="radio" name="start" value="custom"> Custom
                         <br><br>
                         <label for="stop">Stop</label><?php echo $stopErr; ?>
-                        <br>
-                            <input id="stop" type="radio" name="stop" value="immidiatly" checked> Immidiatly
-                            <br>
-                            <input type="radio" name="stop" value="custom"> Custom
+                            <input type="date">
                             <br>
                             <input class="blue-button" type="submit" value="Create / Modify" name="submit" />
                         </form>

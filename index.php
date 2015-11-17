@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div id='cssmenu' class="inner">
+    <nav id='cssmenu' class="inner">
         <ul>
             <li>
                 <img src="images/WeBeHosting.png" class="logo">
@@ -49,7 +49,7 @@
                 <a href='#'><img src="images/logout.jpg" class="nav-img"><span class="hidden-xs menu-text">Uitloggen</span></a>
             </li>
         </ul>
-    </div>
+    </nav>
     <div id="nav" class="inner line-color">
     </div>
     <div class="content">
