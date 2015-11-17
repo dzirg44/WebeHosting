@@ -1,17 +1,15 @@
 <?php
-
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "WebeHosting";
 
 /* connectie maken */
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 /* check connectie */
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
 
 $subjectErr = $bodyErr = $startDateTimeErr = $endDateTimeErr = "";
 $subject = $body = $startDateTime = $endDateTime = "";
@@ -56,30 +54,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 
-        $sql = "INSERT INTO unavailable (fromPerson, subject, body, startDateTime, endDateTime)
-                VALUES ('$from', '$subject', '$body', '$startDateTime', '$endDateTime')";
+        $sql = "INSERT INTO unavailable(subject, body, startDateTime, endDateTime)
+                VALUES ('$subject', '$body', '$startDateTime', '$endDateTime')";
 
-        if ($conn->query($sql)) {
+        $sql1 = "INSERT INTO mailBox(mailAddress)
+                    VALUES ('$mailBoxSql')";
+
+        if ($conn->query($sql . $sql1)) {
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            echo "Error: " . $sql . $sql1 . "<br>" . mysqli_error($conn);
         }
 }
 
+/* laten zien */
+$mailBoxSql = "SELECT id, mailAddress FROM mailbox";
+$mailBoxResult = $conn->query($mailBoxSql) or die(mysqli_error($conn));
 
-
-$id = $_GET['id'];
-$sql = 'SELECT subject, body, startDateTime, endDateTime FROM unavailable WHERE id = ' . $id;
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_array($result);
-
-if($row) {
-    $subject = $row["subject"];
-    $body = $row["body"];
-    $start= $row["startDateTime"];
-    $stop = $row["endDateTime"];
-}
-
-
+$unavailableSql = "SELECT id, subject, startDateTime, endDateTime FROM unavailable";
+$unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 
 ?>
 
@@ -157,15 +149,13 @@ if($row) {
             <div id='tabmenu'>
                 <ul>
                     <li><a href='autoresponders.php'>Autoresponders</a></li>
-                    <li><a href='autoresponder_add.php'>Add Responder</a></li>
-                    <li class="active"><a href="#">Edit Responder</a></li>
+                    <li class='active'><a href='autoresponder_add.php'>Add Responder</a></li>
                 </ul>
             </div>
             <div class="div">
-                <form method="post" class="form" action="edit_update.php" enctype="multipart/form-data">
-                    <input type="hidden" name="id_email" value="<?php echo $id; ?>"/>
+                <form method="post" class="form" action="" enctype="multipart/form-data">
                     <label for="character">Character</label>
-                    <select class="background-grey" id="character" name="charactr" >
+                    <select class="background-grey" id="character" name="charactr">
                         <option value="0" selected disabled>Please select a character</option>
                         <option value="utf-8">UTF-8</option>
                     </select>
@@ -197,18 +187,18 @@ if($row) {
 
                     </select>
                     <label for="fromPerson">From</label><?= $fromPersonErr; ?>
-                    <input id="fromPerson" type="text" name="fromPerson" placeholder="Abraham Lincoln" class="input" value="<?php echo $fromPerson; ?>">
+                    <input id="fromPerson" type="text" name="fromPerson" placeholder="Abraham Lincoln" class="input">
                     <label for="subject">Subject</label><?= $subjectErr ?>
-                    <input type="text" id="subject" name="subject" placeholder="The White House" class="input" value="<?php echo $subject; ?>">
+                    <input type="text" id="subject" name="subject" placeholder="The White House" class="input">
             </div>
             <div class="div" style="position: absolute;">
                 <label for="body">Body</label><?= $bodyErr ?>
-                <textarea id="body" name="body" placeholder="Type hier u notitie" value="<?php echo $body; ?>"></textarea>
+                <textarea id="body" name="body" placeholder="Type hier u notitie"></textarea>
                 <label for="start">Start</label><?= $startDateTimeErr ?><br>
-                <input type="date" id="start" name="start" placeholder="date" class="input" value="<?php echo $startDateTime; ?>">
+                <input type="date" id="start" name="start" placeholder="Date" class="input">
                 <br><br>
                 <label for="stop">Stop</label><?= $endDateTimeErr ?><br>
-                <input type="date" id="stop" name="stop" placeholder="Date" class="input" value="<?php echo $endDateTime; ?>">
+                <input type="date" id="stop" name="stop" placeholder="Date" class="input">
                 <br>
                 <input class="blue-button" type="submit" value="Create / Modify" name="submit" />
                 </form>
@@ -223,4 +213,3 @@ if($row) {
 </body>
 
 </html>
-
