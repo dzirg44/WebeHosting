@@ -53,14 +53,7 @@ label {
     font-size: 12px;
     font-weight: normal;
     margin: 0;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-margin-top: 20px;
-=======
-margin-top: 20;
-=======
     margin-top: 20px;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     font-size: 12px;
 }
 
@@ -87,30 +80,13 @@ margin-top: 20;
 }
 
 #cssmenu {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-width: 200;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-background: #6b7885;
-=======
     background: #6b7885;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     display: inline-block;
     width: 200px;
 }
 
 #cssmenu ul ul {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-padding: 10 15px;
-    display: none;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-background: #F3F3F3;
-=======
     background: #F3F3F3;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     display: none;
     padding: 10px 15px;
 }
@@ -140,15 +116,7 @@ a.active {
 }
 
 #nav {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-width: 200;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-max-height: 100%;
-=======
     max-height: 100%;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     opacity: 0.7;
     position: absolute;
     width: 200px;
@@ -156,22 +124,11 @@ max-height: 100%;
 
 .inner {
     float: none;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-margin: 0 auto;
-=======
     margin: 0 auto;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     max-width: 15%;
     padding-top: 10px;
     position: relative;
     width: 100%;
-<<<<<<< HEAD
-=======
-padding-top: 10;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-=======
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
 }
 
 .line-color {
@@ -194,28 +151,10 @@ a {
     opacity: 0.8;
     text-align: center;
     width: 100%;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-}
-
-.logo {
-=======
-height: 50;
-}
-
-.logo {
-    padding-top: 20;
-    padding-bottom: 20;
-    text-align: center;
-    width: 100%;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-background: #fff;
-=======
 }
 
 .logo {
     background: #fff;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     margin-bottom: 20;
     margin-top: 30;
     opacity: 0.9;
@@ -226,18 +165,8 @@ background: #fff;
 }
 
 .li {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-padding-bottom: 20px;
-    padding-top: 20px;
-=======
-padding-top: 20;
-    padding-bottom: 20;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-=======
     padding-bottom: 20px;
     padding-top: 20px;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
 }
 
 .kop {
@@ -255,24 +184,10 @@ padding-top: 20;
 }
 
 .nav-img {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-height: 20px;
-    padding-left: 20px;
-    padding-top: 15px;
-    width: 20px;
-=======
-height: 20;
-    width: 20;
-    padding-top: 15px;
-    padding-left: 20;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-=======
     height: 20px;
     padding-left: 20px;
     padding-top: 15px;
     width: 20px;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
 }
 
 .menu-text {
@@ -287,19 +202,9 @@ height: 20;
 /* Content */
 
 .content {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-display: inline-block;
-    margin-top: 30px;
-=======
-margin-top: 30;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-padding-left: 5%;
-=======
     display: inline-block;
     margin-top: 30px;
     padding-left: 5%;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     position: absolute;
     width: 78%;
 }
@@ -311,23 +216,12 @@ padding-left: 5%;
     border: 1px solid #dd6262;
     color: #fff;
     float: left;
-    <<<<<<< HEAD
-height: 112px;
+<<<<<<< HEAD
+    height: 112px;
     margin: 10px;
     margin-bottom: 50px;
     margin-top: 0;
-<<<<<<< HEAD
-=======
-width: 300;
-    height: 112px;
-    margin: 10;
-    margin-top: 0;
-    margin-bottom: 50;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-text-align: center;
-=======
     text-align: center;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     width: 300px;
 }
 
@@ -340,27 +234,11 @@ text-align: center;
     border: 1px solid #78a144;
     color: #fff;
     float: left;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-height: 112px;
-    margin: 10px;
-    margin-bottom: 50px;
-    margin-top: 0;
-=======
-width: 300;
-    height: 112px;
-    margin: 10;
-    margin-top: 0;
-    margin-bottom: 50;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-text-align: center;
-=======
     height: 112px;
     margin: 10px;
     margin-bottom: 50px;
     margin-top: 0;
     text-align: center;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     width: 300px;
 }
 
@@ -373,27 +251,11 @@ text-align: center;
     border: 1px solid #4983a6;
     color: #fff;
     float: left;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-height: 112px;
-    margin: 10px;
-    margin-bottom: 50px;
-    margin-top: 0;
-=======
-width: 300;
-    height: 112px;
-    margin: 10;
-    margin-top: 0;
-    margin-bottom: 50;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-text-align: center;
-=======
     height: 112px;
     margin: 10px;
     margin-bottom: 50px;
     margin-top: 0;
     text-align: center;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     width: 300px;
 }
 
@@ -406,27 +268,11 @@ text-align: center;
     border: 1px solid #bd6536;
     color: #fff;
     float: left;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-height: 112px;
-    margin: 10px;
-    margin-bottom: 50px;
-    margin-top: 0;
-=======
-width: 300;
-    height: 112px;
-    margin: 10;
-    margin-top: 0;
-    margin-bottom: 50;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-text-align: center;
-=======
     height: 112px;
     margin: 10px;
     margin-bottom: 50px;
     margin-top: 0;
     text-align: center;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     width: 300px;
 }
 
@@ -471,15 +317,7 @@ text-align: center;
 
 table {
     border: 2px solid #d6d6d6;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-margin: 10;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-border-radius: 5px;
-=======
     border-radius: 5px;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     margin: 10px;
 }
 
@@ -493,29 +331,13 @@ border-radius: 5px;
 }
 
 table tr td {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-height: 40;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-border: 0;
-=======
     border: 0;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     height: 40px;
     padding: 15px;
 }
 
 .table-numbers {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-width: 120;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-color: #10617d;
-=======
     color: #10617d;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     width: 120px;
 }
 
@@ -548,18 +370,8 @@ table.t02 tr:nth-child(odd) {
     background: #f6f6f6;
     border: 1px solid #d6d6d6;
     color: #0a516a;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-height: 20px;
-=======
-height: 20;
-    width: 20;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-padding: 3px;
-=======
     height: 20px;
     padding: 3px;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     padding-top: 6px;
     width: 20px;
 }
@@ -589,22 +401,10 @@ padding: 3px;
    Aanbiedingen */
 
 .offer {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-background: #000;
-    border-radius: 5px;
-    color: #fff;
-=======
-min-width: 42%;
-    height: 70;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-display: inline-block;
-=======
     background: #000;
     border-radius: 5px;
     color: #fff;
     display: inline-block;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     height: 70px;
     margin: 12px;
     min-width: 42%;
@@ -615,18 +415,8 @@ display: inline-block;
     background: #719132;
     border: 0;
     border-radius: 1px;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-box-shadow: 0px 0px 0px 6px rgba(0, 0, 0, 0.3);
-=======
-box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.3);
-    padding: 10;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-color: #fff;
-=======
     box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.3);
     color: #fff;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     float: right;
     padding: 10px;
 }
@@ -652,22 +442,10 @@ div.offer {
 
 @media (max-width: 415px) {
     .offer {
-<<<<<<< HEAD
-        <<<<<<< HEAD
-    background: #000;
-        border-radius: 5px;
-        color: #fff;
-    =======
-    width: 190;
-        height: 70;
-    >>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-    display: inline-block;
-=======
         background: #000;
         border-radius: 5px;
         color: #fff;
         display: inline-block;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
         height: 70px;
         margin: 12px;
         padding: 15px;
@@ -677,22 +455,10 @@ div.offer {
 
 @media (max-width: 480) {
     .offer {
-<<<<<<< HEAD
-        <<<<<<< HEAD
-    background: #000;
-        border-radius: 5px;
-        color: #fff;
-    =======
-    width: 200;
-        height: 70;
-    >>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-    display: inline-block;
-=======
         background: #000;
         border-radius: 5px;
         color: #fff;
         display: inline-block;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
         height: 70px;
         margin: 12px;
         padding: 15px;
@@ -702,22 +468,10 @@ div.offer {
 
 @media (max-width: 508px) {
     .offer {
-<<<<<<< HEAD
-        <<<<<<< HEAD
-    background: #000;
-        border-radius: 5px;
-        color: #fff;
-    =======
-    width: 200;
-        height: 70;
-    >>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-    display: inline-block;
-=======
         background: #000;
         border-radius: 5px;
         color: #fff;
         display: inline-block;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
         height: 70px;
         margin: 12px;
         padding: 15px;
@@ -771,39 +525,17 @@ div.offer {
    tabs*/
 
 .tabs-menu {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-height: 30;
-    float: left;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-clear: both;
-=======
     clear: both;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     float: left;
     height: 30px;
     list-style-type: none;
 }
 
 .tabs-menu li {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-background-color: none;
-=======
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     float: left;
     height: 30px;
     line-height: 30px;
     margin-right: 10px;
-<<<<<<< HEAD
-=======
-height: 30;
-    line-height: 30;
-    float: left;
-    margin-right: 10;
-=======
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     background-color: transparent;
 }
 
@@ -816,15 +548,7 @@ height: 30;
 }
 
 .tabs-menu li a {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-padding: 10;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-color: #9b9b9b;
-=======
     color: #9b9b9b;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     padding: 10px;
     text-decoration: none;
 }
@@ -853,12 +577,7 @@ color: #9b9b9b;
    formulier*/
 
 .input {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-font-size: 10px;
-=======
     font-size: 10px;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     height: 30px;
     margin-bottom: 20px;
     width: 100%;
@@ -871,24 +590,6 @@ select {
     margin-top: -20px;
     padding: 10px;
     width: 100%;
-<<<<<<< HEAD
-=======
-width: 100%;
-    height: 30;
-    margin-bottom: 20;
-    font-size: 10;
-}
-
-select {
-    width: 100%;
-    height: 30;
-    padding: 10;
-    margin-bottom: 20;
-    margin-top: -20;
-    font-size: 10;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-=======
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
 }
 
 .auto {
@@ -924,44 +625,19 @@ tr {
 .blue-button {
     background: #48A2DE;
     border: none;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-border-radius: 5px;
-=======
     border-radius: 5px;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     color: #fff;
     font-size: 18px;
     height: 40px;
     margin-top: 20px;
     padding: 20px;
     padding-top: 10px;
-<<<<<<< HEAD
-=======
-padding: 20;
-    color: #fff;
-    margin-top: 20;
-    font-size: 18px;
-    height: 40;
-    padding-top: 10;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-=======
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
 }
 
 #site-search-input {
     height: 20px;
     padding-left: 7px;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-width: 190px;
-=======
-width: 190;
-    height: 20;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-=======
     width: 190px;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
 }
 
 .search {
@@ -979,13 +655,6 @@ width: 190;
     margin-bottom: 20px;
     outline: 0;
     padding: .4em 0 .4em .6em;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-margin-bottom: 20;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-=======
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
 }
 
 #button-holder {
@@ -1010,51 +679,22 @@ margin-bottom: 20;
 }
 
 textarea {
-<<<<<<< HEAD
-    <<<<<<< HEAD
-border: 1px solid #CCCCCC;
-    height: 150px;
-    padding: 10px;
-=======
-padding: 10;
-    border: 1px solid #CCCCCC;
-    height: 150;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-width: 100%;
-=======
     border: 1px solid #CCCCCC;
     height: 150px;
     padding: 10px;
     width: 100%;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
 }
 
 .background-grey {
     background: #EFEFEF;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-height: 20;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-border: none;
-=======
     border: none;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     height: 20px;
     padding-top: 5px;
 }
 
 .background-white {
     background: #fff;
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    =======
-height: 20;
->>>>>>> 8324d00a08567c3be70fa6da8bf649c91c22758d
-border: none;
-=======
     border: none;
->>>>>>> f8d4051eced851a06afe05be92e909eb7c941cd8
     height: 20px;
 }
 
