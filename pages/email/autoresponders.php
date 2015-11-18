@@ -12,11 +12,13 @@ if (!$conn) {
 }
 
 /* laten zien */
-$mailBoxSql = "SELECT id, mailAddress FROM mailbox";
-$mailBoxResult = $conn->query($mailBoxSql) or die(mysqli_error($conn));
-
-$unavailableSql = "SELECT id, subject, startDateTime, endDateTime FROM unavailable";
+$unavailableSql = "SELECT unavailable.id, subject, startDateTime, endDateTime,mailAddress
+                   FROM unavailable
+                   INNER JOIN mailbox
+                   ON unavailable.mailboxId=mailbox.id";
 $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
+
+
 
 ?>
 
@@ -129,9 +131,9 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
                             <td class="nine padding-elf"><?= $row["mailAddress"] ?></td>
                             <td class="nine padding-elf"><?= $row["subject"] ?></td>
                             <td class="ed">
-                                <a href="edit.php?id=<?=$row['id_email']?>" class="ed-padding">
+                                <a href="edit.php?id=<?=$row['id']?>" class="ed-padding">
                                     <img src="../../images/edit.png" class="edImg"></a>
-                                <a href="delete.php?id=<?=$row['id_email']?>" onclick="return confirm_delete();">
+                                <a href="delete.php?id=<?=$row['id']?>" onclick="return confirm_delete();">
                                     <img src="../../images/brullenbak.png" class="edImg"></a>
                             </td>
                         </tr>

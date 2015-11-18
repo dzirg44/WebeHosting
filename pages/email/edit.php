@@ -13,19 +13,47 @@ if (!$conn) {
 }
 
 
-$subjectErr = $bodyErr = $startDateTimeErr = $endDateTimeErr = "";
-$subject = $body = $startDateTime = $endDateTime = "";
+$characterErr = $intervalErr = $fromErr = $subjectErr = $bodyErr = $startDateTimeErr = $endDateTimeErr = "";
+$character = $interval = $from = $subject = $body = $startDateTime = $endDateTime = "";
 
 //check of alle vakken er zijn
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    if(isset($_POST["subject"],$_POST["body"],$_POST["startDateTime"],$_POST["endDateTime"])) {
+    if(isset($_POST["character"],$_POST["interval"],$_POST["from"],$_POST["subject"],$_POST["body"],$_POST["startDateTime"],$_POST["endDateTime"])) {
 
-//        /* from */
-//        if (empty($_POST["fromPerson"])) {
-//            $fromPersonErr = " filling in";
+        /* character */
+        if (empty($_POST["character"])) {
+            echo $characterErr;
+        } else {
+            $character = ($_POST["character"]);
+        }
+
+        /* interval */
+        if (empty($_POST["interval"])) {
+            echo $intervalErr;
+        } else {
+            $interval = ($_POST["interval"]);
+        }
+
+//        /* domein */
+//        if (empty($_POST["domain"])) {
+//            echo $domainErr;
 //        } else {
-//            $fromPerson = ($_POST["fromPerson"]);
+//            $domain = ($_POST["domain"]);
 //        }
+//
+//        /* mailAddress */
+//        if (empty($_POST["mailAddress"])) {
+//            echo $mailAddressErr;
+//        } else {
+//            $mailAddress = ($_POST["mailAddress"]);
+//        }
+
+        /* from */
+        if (empty($_POST["from"])) {
+            $fromErr = " filling in";
+        } else {
+            $from = ($_POST["from"]);
+        }
 
         /* subject */
         if (empty($_POST["subject"])) {
@@ -56,8 +84,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 
-        $sql = "INSERT INTO unavailable (fromPerson, subject, body, startDateTime, endDateTime)
-                VALUES ('$from', '$subject', '$body', '$startDateTime', '$endDateTime')";
+        $sql = "INSERT INTO unavailable (`character`, `interval`, `from`, subject, body, startDateTime, endDateTime)
+                VALUES ('$character', '$interval', '$from', '$subject', '$body', '$startDateTime', '$endDateTime')";
 
         if ($conn->query($sql)) {
         } else {
@@ -68,19 +96,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 $id = $_GET['id'];
-$sql = 'SELECT subject, body, startDateTime, endDateTime FROM unavailable WHERE id = ' . $id;
+$sql = 'SELECT domainId, mailboxId, `character`, `interval`, `from`, subject, body, startDateTime, endDateTime
+        FROM unavailable
+        INNER JOIN mailbox
+        ON unavailable.mailboxId = mailbox.id
+        WHERE unavailable.id = ' . $id;
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 
+
 if($row) {
+    $domainId = $row["domainId"];
+    $mailboxId = $row["mailboxId"];
+    $character = $row["character"];
+    $interval = $row["interval"];
+//    $domein = $row["domein"];
+//    $mailAddress = $row["mailAddress"];
+    $from = $row["from"];
     $subject = $row["subject"];
     $body = $row["body"];
-    $start= $row["startDateTime"];
-    $stop = $row["endDateTime"];
+    $startDateTime = $row["startDateTime"];
+    $endDateTime = $row["endDateTime"];
 }
 
+$mailBoxSql = "SELECT id, mailAddress FROM mailbox";
+$mailBoxResult = $conn->query($mailBoxSql) or die(mysqli_error($conn));
 
-
+$domainSql = "SELECT id, `domain` FROM `domain`";
+$domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 ?>
 
 <!DOCTYPE html>
@@ -165,7 +208,7 @@ if($row) {
                 <form method="post" class="form" action="edit_update.php" enctype="multipart/form-data">
                     <input type="hidden" name="id_email" value="<?php echo $id; ?>"/>
                     <label for="character">Character</label>
-                    <select class="background-grey" id="character" name="charactr" >
+                    <select class="background-grey" id="character" name="character">
                         <option value="0" selected disabled>Please select a character</option>
                         <option value="utf-8">UTF-8</option>
                     </select>
@@ -177,38 +220,48 @@ if($row) {
                     </select>
                     <p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
                     <label for="domein">Domein</label>
-                    <select name="domein" class="background-grey" id="domein">
-                        <option value="0" selected disabled>Please select a domain</option>
-                        <option value="Nildomain">Nildomain</option>
-                    </select>
-                    <label for="mailAddress">E-mail</label>
-                    <select name="mailAddress" class="background-grey" id="mailAddress">
-                        <option value="0" selected disabled>Please select a email</option>
-
+                    <select name="domein" id="domein" class="background-grey">
                         <?php
-                        if($mailBoxResult->num_rows > 0):
-                            while($row = $mailBoxResult->fetch_array(MYSQLI_ASSOC)):
-                                ?>
-                                <option value="<?=$row['id']?>"><?=$row['mailAddress']?></option>
+                        if($domainResult->num_rows > 0):
+                            while($row = $domainResult->fetch_array(MYSQLI_ASSOC)):?>
+                                <?php if ($row['id'] == $domainId): ?>
+                                    <option value="<?php echo $row['id']; ?>" selected><?php echo $row['domain']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['domain']; ?></option>
+                                <?php endif; ?>
                                 <?php
                             endwhile;
                         endif;
                         ?>
-
                     </select>
-                    <label for="fromPerson">From</label><?= $fromPersonErr; ?>
-                    <input id="fromPerson" type="text" name="fromPerson" placeholder="Abraham Lincoln" class="input" value="<?php echo $fromPerson; ?>">
+                    <label for="mailAddress">E-mail</label>
+                        <select name="mailAddress" id="mailAddress" class="background-grey">
+                            <?php
+                            if($mailBoxResult->num_rows > 0):
+                                while($row = $mailBoxResult->fetch_array(MYSQLI_ASSOC)):?>
+                                    <?php if ($row['id'] == $mailboxId): ?>
+                                        <option value="<?php echo $row['id']; ?>" selected><?php echo $row['mailAddress']; ?></option>
+                                    <?php else: ?>
+                                        <option value="<?php echo $row['id']; ?>"><?php echo $row['mailAddress']; ?></option>
+                                    <?php endif; ?>
+                                    <?php
+                                endwhile;
+                            endif;
+                            ?>
+                        </select>
+                    <label for="from">From</label><?= $fromErr; ?>
+                    <input id="from" type="text" name="from" placeholder="Abraham Lincoln" class="input" value="<?php echo $from; ?>">
                     <label for="subject">Subject</label><?= $subjectErr ?>
                     <input type="text" id="subject" name="subject" placeholder="The White House" class="input" value="<?php echo $subject; ?>">
             </div>
             <div class="div" style="position: absolute;">
                 <label for="body">Body</label><?= $bodyErr ?>
-                <textarea id="body" name="body" placeholder="Type hier u notitie" value="<?php echo $body; ?>"></textarea>
-                <label for="start">Start</label><?= $startDateTimeErr ?><br>
-                <input type="date" id="start" name="start" placeholder="date" class="input" value="<?php echo $startDateTime; ?>">
+                <input id="body" name="body" placeholder="Type hier u notitie" class="inputBody" value="<?php echo $body; ?>">
+                <label for="startDateTime">Start</label><?= $startDateTimeErr ?><br>
+                <input type="text" id="startDateTime" name="startDateTime" placeholder="date" class="input" value="<?php echo $startDateTime; ?>">
                 <br><br>
-                <label for="stop">Stop</label><?= $endDateTimeErr ?><br>
-                <input type="date" id="stop" name="stop" placeholder="Date" class="input" value="<?php echo $endDateTime; ?>">
+                <label for="endDateTime">Stop</label><?= $endDateTimeErr ?><br>
+                <input type="text" id="endDateTime" name="endDateTime" placeholder="Date" class="input" value="<?php echo $endDateTime; ?>">
                 <br>
                 <input class="blue-button" type="submit" value="Create / Modify" name="submit" />
                 </form>

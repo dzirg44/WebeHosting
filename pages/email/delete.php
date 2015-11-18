@@ -12,15 +12,19 @@ if (!$conn) {
 }
 
 
-$id_email = $_GET['id'];
-$sql = "DELETE FROM email WHERE id_email = $id_email";
+$id = $_GET['id'];
+$sql = "UPDATE unavailable
+        SET active = 0
+        WHERE id = '$id'";
 
+$sql1 = "INSERT INTO setOff
+         WHERE active = 0;";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Je gegevens zijn verwijderd <br /><br /><a href='autoresponders.php'>Home >></a>";
+    echo "Record updated successfully <a href='autoresponders.php'>home</a>";
     header('location: autoresponders.php');
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Error updating record: " . mysqli_error($conn);
 }
 
 mysqli_close($conn);

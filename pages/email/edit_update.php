@@ -1,14 +1,13 @@
 <?php
-
-$font = $_POST['font'];
-$break = $_POST['break'];
-$email = $_POST['email'];
-$domein = $_POST['domein'];
-$belong = $_POST['belong'];
+$character = $_POST['character'];
+$interval = $_POST['interval'];
+$from = $_POST['from'];
 $subject = $_POST['subject'];
 $body = $_POST['body'];
+$startDateTime = $_POST['startDateTime'];
+$endDateTime = $_POST['endDateTime'];
 
-$id_email = $_POST['id_email'];
+//$id = $_POST['id'];
 
 
 $servername = "localhost";
@@ -16,21 +15,23 @@ $username = "root";
 $password = "";
 $dbname = "WebeHosting";
 
-// Create connection
+// connectie maken
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
+// check connectie
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "UPDATE email
-        SET font='$font', break='$break', email='$email', domein='$domein', belong='$belong', subject='$subject', body='$body'
-        WHERE id_email='$id_email'";
+
+$id = $_GET['id'];
+$sql = "UPDATE unavailable
+        SET `character`='$character', `interval`='$interval', `from`='$from', subject='$subject', body='$body', startDateTime='$startDateTime', endDateTime='$endDateTime'
+        WHERE id = '$id'";
 
 
 if (mysqli_query($conn, $sql)) {
     echo "Record updated successfully <a href='autoresponders.php'>home</a>";
-    header('location: autoresponders.php');
+//    header('location: autoresponders.php');
 } else {
     echo "Error updating record: " . mysqli_error($conn);
 }

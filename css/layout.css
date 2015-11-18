@@ -67,7 +67,6 @@ label {
 #cssmenu li,
 #cssmenu a {
     border: 0;
-    font-family: "helvetica";
     font-size: 11px;
     font-weight: bold;
     line-height: 2;
@@ -91,12 +90,12 @@ label {
 }
 
 #cssmenu ul ul li {
-    padding: 10 0;
+    padding: 10px 0;
 }
 
 #cssmenu ul ul a {
     display: inline-block;
-    font-size: 10;
+    font-size: 10px;
     font-weight: bold;
 }
 
@@ -632,6 +631,13 @@ div.offer {
     width: 100%;
 }
 
+.inputBody {
+    font-size: 10px;
+    height: 115px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
 select {
     font-size: 10px;
     height: 30px;
@@ -769,6 +775,5 @@ textarea {
 /* empty filed style */
 
 .emptyFiled {
-    opacity: 0.8;
     border: 2px solid #ff0000;
 }
