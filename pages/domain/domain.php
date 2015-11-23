@@ -11,13 +11,46 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
+$domainErr = "";
+$domain = $fieldEmpty = "";
+$noError = true;
+
+//check of alle vakken er zijn
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+	if (isset($_POST["domain"])) {
+
+		if (!preg_match('/^(?!\-)(?:[a-zA-Z\d\-]{0,62}[a-zA-Z\d]\.){1,126}(?!\d+)[a-zA-Z\d]{1,63}$/', $_POST["domain"])) {
+			$fieldEmpty = "<span style='color: #ff0000;'>There have to be a .com or .be etc</span>";
+			$noError = false;
+		}
+		/* from */
+		if (empty($_POST["domain"])) {
+			echo $domainErr;
+			$noError = false;
+		} else {
+			$domain = ($_POST["domain"]);
+		}
+	}
+
+	if ($noError) {
+		$sql = "INSERT INTO domain(`domain`)
+                VALUES ('$domain')";
+
+
+		if ($conn->query($sql)) {
+			header('location: domain.php');
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+	}
+
+}
+
 /* laten zien */
-$unavailableSql = "SELECT unavailable.id, subject, startDateTime, endDateTime,mailAddress
-                   FROM unavailable
-                   INNER JOIN mailbox
-                   ON unavailable.mailboxId=mailbox.id
-                   WHERE unavailable.active = 1";
-$unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
+$domainSql = "SELECT `domain`.id, `domain`
+              FROM `domain`
+              WHERE active = 1 ";
+$domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 
 
 ?>
@@ -48,7 +81,7 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 					</a>
 				</li>
 				<li class='kop'>
-					<a href='../domain/domain.php'><img src="" class="nav-img"><span class="hidden-xs menu-text ">Domeinen</span></a>
+					<a href='#'><img src="" class="nav-img"><span class="hidden-xs menu-text ">Domeinen</span></a>
 				</li>
 				<li class='kop auto-email-kopdown'>
 					<a href='#'><img src="../../images/mail.png"
@@ -56,7 +89,7 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 					<ul class="auto-email-subdown">
 						<li><a href='#' class="subkop">Mail Account</a></li>
 						<li><a href='#' class="subkop">Forward Mail</a></li>
-						<li><a href='#' class="active subkop">Autoresponders</a></li>
+						<li><a href='../email/autoresponders.php' class="subkop">Autoresponders</a></li>
 						<li><a href='#' class="subkop">Aliasses</a></li>
 					</ul>
 				</li>
@@ -101,12 +134,28 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 				<div class="tab">
 					<div id='tabmenu'>
 						<ul>
-							<li class='active'><a href='#'>Autoresponders</a></li>
-							<li><a href='autoresponder_add.php'>Add Responder</a></li>
+							<li class='active'><a href='#'>Domain</a></li>
 						</ul>
 					</div>
 					<div id="tab-1" class="tab-content">
-						<h2>Current Autoresponders</h2>
+						<form method="post" class="form red-icon" action="" enctype="multipart/form-data">
+							<h2 for="domain">Add domain</h2><br>
+							<?php if (strlen($fieldEmpty) > 0): ?>
+								<input class="error" type="text"
+									   id="domain"
+									   name="domain"
+									   placeholder="Domain name"
+							<?php else: ?>
+								<input type="text"
+									   id="domain"
+									   name="domain"
+									   placeholder="Domain name"
+									   class="inputDomain">
+							<?php endif; ?>
+							<?= $fieldEmpty; ?>
+							<br><br><input class="blue-button" type="submit" value="Create / Modify" name="submit"/>
+						</form>
+						<h2>Current domains</h2>
 
 						<p class="eleven">Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja
 										  ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali
@@ -118,28 +167,16 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 						</div>
 						<table class="auto">
 							<tr>
-								<th class="thText">
-									<p class="eleven-table">Begin</p>
-								</th>
-								<th class="thText">
-									<p class="eleven-table">End</p>
-								</th>
-								<th class="thText">
-									<p class="eleven-table">E-mail</p>
-								</th>
 								<th class="th">
-									<p class="eleven-table">Subject</p>
+									<p class="eleven-table">Domain</p>
 								</th>
 								<th class="thIcon">
 									<p class="eleven-table">Action</p>
 								</th>
 							</tr>
-							<?php while ($row = mysqli_fetch_array($unavailableResult)): ?>
+							<?php while ($row = mysqli_fetch_array($domainResult)): ?>
 								<tr>
-									<td class="nine padding-elf"><?= $row["startDateTime"] ?></td>
-									<td class="nine padding-elf"><?= $row["endDateTime"] ?></td>
-									<td class="nine padding-elf"><?= $row["mailAddress"] ?></td>
-									<td class="nine padding-elf"><?= $row["subject"] ?></td>
+									<td class="nine padding-elf"><?= $row["domain"] ?></td>
 									<td class="ed">
 										<a href="edit.php?id=<?= $row['id'] ?>" class="ed-padding">
 											<img src="../../images/edit.png" class="edImg"></a>

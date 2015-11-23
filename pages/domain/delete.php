@@ -13,13 +13,13 @@ if (!$conn) {
 
 
 $id = $_GET['id'];
-$sql = "UPDATE unavailable
+$sql = "UPDATE `domain`
         SET active = '0'
         WHERE id = '$id'";
 
 
 if (mysqli_query($conn, $sql)) {
-	header('location: autoresponders.php');
+	header('location: domain.php');
 } else {
 	echo "Error updating record: " . mysqli_error($conn);
 }

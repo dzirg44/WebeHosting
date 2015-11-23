@@ -1,4 +1,7 @@
 <?php
+$domain = $_POST['domain'];
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -12,14 +15,14 @@ if (!$conn) {
 }
 
 
-$id = $_GET['id'];
-$sql = "UPDATE unavailable
-        SET active = '0'
-        WHERE id = '$id'";
+$id = $_POST['id'];
+$sql = "UPDATE `domain`
+        SET `domain`='$domain'
+        WHERE id = $id";
 
 
 if (mysqli_query($conn, $sql)) {
-	header('location: autoresponders.php');
+	header('location: domain.php');
 } else {
 	echo "Error updating record: " . mysqli_error($conn);
 }

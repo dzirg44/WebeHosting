@@ -7,8 +7,6 @@ $body = $_POST['body'];
 $startDateTime = $_POST['startDateTime'];
 $endDateTime = $_POST['endDateTime'];
 
-//$id = $_POST['id'];
-
 
 $servername = "localhost";
 $username = "root";
@@ -19,21 +17,20 @@ $dbname = "WebeHosting";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // check connectie
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+	die("Connection failed: " . mysqli_connect_error());
 }
 
 
-$id = $_GET['id'];
+$id = $_POST['id'];
 $sql = "UPDATE unavailable
         SET `character`='$character', `interval`='$interval', `from`='$from', subject='$subject', body='$body', startDateTime='$startDateTime', endDateTime='$endDateTime'
-        WHERE id = '$id'";
+        WHERE id = $id";
 
 
 if (mysqli_query($conn, $sql)) {
-    echo "Record updated successfully <a href='autoresponders.php'>home</a>";
-//    header('location: autoresponders.php');
+	header('location: autoresponders.php');
 } else {
-    echo "Error updating record: " . mysqli_error($conn);
+	echo "Error updating record: " . mysqli_error($conn);
 }
 
 mysqli_close($conn);
