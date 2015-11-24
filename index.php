@@ -23,7 +23,7 @@
 					</a>
 				</li>
 				<li class='kop'>
-					<a href='pages/domain/domain.php'><img src="" class="nav-img"><span class="hidden-xs menu-text">Domeinen</span></a>
+					<a href='pages/domain/domain.php'><img src="" class="nav-img"><span class="hidden-xs menu-text">Domainen</span></a>
 				</li>
 				<li class='kop index-email-kopdown'>
 					<a href='#'><img src="images/mail.png"

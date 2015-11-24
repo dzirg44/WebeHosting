@@ -85,7 +85,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
             </a>
         </li>
         <li class='kop'>
-            <a href='#'><img src="" class="nav-img"><span class="hidden-xs menu-text ">Domeinen</span></a>
+            <a href='#'><img src="" class="nav-img"><span class="hidden-xs menu-text ">Domainen</span></a>
         </li>
         <li class='kop auto-email-kopdown'>
             <a href='#'><img src="../../images/mail.png" class="nav-img"><span class="hidden-xs menu-text auto-email-kopdownn">E-mail</span></a>
@@ -98,9 +98,6 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
         </li>
         <li class='kop auto-databases-kopdown'>
             <a href='#'><img src="../../images/dedicated.png" class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
-            <ul class="auto-databases-subdown">
-                <li><a href='#' class="subkop">Subkop</a></li>
-            </ul>
         </li>
         <li class='kop'>
             <a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
@@ -134,6 +131,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
             <div id='tabmenu'>
                 <ul>
                     <li><a href='domain.php'>Domain</a></li>
+                    <li><a href="sub_domain.php">Subdomain</a></li>
                     <li class="active"><a href="#">Edit Domain</a></li>
                 </ul>
             </div>

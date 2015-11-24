@@ -11,35 +11,52 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$domainErr = "";
-$domain = $fieldEmpty = "";
+$subDomainErr = "";
+$subDomain = $fieldEmpty = "";
 $noError = true;
 
 //check of alle vakken er zijn
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	if (isset($_POST["domain"])) {
+	if (isset($_POST["subDomain"])) {
 
-		if (!preg_match('/^(?!\-)(?:[a-zA-Z\d\-]{0,62}[a-zA-Z\d]\.){1,126}(?!\d+)[a-zA-Z\d]{1,63}$/', $_POST["domain"])) {
-			$fieldEmpty = "<span style='color: #ff0000;'>There have to be a .com or .be etc</span>";
+		if (!preg_match('/[^a-z^A-Z0-9_\\-]+$/', $_POST['subDomain'])) {
+			$fieldEmpty = "<span style='color: #ff0000;'></span>";
 			$noError = false;
 		}
-
-		/* domain */
-		if (empty($_POST["domain"])) {
-			echo $domainErr;
+		/* from */
+		if (empty($_POST["subDomain"])) {
+			echo $subDomainErr;
 			$noError = false;
 		} else {
-			$domain = ($_POST["domain"]);
+			$subDomain = ($_POST["subDomain"]);
 		}
 	}
 
 	if ($noError) {
-		$sql = "INSERT INTO `domain`(`domain`)
-                VALUES ('$domain')";
+
+
+		$query = "SELECT * FROM subDomain WHERE subDomain = '$subDomain' AND domainId = '".$_POST['domain']."'";
+		$result = $conn->query($query);
+
+		if($result->num_rows === 1) {
+			$row = mysqli_fetch_array($result);
+
+			if($row['active'] == 0) {
+				$sql = "UPDATE subDomain SET active = 1 WHERE subdomain = '$subDomain'";
+			} else {
+				echo "Subdomain already exist";
+				$sql = "";
+			}
+
+		}
+		else {
+			$sql = "INSERT INTO subDomain(`subDomain`, domainId)
+                VALUES ('$subDomain', '".$_POST['domain']."')";
+		}
 
 
 		if ($conn->query($sql)) {
-			header('location: domain.php');
+			header('location: sub_domain.php');
 		} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
@@ -47,11 +64,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 }
 
+
 /* laten zien */
-$domainSql = "SELECT `domain`.id, `domain`
-              FROM `domain`
-              WHERE active = 1 ";
+$subDomainSql = "SELECT subDomain.id, CONCAT(subDomain,'.',`domain`) AS `subDomainName`
+                   FROM subDomain
+                   INNER JOIN `domain`
+                   ON subDomain.domainId=`domain`.id
+                   WHERE subDomain.active = 1";
+$subDomainResult = $conn->query($subDomainSql) or die(mysqli_error($conn));
+
+$domainSql = "SELECT id, `domain` FROM `domain`";
 $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
+
+/* bestaat het al in database */
 
 
 ?>
@@ -132,29 +157,44 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 				<div class="tab">
 					<div id='tabmenu'>
 						<ul>
-							<li class='active'><a href='#'>Domain</a></li>
-							<li><a href='sub_domain.php'>Subdomain</a></li>
+							<li><a href='domain.php'>Domain</a></li>
+							<li class="active"><a href='#'>Subdomain</a></li>
 						</ul>
 					</div>
 					<div id="tab-1" class="tab-content">
 						<form method="post" class="form red-icon" action="" enctype="multipart/form-data">
-							<h2 for="domain">Add domain</h2><br>
+							<h2 for="subDomain">Add subdomain</h2><?= $fieldEmpty; ?>
+							<br>
 							<?php if (strlen($fieldEmpty) > 0): ?>
 								<input class="error" type="text"
-									   id="domain"
-									   name="domain"
-									   placeholder="Domain name"
+									   id="subDomain"
+									   name="subDomain"
+									   placeholder="subdomain name"
 							<?php else: ?>
 								<input type="text"
-									   id="domain"
-									   name="domain"
-									   placeholder="Domain name"
-									   class="inputDomain">
+									   id="subDomain"
+									   name="subDomain"
+									   placeholder="subdomain name"
+									   class="inputSubdomain">
 							<?php endif; ?>
-							<?= $fieldEmpty; ?>
+							<select name="domain"
+									class="selectSubdomain"
+									id="domain">
+								<option value="0" selected disabled>Please select a domain</option>
+								<?php
+								if ($domainResult->num_rows > 0):
+									while ($row = $domainResult->fetch_array(MYSQLI_ASSOC)):?>
+										<option value="<?= $row['id'] ?>">
+											<?= $row['domain'] ?>
+										</option>
+										<?php
+									endwhile;
+								endif;
+								?>
+							</select>
 							<br><br><input class="blue-button" type="submit" value="Create / Modify" name="submit"/>
 						</form>
-						<h2>Current domains</h2>
+						<h2>Current subdomains</h2>
 
 						<p class="eleven">Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja
 										  ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali
@@ -167,19 +207,19 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 						<table class="auto">
 							<tr>
 								<th class="th">
-									<p class="eleven-table">Domain</p>
+									<p class="eleven-table">Subdomain</p>
 								</th>
 								<th class="thIcon">
 									<p class="eleven-table">Action</p>
 								</th>
 							</tr>
-							<?php while ($row = mysqli_fetch_array($domainResult)): ?>
+							<?php while ($row = mysqli_fetch_array($subDomainResult)): ?>
 								<tr>
-									<td class="nine padding-elf"><?= $row["domain"] ?></td>
+									<td class="nine padding-elf"><?= $row["subDomainName"] ?></td>
 									<td class="ed">
-										<a href="edit.php?id=<?= $row['id'] ?>" class="ed-padding">
+										<a href="edit_subdomain.php?id=<?= $row['id'] ?>" class="ed-padding">
 											<img src="../../images/edit.png" class="edImg"></a>
-										<a href="delete.php?id=<?= $row['id'] ?>" onclick="return confirm_delete();">
+										<a href="delete_subdomain.php?id=<?= $row['id'] ?>" onclick="return confirm_delete();">
 											<img src="../../images/brullenbak.png" class="edImg"></a>
 									</td>
 								</tr>

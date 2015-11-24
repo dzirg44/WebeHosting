@@ -48,7 +48,7 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 					</a>
 				</li>
 				<li class='kop'>
-					<a href='../domain/domain.php'><img src="" class="nav-img"><span class="hidden-xs menu-text ">Domeinen</span></a>
+					<a href='../domain/domain.php'><img src="" class="nav-img"><span class="hidden-xs menu-text ">Domainen</span></a>
 				</li>
 				<li class='kop auto-email-kopdown'>
 					<a href='#'><img src="../../images/mail.png"
@@ -63,9 +63,6 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 				<li class='kop auto-databases-kopdown'>
 					<a href='#'><img src="../../images/dedicated.png"
 									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
-					<ul class="auto-databases-subdown">
-						<li><a href='#' class="subkop">Subkop</a></li>
-					</ul>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
