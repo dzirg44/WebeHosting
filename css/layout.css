@@ -55,7 +55,7 @@ label {
 	color       : #666666;
 	font-size   : 1em;
 	font-weight : normal;
-	margin      : 0;
+	margin      : 5px;
 	margin-top  : 20px;
 }
 
@@ -98,7 +98,7 @@ label {
 
 #cssmenu ul ul a {
 	display     : inline-block;
-	font-size   : 0,83em;
+	font-size   : 0.83em;
 	font-weight : bold;
 }
 
@@ -156,8 +156,8 @@ a {
 
 .logo {
 	background     : #ffffff;
-	margin-bottom  : 20;
-	margin-top     : 30;
+	margin-bottom  : 20px;
+	margin-top     : 30px;
 	opacity        : 0.9;
 	padding-bottom : 20px;
 	padding-top    : 20px;
@@ -192,12 +192,12 @@ a {
 }
 
 .menu-text {
-	padding-left : 10;
+	padding-left : 10px;
 }
 
 .nav-arrow {
 	float         : right;
-	padding-right : 10;
+	padding-right : 10px;
 }
 
 /* Content */
@@ -394,7 +394,7 @@ table.t02 tr:nth-child(odd) {
 }
 
 .table-padding {
-	padding : 20;
+	padding : 20px;
 }
 
 /* index
@@ -428,7 +428,7 @@ table.t02 tr:nth-child(odd) {
 }
 
 .offer-padding {
-	padding-left : 150;
+	padding-left : 150px;
 	width        : 215.96875px;
 }
 
@@ -580,7 +580,7 @@ div.offer {
 #tabmenu > ul > li > a {
 	z-index            : 2;
 	padding            : 18px 25px 12px 25px;
-	font-size          : 1,25em;
+	font-size          : 1.25em;
 	font-weight        : 400;
 	text-decoration    : none;
 	color              : #444444;
@@ -617,24 +617,23 @@ div.offer {
    formulier*/
 
 .input {
-	font-size     : 0,83em;
+	font-size     : 0.83em;
 	height        : 30px;
 	margin-bottom : 20px;
 	width         : 100%;
 }
 
 .inputBody {
-	font-size     : 0,83em;
+	font-size     : 0.83em;
 	height        : 115px;
 	margin-bottom : 20px;
 	width         : 100%;
 }
 
 select {
-	font-size     : 0,83em;
+	font-size     : 0.83em;
 	height        : 30px;
 	margin-bottom : 20px;
-	margin-top    : -20px;
 	padding       : 10px;
 	width         : 100%;
 }
@@ -656,14 +655,15 @@ select {
 	border-bottom : 1px solid #dddddd;
 	margin-bottom : 0;
 	text-align    : center;
-	width         : 8%;
+	/*float: right;*/
+	width: 8%;
 }
 
 .thText {
 	border-bottom : 1px solid #dddddd;
 	margin-bottom : 0;
 	text-align    : left;
-	width         : 15%;
+	width         : 20%;
 }
 
 tr {
@@ -681,7 +681,7 @@ tr {
 	border        : none;
 	border-radius : 5px;
 	color         : #ffffff;
-	font-size     : 1,5em;
+	font-size     : 1.5em;
 	height        : 40px;
 	padding       : 20px;
 	padding-top   : 10px;
@@ -739,15 +739,10 @@ textarea {
 
 .background-grey {
 	background  : #efefef;
-	border      : none;
-	height      : 20px;
-	padding-top : 5px;
 }
 
 .background-white {
 	background : #ffffff;
-	border     : none;
-	height     : 20px;
 }
 
 .ed {
@@ -765,7 +760,7 @@ textarea {
 /* domain */
 
 .inputDomain {
-	font-size     : 0,83em;
+	font-size     : 0.83em;
 	width         : 50%;
 	border        : 1px solid #e5e5e5;
 	height        : 17px;
@@ -775,7 +770,7 @@ textarea {
 }
 
 .inputSubdomain {
-	font-size     : 0,83em;
+	font-size     : 0.83em;
 	width         : 25%;
 	border        : 1px solid #e5e5e5;
 	height        : 17px;
@@ -785,13 +780,13 @@ textarea {
 
 .selectSubdomain {
 	width      : 25%;
-	background : #efefef;
-	border     : #e5e5e5;
+	background  : #efefef;
+
 }
 
 .error {
 	border        : 1px solid #ff0000;
-	font-size     : 0,83em;
+	font-size     : 0.83em;
 	height        : 30px;
 	margin-bottom : 20px;
 	width         : 50%;

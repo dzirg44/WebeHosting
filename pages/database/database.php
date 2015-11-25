@@ -12,12 +12,10 @@ if (!$conn) {
 }
 
 /* laten zien */
-$unavailableSql = "SELECT unavailable.id, subject, startDateTime, endDateTime,mailAddress
-                   FROM unavailable
-                   INNER JOIN mailbox
-                   ON unavailable.mailboxId=mailbox.id
-                   WHERE unavailable.active = 1";
-$unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
+$databaseSql = "SELECT id, databaseName
+                   FROM `database`
+                   WHERE active = 1";
+$databaseResult = $conn->query($databaseSql) or die(mysqli_error($conn));
 
 
 ?>
@@ -56,13 +54,13 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 					<ul class="auto-email-subdown">
 						<li><a href='#' class="subkop">Mail Account</a></li>
 						<li><a href='#' class="subkop">Forward Mail</a></li>
-						<li><a href='#' class="active subkop">Autoresponders</a></li>
+						<li><a href='../email/autoresponders.php' class="active subkop">Autoresponders</a></li>
 						<li><a href='#' class="subkop">Aliasses</a></li>
 					</ul>
 				</li>
 				<li class='kop auto-databases-kopdown'>
-					<a href='../database/database.php'><img src="../../images/dedicated.png"
-									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
+					<a href='#'><img src="../../images/dedicated.png"
+														   class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
@@ -98,12 +96,13 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 				<div class="tab">
 					<div id='tabmenu'>
 						<ul>
-							<li class='active'><a href='#'>Autoresponders</a></li>
-							<li><a href='autoresponder_add.php'>Add Responder</a></li>
+							<li class='active'><a href='#'>Databases</a></li>
+							<li><a href='database_add.php'>Add database</a></li>
+							<li><a href="database_add_user.php">Add user</a></li>
 						</ul>
 					</div>
 					<div id="tab-1" class="tab-content">
-						<h2>Current Autoresponders</h2>
+						<h2>Current Databases</h2>
 
 						<p class="eleven">Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja
 										  ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali
@@ -116,27 +115,15 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 						<table class="auto">
 							<tr>
 								<th class="thText">
-									<p class="eleven-table">Begin</p>
-								</th>
-								<th class="thText">
-									<p class="eleven-table">End</p>
-								</th>
-								<th class="thText">
-									<p class="eleven-table">E-mail</p>
-								</th>
-								<th class="th">
-									<p class="eleven-table">Subject</p>
+									<p class="eleven-table">Databases</p>
 								</th>
 								<th class="thIcon">
-									<p class="eleven-table">Action</p>
+									<p class="eleven-table ">Action</p>
 								</th>
 							</tr>
-							<?php while ($row = mysqli_fetch_array($unavailableResult)): ?>
+							<?php while ($row = mysqli_fetch_array($databaseResult)): ?>
 								<tr>
-									<td class="nine padding-elf"><?= $row["startDateTime"] ?></td>
-									<td class="nine padding-elf"><?= $row["endDateTime"] ?></td>
-									<td class="nine padding-elf"><?= $row["mailAddress"] ?></td>
-									<td class="nine padding-elf"><?= $row["subject"] ?></td>
+									<td class="nine padding-elf"><?= $row["databaseName"] ?></td>
 									<td class="ed">
 										<a href="edit.php?id=<?= $row['id'] ?>" class="ed-padding">
 											<img src="../../images/edit.png" class="edImg"></a>

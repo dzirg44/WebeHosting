@@ -36,11 +36,8 @@
 					</ul>
 				</li>
 				<li class='kop index-databases-kopdown'>
-					<a href='#'><img src="images/dedicated.png"
+					<a href='pages/database/database.php'><img src="images/dedicated.png"
 									 class="nav-img"><span class="hidden-xs menu-text index-databases-kopdownn">Databases</span></a>
-					<ul class="index-databases-subdown">
-						<li><a href='#' class="subkop">Subkop</a></li>
-					</ul>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="images/cloud.jpg"

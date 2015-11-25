@@ -1,24 +1,78 @@
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "WebeHosting";
 
 /* connectie maken */
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 /* check connectie */
 if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-/* laten zien */
-$unavailableSql = "SELECT unavailable.id, subject, startDateTime, endDateTime,mailAddress
-                   FROM unavailable
-                   INNER JOIN mailbox
-                   ON unavailable.mailboxId=mailbox.id
-                   WHERE unavailable.active = 1";
-$unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 
+$databaseNameErr = $collationErr = $passwordErr = $password1Err = "";
+$databaseName = $collation = $password = $password1 = "";
+
+//check of alle vakken er zijn
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+	if (isset($_POST["databaseName"], $_POST["collation"], $_POST["password"], $_POST["password1"])) {
+
+		/* database name */
+		if (empty($_POST["databaseName"])) {
+			echo $databaseNameErr;
+		} else {
+			$databaseName = ($_POST["databaseName"]);
+		}
+
+		/* collation */
+		if (empty($_POST["collation"])) {
+			echo $collationErr;
+		} else {
+			$collation = ($_POST["collation"]);
+		}
+
+		/* password */
+		if (empty($_POST["password"])) {
+			echo $password;
+		} else {
+			$password = ($_POST["password"]);
+		}
+
+		/* password1 */
+		if (empty($_POST["password1"])) {
+			echo $password1Err;
+		} else {
+			$password1 = $_POST["password1"];
+		}
+	}
+
+	$sql = "INSERT INTO `database` (databaseName, `collation`, password)
+                VALUES ('$databaseName', '$collation', '$password')";
+
+	if ($conn->query($sql)) {
+		header('location: database.php');
+	} else {
+		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+}
+
+
+$id = $_GET['id'];
+$sql = 'SELECT id, databaseName, `collation`, password
+        FROM `database`
+        WHERE id = ' . $id;
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+
+
+if($row) {
+	$databaseName = $row["databaseName"];
+	$collation = $row["collation"];
+	$password = $row["password"];
+}
 
 ?>
 
@@ -56,12 +110,12 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 					<ul class="auto-email-subdown">
 						<li><a href='#' class="subkop">Mail Account</a></li>
 						<li><a href='#' class="subkop">Forward Mail</a></li>
-						<li><a href='#' class="active subkop">Autoresponders</a></li>
+						<li><a href='../email/autoresponders.php' class="subkop">Autoresponders</a></li>
 						<li><a href='#' class="subkop">Aliasses</a></li>
 					</ul>
 				</li>
 				<li class='kop auto-databases-kopdown'>
-					<a href='../database/database.php'><img src="../../images/dedicated.png"
+					<a href='#'><img src="../../images/dedicated.png"
 									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
 				</li>
 				<li class='kop'>
@@ -98,63 +152,28 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 				<div class="tab">
 					<div id='tabmenu'>
 						<ul>
-							<li class='active'><a href='#'>Autoresponders</a></li>
-							<li><a href='autoresponder_add.php'>Add Responder</a></li>
+							<li><a href='database.php'>Databases</a></li>
+							<li><a href='database_add.php'>Add database</a></li>
+							<li><a href="database_add_user.php">Add user</a></li>
+							<li class="active"><a href="#">Edit database</a></li>
 						</ul>
 					</div>
-					<div id="tab-1" class="tab-content">
-						<h2>Current Autoresponders</h2>
-
-						<p class="eleven">Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja
-										  ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali
-										  testausteksti jo 1500-luvulta asti.</p>
-						<input type='text' placeholder='Search' id='search-text-input'/>
-
-						<div id='button-holder'>
-							<img src='../../images/search.png'/>
-						</div>
-						<table class="auto">
-							<tr>
-								<th class="thText">
-									<p class="eleven-table">Begin</p>
-								</th>
-								<th class="thText">
-									<p class="eleven-table">End</p>
-								</th>
-								<th class="thText">
-									<p class="eleven-table">E-mail</p>
-								</th>
-								<th class="th">
-									<p class="eleven-table">Subject</p>
-								</th>
-								<th class="thIcon">
-									<p class="eleven-table">Action</p>
-								</th>
-							</tr>
-							<?php while ($row = mysqli_fetch_array($unavailableResult)): ?>
-								<tr>
-									<td class="nine padding-elf"><?= $row["startDateTime"] ?></td>
-									<td class="nine padding-elf"><?= $row["endDateTime"] ?></td>
-									<td class="nine padding-elf"><?= $row["mailAddress"] ?></td>
-									<td class="nine padding-elf"><?= $row["subject"] ?></td>
-									<td class="ed">
-										<a href="edit.php?id=<?= $row['id'] ?>" class="ed-padding">
-											<img src="../../images/edit.png" class="edImg"></a>
-										<a href="delete.php?id=<?= $row['id'] ?>" onclick="return confirm_delete();">
-											<img src="../../images/brullenbak.png" class="edImg"></a>
-									</td>
-								</tr>
-							<?php endwhile; ?>
-						</table>
+					<div class="div">
+						<form method="post" class="form" action="edit_update.php" enctype="multipart/form-data">
+							<input type="hidden" name="id" value="<?php echo $id; ?>"/>
+							<label for="databaseName">Database name</label><?= $databaseNameErr ?><br>
+							<input type="text" id="databaseName" name="databaseName" placeholder="Domain name" class="input" value="<?php echo $databaseName; ?>">
+							<br>
+							<input class="blue-button" type="submit" value="Create / Modify" name="submit" />
+						</form>
 					</div>
-
 				</div>
 			</div>
 
-		</div>
 
 		</div>
 
 	</body>
 
 </html>
+

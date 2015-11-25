@@ -164,7 +164,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					</ul>
 				</li>
 				<li class='kop auto-databases-kopdown'>
-					<a href='#'><img src="../../images/dedicated.png"
+					<a href='../database/database.php'><img src="../../images/dedicated.png"
 									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
 				</li>
 				<li class='kop'>

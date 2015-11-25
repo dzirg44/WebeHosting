@@ -19,7 +19,7 @@ $noError = true;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	if (isset($_POST["subDomain"])) {
 
-		if (!preg_match('/[^a-z^A-Z0-9_\\-]+$/', $_POST['subDomain'])) {
+		if (!preg_match('/[^a-z^A-Z0-9]/', $_POST['subDomain'])) {
 			$fieldEmpty = "<span style='color: #ff0000;'></span>";
 			$noError = false;
 		}
@@ -120,7 +120,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					</ul>
 				</li>
 				<li class='kop auto-databases-kopdown'>
-					<a href='#'><img src="../../images/dedicated.png"
+					<a href='../database/database.php'><img src="../../images/dedicated.png"
 									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
 				</li>
 				<li class='kop'>

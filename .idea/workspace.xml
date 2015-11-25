@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59ca154f-a6c0-468c-a1a8-31282af116f0" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/database/databse.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/email/autoresponder_add.php" afterPath="$PROJECT_DIR$/pages/email/autoresponder_add.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/email/autoresponders.php" afterPath="$PROJECT_DIR$/pages/email/autoresponders.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/domain/domain.php" afterPath="$PROJECT_DIR$/pages/domain/domain.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/domain/edit.php" afterPath="$PROJECT_DIR$/pages/domain/edit.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/email/edit.php" afterPath="$PROJECT_DIR$/pages/email/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/domain/edit_subdomain.php" afterPath="$PROJECT_DIR$/pages/domain/edit_subdomain.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/layout.css" afterPath="$PROJECT_DIR$/css/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/domain/sub_domain.php" afterPath="$PROJECT_DIR$/pages/domain/sub_domain.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hosting_panel:projectmatrix.iws" />
@@ -31,57 +34,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layout.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/layout.css">
+      <file leaf-file-name="edit_update.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/database/edit_update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="518" column="13" selection-start-line="518" selection-start-column="13" selection-end-line="518" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.46623793">
+              <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="domain.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/domain/domain.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-47.25">
-              <caret line="84" column="100" selection-start-line="84" selection-start-column="100" selection-end-line="84" selection-end-column="100" />
-              <folding>
-                <marker date="1448361449000" expanded="true" signature="594:609" placeholder="..." />
-                <marker date="1448361449000" expanded="true" signature="849:914" placeholder="INSERT INTO ..." />
-                <marker date="1448361449000" expanded="true" signature="1092:1179" placeholder="SELECT `doma..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sub_domain.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/domain/sub_domain.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22459893">
-              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-              <folding>
-                <marker date="1448380351000" expanded="true" signature="553:568" placeholder="..." />
-                <marker date="1448380351000" expanded="true" signature="787:816" placeholder="SELECT * FRO..subDomain..." />
-                <marker date="1448380351000" expanded="true" signature="787:829" placeholder="SELECT * FRO..subDomain..." />
-                <marker date="1448380351000" expanded="true" signature="787:841" placeholder="SELECT * FRO..subDomain..." />
-                <marker date="1448380351000" expanded="true" signature="787:879" placeholder="SELECT * FRO..subDomain..." />
-                <marker date="1448380351000" expanded="true" signature="1030:1050" placeholder="UPDATE subDo..." />
-                <marker date="1448380351000" expanded="true" signature="1030:1061" placeholder="UPDATE subDo..." />
-                <marker date="1448380351000" expanded="true" signature="1030:1067" placeholder="UPDATE subDo..." />
-                <marker date="1448380351000" expanded="true" signature="1030:1092" placeholder="UPDATE subDo..." />
-                <marker date="1448380351000" expanded="true" signature="1188:1294" placeholder="INSERT INTO ..." />
-                <marker date="1448380351000" expanded="true" signature="1484:1491" placeholder="SELECT `doma..." />
-                <marker date="1448380351000" expanded="true" signature="1484:1726" placeholder="SELECT subDo..." />
-                <marker date="1448380351000" expanded="true" signature="1820:1853" placeholder="SELECT id, `..." />
-                <marker date="1448380351000" expanded="true" signature="1997:2453" placeholder="..." />
-                <marker date="1448380351000" expanded="true" signature="2006:2023" placeholder="..." />
-                <marker date="1448380351000" expanded="true" signature="2006:2433" placeholder="..." />
-                <marker date="1448380351000" expanded="true" signature="2442:2453" placeholder="..." />
-                <marker date="1448380351000" expanded="true" signature="2485:2578" placeholder="..." />
-                <marker date="1448380351000" expanded="true" signature="2494:2563" placeholder="..." />
-                <marker date="1448380351000" expanded="true" signature="2649:2680" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -115,15 +73,22 @@
         <option value="$PROJECT_DIR$/pages/email/delete.php" />
         <option value="$PROJECT_DIR$/pages/domain/delete_subdomain.php" />
         <option value="$PROJECT_DIR$/pages/domain/edit_update_subdomain.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/pages/domain/domain.php" />
-        <option value="$PROJECT_DIR$/pages/domain/edit.php" />
+        <option value="$PROJECT_DIR$/pages/database/databse.php" />
         <option value="$PROJECT_DIR$/pages/domain/edit_subdomain.php" />
-        <option value="$PROJECT_DIR$/pages/email/autoresponder_add.php" />
-        <option value="$PROJECT_DIR$/pages/email/autoresponders.php" />
+        <option value="$PROJECT_DIR$/pages/domain/edit.php" />
+        <option value="$PROJECT_DIR$/pages/domain/domain.php" />
         <option value="$PROJECT_DIR$/pages/email/edit.php" />
-        <option value="$PROJECT_DIR$/css/layout.css" />
+        <option value="$PROJECT_DIR$/pages/email/autoresponders.php" />
         <option value="$PROJECT_DIR$/pages/domain/sub_domain.php" />
+        <option value="$PROJECT_DIR$/css/layout.css" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/pages/email/autoresponder_add.php" />
+        <option value="$PROJECT_DIR$/pages/database/database_add.php" />
+        <option value="$PROJECT_DIR$/pages/database/database.php" />
+        <option value="$PROJECT_DIR$/pages/database/delete.php" />
+        <option value="$PROJECT_DIR$/pages/database/edit.php" />
+        <option value="$PROJECT_DIR$/pages/database/database_add_user.php" />
+        <option value="$PROJECT_DIR$/pages/database/edit_update.php" />
       </list>
     </option>
   </component>
@@ -141,7 +106,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1" />
     <option name="y" value="23" />
-    <option name="width" value="933" />
+    <option name="width" value="1574" />
     <option name="height" value="1077" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -167,6 +132,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -226,10 +192,6 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="email">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -244,21 +206,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="domain">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Hosting_panel:projectmatrix">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="pages">
+            <PATH_ELEMENT USER_OBJECT="database">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -279,7 +227,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -331,21 +278,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="933" height="1077" extended-state="0" />
+    <frame x="1" y="23" width="1574" height="1077" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32624114" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.332211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1997389" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32588834" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -367,7 +314,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -375,57 +322,7 @@
     <entry file="file://$PROJECT_DIR$/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="769" column="8" selection-start-line="769" selection-start-column="8" selection-end-line="769" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/domain/domain.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1448361449000" expanded="true" signature="594:609" placeholder="..." />
-            <marker date="1448361449000" expanded="true" signature="849:914" placeholder="INSERT INTO ..." />
-            <marker date="1448361449000" expanded="true" signature="1092:1179" placeholder="SELECT `doma..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/domain/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="212" column="14" selection-start-line="212" selection-start-column="14" selection-end-line="212" selection-end-column="14" />
-          <folding>
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="SELECT `doma..." />
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="SELECT id, m..mailbox..." />
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="SELECT id, `..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/domain/edit_update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/domain/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
           <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -433,9 +330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="152" column="7" selection-start-line="152" selection-start-column="7" selection-end-line="152" selection-end-column="7" />
-          <folding>
-            <marker date="1448361477000" expanded="true" signature="-1:-1" placeholder="SELECT unava..unavailable..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -443,11 +337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1448361470000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448361470000" expanded="true" signature="-1:-1" placeholder="SELECT id, m..mailbox..." />
-            <marker date="1448361470000" expanded="true" signature="-1:-1" placeholder="SELECT id, `..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -455,12 +344,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
-          <folding>
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="SELECT domai..." />
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="SELECT id, m..mailbox..." />
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="SELECT id, `..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -468,7 +351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -476,7 +358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="18" selection-start-line="1" selection-start-column="0" selection-end-line="14" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -484,7 +365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="730" column="0" selection-start-line="730" selection-start-column="0" selection-end-line="730" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -492,9 +372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-          <folding>
-            <marker date="1448361477000" expanded="true" signature="-1:-1" placeholder="SELECT unava..unavailable..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -502,11 +379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1448361470000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448361470000" expanded="true" signature="-1:-1" placeholder="SELECT id, m..mailbox..." />
-            <marker date="1448361470000" expanded="true" signature="-1:-1" placeholder="SELECT id, `..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -514,12 +386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="SELECT domai..." />
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="SELECT id, m..mailbox..." />
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="SELECT id, `..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -527,7 +393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="706" column="1" selection-start-line="706" selection-start-column="1" selection-end-line="706" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -535,9 +400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1448361477000" expanded="true" signature="-1:-1" placeholder="SELECT unava..unavailable..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -545,7 +407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -560,9 +421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="177" column="4" selection-start-line="177" selection-start-column="4" selection-end-line="177" selection-end-column="4" />
-          <folding>
-            <marker date="1448361477000" expanded="true" signature="-1:-1" placeholder="SELECT unava..unavailable..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -577,7 +435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="668" column="1" selection-start-line="668" selection-start-column="1" selection-end-line="668" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -592,9 +449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="189" column="29" selection-start-line="189" selection-start-column="29" selection-end-line="189" selection-end-column="60" />
-          <folding>
-            <marker date="1448361477000" expanded="true" signature="-1:-1" placeholder="SELECT unava..unavailable..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -609,7 +463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="668" column="1" selection-start-line="668" selection-start-column="1" selection-end-line="668" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -624,9 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1448361477000" expanded="true" signature="-1:-1" placeholder="SELECT unava..unavailable..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -634,7 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="668" column="1" selection-start-line="668" selection-start-column="1" selection-end-line="668" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,7 +498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="668" column="1" selection-start-line="668" selection-start-column="1" selection-end-line="668" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,7 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -675,18 +522,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/database/databse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.096463025">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/email/edit_update.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,23 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43887147">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/domain/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/domain/edit_update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,83 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44919786">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/domain/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.833333">
-          <caret line="87" column="91" selection-start-line="87" selection-start-column="91" selection-end-line="87" selection-end-column="91" />
-          <folding>
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="SELECT `doma..." />
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="SELECT id, m..mailbox..." />
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="SELECT id, `..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/domain/edit_subdomain.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.833333">
-          <caret line="84" column="99" selection-start-line="84" selection-start-column="99" selection-end-line="84" selection-end-column="99" />
-          <folding>
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="SELECT `subD..." />
-            <marker date="1448361449000" expanded="true" signature="-1:-1" placeholder="SELECT id, `..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/email/autoresponders.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22673796">
-          <caret line="50" column="118" selection-start-line="50" selection-start-column="118" selection-end-line="50" selection-end-column="118" />
-          <folding>
-            <marker date="1448361477000" expanded="true" signature="-1:-1" placeholder="SELECT unava..unavailable..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22673796">
-          <caret line="25" column="121" selection-start-line="25" selection-start-column="121" selection-end-line="25" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/email/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="SELECT domai..." />
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="SELECT id, m..mailbox..." />
-            <marker date="1448361491000" expanded="true" signature="-1:-1" placeholder="SELECT id, `..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/email/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/email/autoresponder_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="59" />
-          <folding>
-            <marker date="1448361470000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448361470000" expanded="true" signature="-1:-1" placeholder="SELECT id, m..mailbox..." />
-            <marker date="1448361470000" expanded="true" signature="-1:-1" placeholder="SELECT id, `..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -802,56 +547,133 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.75">
           <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/domain/sub_domain.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3215434">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="518" column="13" selection-start-line="518" selection-start-column="13" selection-end-line="518" selection-end-column="13" />
-          <folding />
+          <caret line="758" column="0" selection-start-line="758" selection-start-column="0" selection-end-line="758" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41800642">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/email/autoresponder_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3697749">
+          <caret line="172" column="37" selection-start-line="172" selection-start-column="37" selection-end-line="172" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/domain/edit_subdomain.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/domain/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.75">
+          <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/domain/edit_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/domain/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/email/autoresponders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.375">
+          <caret line="140" column="40" selection-start-line="140" selection-start-column="40" selection-end-line="140" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/database/database_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.5">
+          <caret line="144" column="48" selection-start-line="144" selection-start-column="48" selection-end-line="144" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/domain/domain.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-47.25">
-          <caret line="84" column="100" selection-start-line="84" selection-start-column="100" selection-end-line="84" selection-end-column="100" />
-          <folding>
-            <marker date="1448361449000" expanded="true" signature="594:609" placeholder="..." />
-            <marker date="1448361449000" expanded="true" signature="849:914" placeholder="INSERT INTO ..." />
-            <marker date="1448361449000" expanded="true" signature="1092:1179" placeholder="SELECT `doma..." />
-          </folding>
+        <state vertical-scroll-proportion="-30.75">
+          <caret line="179" column="40" selection-start-line="179" selection-start-column="40" selection-end-line="179" selection-end-column="99" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/domain/sub_domain.php">
+    <entry file="file://$PROJECT_DIR$/pages/email/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22459893">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <marker date="1448380351000" expanded="true" signature="553:568" placeholder="..." />
-            <marker date="1448380351000" expanded="true" signature="787:816" placeholder="SELECT * FRO..subDomain..." />
-            <marker date="1448380351000" expanded="true" signature="787:829" placeholder="SELECT * FRO..subDomain..." />
-            <marker date="1448380351000" expanded="true" signature="787:841" placeholder="SELECT * FRO..subDomain..." />
-            <marker date="1448380351000" expanded="true" signature="787:879" placeholder="SELECT * FRO..subDomain..." />
-            <marker date="1448380351000" expanded="true" signature="1030:1050" placeholder="UPDATE subDo..." />
-            <marker date="1448380351000" expanded="true" signature="1030:1061" placeholder="UPDATE subDo..." />
-            <marker date="1448380351000" expanded="true" signature="1030:1067" placeholder="UPDATE subDo..." />
-            <marker date="1448380351000" expanded="true" signature="1030:1092" placeholder="UPDATE subDo..." />
-            <marker date="1448380351000" expanded="true" signature="1188:1294" placeholder="INSERT INTO ..." />
-            <marker date="1448380351000" expanded="true" signature="1484:1491" placeholder="SELECT `doma..." />
-            <marker date="1448380351000" expanded="true" signature="1484:1726" placeholder="SELECT subDo..." />
-            <marker date="1448380351000" expanded="true" signature="1820:1853" placeholder="SELECT id, `..." />
-            <marker date="1448380351000" expanded="true" signature="1997:2453" placeholder="..." />
-            <marker date="1448380351000" expanded="true" signature="2006:2023" placeholder="..." />
-            <marker date="1448380351000" expanded="true" signature="2006:2433" placeholder="..." />
-            <marker date="1448380351000" expanded="true" signature="2442:2453" placeholder="..." />
-            <marker date="1448380351000" expanded="true" signature="2485:2578" placeholder="..." />
-            <marker date="1448380351000" expanded="true" signature="2494:2563" placeholder="..." />
-            <marker date="1448380351000" expanded="true" signature="2649:2680" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-1.045016">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/email/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/database/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/database/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22508039">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/database/database_add_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5948553">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/database/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11254019">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/database/edit_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46623793">
+          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
