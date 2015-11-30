@@ -11,24 +11,18 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$usernameErr = $createAccountErr = $passwordErr = $password1Err = "";
-$username = $createAccount = $password = $password1 = "";
+$usernameErr = $passwordErr = $password1Err = "";
+$username = $password = $password1 = $createAccount = "";
 
 //check of alle vakken er zijn
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	if (isset($_POST["username"],$_POST["password"], $_POST["password1"])) {
+	if (isset($_POST["username"], $_POST["password"], $_POST["password1"], $_POST["createAccount"])) {
 
 		/* username */
 		if (empty($_POST["username"])) {
 			echo $usernameErr;
 		} else {
 			$username = ($_POST["username"]);
-		}
-
-		/* create account */
-		if (empty($_POST["createAccount"])) {
-		} else {
-			$createAccount = ($_POST["createAccount"]);
 		}
 
 		/* password */
@@ -45,11 +39,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 			$password1 = $_POST["password1"];
 		}
 
+		/* create account */
+		if (empty($_POST["createAccount"])) {
+			$createAccount = 0;
+		} else {
+			$createAccount = $_POST["createAccount"];
+		}
 	}
 
-	$sql = "INSERT INTO databaseUser(username, password, createAccount)
-                VALUES ('$username', '$password', )";
 
+		$sql = "INSERT INTO databaseUser (username, password)
+				VALUES ('$_POST[username]','$_POST[password]');";
+
+	if ($createAccount == 1) {
+		$sqlone = "INSERT INTO `database` (databaseName, `collation`, password)
+				VALUES ('$username', 'utf-8', '$password');";
+
+		$sqltwo = "INSERT INTO databaseUser (username, password)
+				   VALUES ('$username', '$password');";
+
+//		$sql3 = "INSERT INTO `database` ( databaseName, `collation`, `database`.password, username, databaseUser.password)
+//				 VALUE ( '$username', 'utf-8', '$password', '$username', '$password' )
+//				 SELECT databaseName, `collation`, `database`.password, username, databaseUser.password
+//				 FROM `database`
+//				 INNER JOIN databaseUserLink
+//				 ON `database`.Id = databaseUserLink.databaseId
+//				 INNER JOIN databaseUser
+//				 ON databaseUserLink.databaseUser = databaseUser.Id";
+
+		$sql = $sqlone . $sqltwo;
+	}
 
 	if ($conn->query($sql)) {
 		header('location: database.php');
@@ -57,7 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
 }
-
 
 ?>
 
@@ -156,8 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 										id="password"
 										name="password"
 										placeholder="Password"
-										class="input"> <br>
-							<label for="password1">Password again</label>
+										class="input"> <br> <label for="password1">Password again</label>
 							<?= $password1Err; ?>
 							<br> <input type="password"
 										id="password1"
@@ -165,12 +182,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 										placeholder="Password again"
 										class="input">
 					</div>
-					<div class="div" style="position: absolute;"><br>
-						<input type="checkbox" value="yes" id="createAccount">Create a database with the same name for this account
-						 <br><br> <input class="blue-button"
-															   type="submit"
-															   value="Save"
-															   name="submit"/></form>
+					<div class="div" style="position: absolute;"><br> <input type="checkbox"
+																			 id="createAccount"
+																			 name="createAccount"
+																			 value="1">Create a database with the same
+																					   name for this account <br><br>
+						<input
+							class="blue-button"
+							type="submit"
+							value="Save"
+							name="submit"/>                        </form>
 					</div>
 				</div>
 			</div>

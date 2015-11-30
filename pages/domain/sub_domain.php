@@ -19,7 +19,7 @@ $noError = true;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	if (isset($_POST["subDomain"])) {
 
-		if (!preg_match('/[^a-z^A-Z0-9]/', $_POST['subDomain'])) {
+		if (!preg_match('/[a-zA-Z0-9]/', $_POST['subDomain'])) {
 			$fieldEmpty = "<span style='color: #ff0000;'></span>";
 			$noError = false;
 		}

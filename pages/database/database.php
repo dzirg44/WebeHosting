@@ -54,7 +54,7 @@ $databaseResult = $conn->query($databaseSql) or die(mysqli_error($conn));
 					<ul class="auto-email-subdown">
 						<li><a href='#' class="subkop">Mail Account</a></li>
 						<li><a href='#' class="subkop">Forward Mail</a></li>
-						<li><a href='../email/autoresponders.php' class="active subkop">Autoresponders</a></li>
+						<li><a href='../email/autoresponders.php' class="subkop">Autoresponders</a></li>
 						<li><a href='#' class="subkop">Aliasses</a></li>
 					</ul>
 				</li>
