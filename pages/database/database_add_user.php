@@ -55,13 +55,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		$sql = "INSERT INTO `database` (databaseName, `collation`, password)
 				VALUES ('$_POST[username]', 'utf-8', '$_POST[password]');";
 
-		$sqlone = "INSERT INTO `databaseUser` (username, password)
-				   VALUES ('$_POST[username]', '$_POST[password]');";
+		$sqlone = "INSERT INTO `databaseUser` (username, password, createAccount)
+				   VALUES ('$_POST[username]', '$_POST[password]', 1);";
+
+		$sqlCreate = "CREATE USER '" . $username . "'@'" . $servername . " IDENTIFIED BY '" . $password . "';";
+					 "CREATE DATABASE IF NOT EXISTS `" . $username . "`;";
+			    	 "GRANT ALL PRIVILEGES on `" . $username . "`.* TO '" . $username . "'@'" . $servername . "';";
+
+die();
+
+//		$this->db->query("CREATE USER '" . $username . "'@'" . $host . "' IDENTIFIED BY '" . $password . "';");
+//		$this->db->query("CREATE DATABASE IF NOT EXISTS `" . $dbName . "`;");
+//		$this->db->query("GRANT ALL PRIVILEGES on `" . $dbName . "`.* TO '" . $username . "'@'" . $host . "';");
 	}
 
-	$sqlCreate = "CREATE USER '" . $username . "'@'" . $servername . " IDENTIFIED BY '" . $password . "'
-				  CREATE DATABASE IF NOT EXISTS `" . $username . "`
-				  GRANT ALL PRIVILEGES on `" . $username . "`.* TO '" . $username . "'@'" . $servername . "";
+
 
 	if ($conn->query($sql)) {
 		header('location: database.php');
@@ -78,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	if ($conn->query($sqlCreate)) {
 		header('location: database.php');
 	} else {
-		echo "Error: " . $sqlone . "<br>" . mysqli_error($conn);
+		echo "Error: " . $sqlCreate . "<br>" . mysqli_error($conn);
 	}
 }
 
@@ -178,13 +186,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 							<br> <input type="password"
 										id="password"
 										name="password"
-										placeholder="Password"
+										placeholder="*********"
 										class="input"> <br> <label for="password1">Password again</label>
 							<?= $password1Err; ?>
 							<br> <input type="password"
 										id="password1"
 										name="password1"
-										placeholder="Password again"
+										placeholder="*********"
 										class="input">
 					</div>
 					<div class="div" style="position: absolute;"><br> <input type="checkbox"
@@ -193,7 +201,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 																			 value="1">Create a database with the same
 																					   name for this account <br><br>
 						<input
-							class="blue-button"
+							class="blue-button float-right blue-paddingTop"
 							type="submit"
 							value="Save"
 							name="submit"/>                        </form>

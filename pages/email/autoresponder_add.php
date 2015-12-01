@@ -222,7 +222,7 @@ function databaseDate ($date)
 					<div class="div" style="position: absolute;">
 						<label for="body">Body</label>
 						<?= $bodyErr; ?>
-						<textarea id="body" name="body" placeholder="Type hier u notitie"></textarea>
+						<textarea id="body" name="body" placeholder="Type hier u notitie" class="inputbody"></textarea>
 						<label for="startDateTime">Start</label>
 						<?= $startDateTimeErr; ?>
 						<br> <input type="date"

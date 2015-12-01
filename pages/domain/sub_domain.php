@@ -163,7 +163,10 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					</div>
 					<div id="tab-1" class="tab-content">
 						<form method="post" class="form red-icon" action="" enctype="multipart/form-data">
-							<h2 for="subDomain">Add subdomain</h2><?= $fieldEmpty; ?>
+							<h2 for="subDomain" style="
+    margin-top: 0px;
+    padding-top: 0px;
+">Add subdomain</h2><?= $fieldEmpty; ?>
 							<br>
 							<?php if (strlen($fieldEmpty) > 0): ?>
 								<input class="error" type="text"

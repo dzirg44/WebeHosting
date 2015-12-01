@@ -96,7 +96,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 				</li>
 				<li class='kop auto-databases-kopdown'>
 					<a href='../database/database.php'><img src="../../images/dedicated.png"
-									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
+															class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
@@ -138,7 +138,10 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					</div>
 					<div id="tab-1" class="tab-content">
 						<form method="post" class="form red-icon" action="" enctype="multipart/form-data">
-							<h2 for="domain">Add domain</h2><br>
+							<h2 for="domain" style="
+    margin-top: 0px;
+    padding-top: 0px;
+">Add domain</h2><br>
 							<?php if (strlen($fieldEmpty) > 0): ?>
 								<input class="error" type="text"
 									   id="domain"

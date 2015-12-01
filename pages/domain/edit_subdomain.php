@@ -55,6 +55,9 @@ if($row) {
 
 $subDomainSql = "SELECT id, `subDomain` FROM `subDomain`";
 $subDomainResult = $conn->query($subDomainSql) or die(mysqli_error($conn));
+
+$domainSql = "SELECT id, `domain` FROM `domain`";
+$domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 ?>
 
 <!DOCTYPE html>
@@ -136,7 +139,22 @@ $subDomainResult = $conn->query($subDomainSql) or die(mysqli_error($conn));
 						<form method="post" class="form" action="edit_update_subdomain.php" enctype="multipart/form-data">
 							<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							<label for="subDomain">subdomain</label><?= $subDomainErr ?><br>
-							<input type="text" id="subDomain" name="subDomain" placeholder="Subdomain name" class="input" value="<?php echo $subDomain; ?>">
+							<input type="text" id="subDomain" name="subDomain" placeholder="Subdomain name" class="inputsubdomain" value="<?php echo $subDomain; ?>">
+							<select name="domain"
+									class="selectSubdomain"
+									id="domain">
+								<option value="0" selected disabled>Please select a domain</option>
+								<?php
+								if ($domainResult->num_rows > 0):
+									while ($row = $domainResult->fetch_array(MYSQLI_ASSOC)):?>
+										<option value="<?= $row['id'] ?>">
+											<?= $row['domain'] ?>
+										</option>
+										<?php
+									endwhile;
+								endif;
+								?>
+							</select>
 							<br>
 							<input class="blue-button" type="submit" value="Create / Modify" name="submit" />
 						</form>

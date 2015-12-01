@@ -164,6 +164,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 								<option value="0" selected disabled>Please select a character</option>
 								<option value="utf-8">UTF-8</option>
 							</select>
+							<p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
+
 					</div>
 					<div class="div" style="position: absolute;">
 						<label for="password">Password</label>
@@ -171,16 +173,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 						<br> <input type="password"
 									id="password"
 									name="password"
-									placeholder="Password"
+									placeholder="*********"
 									class="input"> <br>
 						<label for="password1">Password again</label>
 						<?= $password1Err; ?>
 						<br> <input type="password"
 									id="password1"
 									name="password1"
-									placeholder="Password again"
+									placeholder="*********"
 									class="input">
-						<br><br> <input class="blue-button"
+						<br><br> <input class="blue-button float-right"
 										type="submit"
 										value="Save"
 										name="submit"/></form>
