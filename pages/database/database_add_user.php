@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 
 
-		$sql = "INSERT INTO `databaseUser` (username, password)
+	$sql = "INSERT INTO `databaseUser` (username, password)
 				VALUES ('$_POST[username]', '$_POST[password]');";
 
 	if ($createAccount == 1) {
@@ -59,6 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 				   VALUES ('$_POST[username]', '$_POST[password]');";
 	}
 
+	$sqlCreate = "CREATE USER '" . $username . "'@'" . $servername . " IDENTIFIED BY '" . $password . "'
+				  CREATE DATABASE IF NOT EXISTS `" . $username . "`
+				  GRANT ALL PRIVILEGES on `" . $username . "`.* TO '" . $username . "'@'" . $servername . "";
+
 	if ($conn->query($sql)) {
 		header('location: database.php');
 	} else {
@@ -66,6 +70,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 
 	if ($conn->query($sqlone)) {
+		header('location: database.php');
+	} else {
+		echo "Error: " . $sqlone . "<br>" . mysqli_error($conn);
+	}
+
+	if ($conn->query($sqlCreate)) {
 		header('location: database.php');
 	} else {
 		echo "Error: " . $sqlone . "<br>" . mysqli_error($conn);

@@ -51,8 +51,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$sql = "INSERT INTO `database`(databaseName, `collation`, password)
                 VALUES ('$databaseName', '$collation', '$password')";
 
+	$sqlCreate = "CREATE DATABASE `$databaseName`";
 
 	if ($conn->query($sql)) {
+		header('location: database.php');
+	} else {
+		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+
+	if ($conn->query($sqlCreate)) {
 		header('location: database.php');
 	} else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
