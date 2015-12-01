@@ -48,32 +48,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 
 
-		$sql = "INSERT INTO databaseUser (username, password)
-				VALUES ('$_POST[username]','$_POST[password]');";
+		$sql = "INSERT INTO `databaseUser` (username, password)
+				VALUES ('$_POST[username]', '$_POST[password]');";
 
 	if ($createAccount == 1) {
-		$sqlone = "INSERT INTO `database` (databaseName, `collation`, password)
-				VALUES ('$username', 'utf-8', '$password');";
+		$sql = "INSERT INTO `database` (databaseName, `collation`, password)
+				VALUES ('$_POST[username]', 'utf-8', '$_POST[password]');";
 
-		$sqltwo = "INSERT INTO databaseUser (username, password)
-				   VALUES ('$username', '$password');";
-
-//		$sql3 = "INSERT INTO `database` ( databaseName, `collation`, `database`.password, username, databaseUser.password)
-//				 VALUE ( '$username', 'utf-8', '$password', '$username', '$password' )
-//				 SELECT databaseName, `collation`, `database`.password, username, databaseUser.password
-//				 FROM `database`
-//				 INNER JOIN databaseUserLink
-//				 ON `database`.Id = databaseUserLink.databaseId
-//				 INNER JOIN databaseUser
-//				 ON databaseUserLink.databaseUser = databaseUser.Id";
-
-		$sql = $sqlone . $sqltwo;
+		$sqlone = "INSERT INTO `databaseUser` (username, password)
+				   VALUES ('$_POST[username]', '$_POST[password]');";
 	}
 
 	if ($conn->query($sql)) {
 		header('location: database.php');
 	} else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+
+	if ($conn->query($sqlone)) {
+		header('location: database.php');
+	} else {
+		echo "Error: " . $sqlone . "<br>" . mysqli_error($conn);
 	}
 }
 
@@ -192,6 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 							type="submit"
 							value="Save"
 							name="submit"/>                        </form>
+
 					</div>
 				</div>
 			</div>

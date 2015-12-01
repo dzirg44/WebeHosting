@@ -118,6 +118,12 @@ if ($row) {
 	$endDateTime = $row["endDateTime"];
 }
 
+$characterSql = "SELECT id, `character` FROM unavailable";
+$characterResult = $conn->query($characterSql) or die(mysqli_error($conn));
+
+$intervalSql = "SELECT id, `interval` FROM unavailable";
+$intervalResult = $conn->query($intervalSql) or die(mysqli_error($conn));
+
 $mailBoxSql = "SELECT id, mailAddress FROM mailbox";
 $mailBoxResult = $conn->query($mailBoxSql) or die(mysqli_error($conn));
 
@@ -209,19 +215,41 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					<div class="div">
 						<form method="post" class="form" action="edit_update.php" enctype="multipart/form-data">
 							<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							<label for="character">Character</label> <select class="background-grey"
-																			 id="character"
-																			 name="character">
-								<option value="0" selected disabled>Please select a character</option>
-								<option value="utf-8">UTF-8</option>
+							<label for="character">Character</label> <select name="charachter"
+																	   id="character"
+																	   class="background-grey">
+								<?php
+								if ($characterResult->num_rows > 0):
+									while ($row = $characterResult->fetch_array(MYSQLI_ASSOC)):?>
+										<?php if ($row['id'] == $Id): ?>
+											<option value="<?php echo $row['id']; ?>"
+													selected><?php echo $row['character']; ?></option>
+										<?php else: ?>
+											<option value="<?php echo $row['id']; ?>"><?php echo $row['character']; ?></option>
+										<?php endif; ?>
+										<?php
+									endwhile;
+								endif;
+								?>
 							</select>
 
 							<p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
-							<label for="interval">Interval</label> <select class="background-white"
-																		   id="interval"
-																		   name="interval">
-								<option value="0" selected disabled>Please select a interval</option>
-								<option value="hours">Hours</option>
+							<label for="interval">Interval</label> <select name="interval"
+																	   id="interval"
+																	   class="background-white">
+								<?php
+								if ($intervalResult->num_rows > 0):
+									while ($row = $intervalResult->fetch_array(MYSQLI_ASSOC)):?>
+										<?php if ($row['id'] == $intervalId): ?>
+											<option value="<?php echo $row['id']; ?>"
+													selected><?php echo $row['interval']; ?></option>
+										<?php else: ?>
+											<option value="<?php echo $row['id']; ?>"><?php echo $row['interval']; ?></option>
+										<?php endif; ?>
+										<?php
+									endwhile;
+								endif;
+								?>
 							</select>
 
 							<p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
