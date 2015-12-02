@@ -11,12 +11,13 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$databaseNameErr = $collation = $passwordErr = $password1Err = "";
+$databaseNameErr = $collation = $passwordErr = $password1 = "";
 $databaseName = $collation = $password = $password1 = "";
+$passwordCheck = "";
 
 //check of alle vakken er zijn
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	if (isset($_POST["databaseName"],$_POST["collation"],$_POST["password"], $_POST["password1"])) {
+	if (isset($_POST["databaseName"], $_POST["collation"], $_POST["password"], $_POST["password1"])) {
 
 		/* database name */
 		if (empty($_POST["databaseName"])) {
@@ -46,27 +47,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 			$password1 = $_POST["password1"];
 		}
 
-	}
-
-	$sql = "INSERT INTO `database`(databaseName, `collation`, password)
+		/* password check */
+		if ($password != $password1) {
+			$passwordCheck = "Oops! Password did not match! Try again. ";
+		} else {
+			$sql = "INSERT INTO `database`(databaseName, `collation`, password)
                 VALUES ('$databaseName', '$collation', '$password')";
 
-	$sqlCreate = "CREATE DATABASE `$databaseName`";
+			$sqlCreate = "CREATE DATABASE `$databaseName`";
 
-	if ($conn->query($sql)) {
-		header('location: database.php');
-	} else {
-		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			if ($conn->query($sql)) {
+				header('location: database.php');
+			} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			}
+
+			if ($conn->query($sqlCreate)) {
+				header('location: database.php');
+			} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			}
+		}
 	}
 
-	if ($conn->query($sqlCreate)) {
-		header('location: database.php');
-	} else {
-		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-	}
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 				</li>
 				<li class='kop auto-databases-kopdown'>
 					<a href='#'><img src="../../images/dedicated.png" class="nav-img"><span
-							class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
+							class="hidden-xs menu-text auto-databases-kopdownn active">Databases</span></a>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span
@@ -156,14 +160,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 						<form method="post" class="form" action="" enctype="multipart/form-data">
 							<label for="databaseName">Database name</label>
 							<?= $databaseNameErr; ?>
-							<input id="databaseName" type="text" name="databaseName" placeholder="Database name" class="input">
+							<input id="databaseName"
+								   type="text"
+								   name="databaseName"
+								   placeholder="Database name"
+								   class="input">
 
 							<label for="collation">Collation</label> <select class="background-grey"
 																			 id="collation"
 																			 name="collation">
-								<option value="0" selected disabled>Please select a character</option>
+								<option value="0" selected disabled>Please select a collation</option>
 								<option value="utf-8">UTF-8</option>
 							</select>
+
 							<p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
 
 					</div>
@@ -174,18 +183,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 									id="password"
 									name="password"
 									placeholder="*********"
-									class="input"> <br>
-						<label for="password1">Password again</label>
-						<?= $password1Err; ?>
-						<br> <input type="password"
-									id="password1"
-									name="password1"
-									placeholder="*********"
-									class="input">
-						<br><br> <input class="blue-button float-right"
-										type="submit"
-										value="Save"
-										name="submit"/></form>
+									class="input"> <br> <label for="password1">Password again</label> <br>
+						<input type="password"
+							   id="password1"
+							   name="password1"
+							   placeholder="*********"
+							   class="input"> <br><?= $passwordCheck ?><br> <input class="blue-button float-right"
+																				   type="submit"
+																				   value="Save"
+																				   name="submit"/></form>
 					</div>
 				</div>
 			</div>

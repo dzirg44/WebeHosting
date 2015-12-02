@@ -29,7 +29,7 @@ body {
 }
 
 .blue-paddingTop {
-	margin-top: 105px;
+	margin-top : 105px;
 }
 
 .nine {
@@ -50,9 +50,9 @@ body {
 }
 
 h2 {
-	font-size   : 1.7em;
-	padding-top : 20px;
-	margin-bottom: 0;
+	font-size     : 1.7em;
+	padding-top   : 20px;
+	margin-bottom : 0;
 }
 
 label {
@@ -438,7 +438,7 @@ table.t02 tr:nth-child(odd) {
 
 .offer-button {
 	margin-top : -55px;
-	margin-top: -10%;
+	margin-top : -10%;
 }
 
 div.offer {
@@ -490,7 +490,6 @@ div.offer {
 	}
 }
 
-
 /* autoresponder
    tabs*/
 .tab {
@@ -504,13 +503,13 @@ div.offer {
 #tabmenu ul,
 #tabmenu ul li,
 #tabmenu ul li a {
-	margin             : 0;
-	padding            : 0;
-	border             : 0;
-	list-style         : none;
-	line-height        : 1;
-	display            : block;
-	position           : relative;
+	margin      : 0;
+	padding     : 0;
+	border      : 0;
+	list-style  : none;
+	line-height : 1;
+	display     : block;
+	position    : relative;
 }
 
 /* line onder */
@@ -587,11 +586,11 @@ div.offer {
    formulier*/
 
 .input {
-	 font-size     : 0.83em;
-	 height        : 30px;
-	 margin-bottom : 20px;
-	 width         : 100%;
- }
+	font-size     : 0.83em;
+	height        : 30px;
+	margin-bottom : 20px;
+	width         : 100%;
+}
 
 .inputBody {
 	font-size     : 0.83em;
@@ -626,7 +625,7 @@ select {
 	margin-bottom : 0;
 	text-align    : center;
 	/*float: right;*/
-	width: 8%;
+	width         : 8%;
 }
 
 .thText {
@@ -655,45 +654,37 @@ tr {
 	height        : 40px;
 	padding       : 20px;
 	padding-top   : 10px;
-	width: 200px;
-}
-
-#site-search-input {
-	height       : 20px;
-	padding-left : 7px;
-	width        : 190px;
-}
-
-.search {
-	margin-left : -30;
+	width         : 200px;
 }
 
 #search-text-input {
-	border-bottom : 1px solid #e5e5e5;
-	border-left   : 1px solid #e5e5e5;
+	border-top    : thin solid #e5e5e5;
+	border-left   : thin solid #e5e5e5;
 	border-right  : 0;
-	border-top    : 1px solid #e5e5e5;
+	border-bottom : thin solid #e5e5e5;
 	float         : left;
-	height        : 17px;
-	margin        : .8em 0 0 0;
-	margin-bottom : 20px;
+	height        : 26px;
+	margin        : 20px 0 20px 0;
 	outline       : 0;
 	padding       : .4em 0 .4em .6em;
+	width         : 183px;
 }
 
 #button-holder {
-	border-bottom : 1px solid #e5e5e5;
-	border-right  : 1px solid #e5e5e5;
-	border-top    : 1px solid #e5e5e5;
+	border-top    : thin solid #e5e5e5;
+	border-right  : thin solid #e5e5e5;
+	border-bottom : thin solid #e5e5e5;
+	cursor        : pointer;
 	float         : left;
-	height        : 25px;
-	margin        : 9px 0 0 0;
+	height        : 35px;
+	margin        : 20px 0 20px 0;
 	text-align    : center;
 	width         : 50px;
 }
 
 #button-holder img {
-	width : 25px;
+	margin : 4px;
+	width  : 27px;
 }
 
 .padding-elf {
@@ -702,14 +693,14 @@ tr {
 }
 
 textarea {
-	border  : 1px solid #cccccc;
-	height  : 150px;
-	width   : 100%;
+	border        : 1px solid #cccccc;
+	height        : 150px;
+	width         : 100%;
 	margin-bottom : 20px;
 }
 
 .background-grey {
-	background  : #efefef;
+	background : #efefef;
 }
 
 .background-white {
@@ -741,18 +732,18 @@ textarea {
 }
 
 .inputSubdomain {
-	font-size     : 0.83em;
-	width         : 25%;
-	border        : 1px solid #e5e5e5;
-	height        : 17px;
-	margin        : .8em 0 0 0;
-	padding       : .4em 0 .4em .6em;
+	font-size : 0.83em;
+	width     : 260px;
+	border    : 1px solid #e5e5e5;
+	height    : 17px;
+	margin    : .8em 0 0 0;
+	padding   : .4em 0 .4em .6em;
+	display   : inline;
 }
 
 .selectSubdomain {
-	width      : 25%;
-	background  : #efefef;
-
+	width      : 190px;
+	background : #efefef;
 }
 
 .error {

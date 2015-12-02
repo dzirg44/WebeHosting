@@ -15,6 +15,7 @@ if (!$conn) {
 
 $databaseNameErr = $collationErr = $passwordErr = $password1Err = "";
 $databaseName = $collation = $password = $password1 = "";
+$passwordCheck = "";
 
 //check of alle vakken er zijn
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -68,11 +69,14 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 
 
-if($row) {
+if ($row) {
 	$databaseName = $row["databaseName"];
 	$collation = $row["collation"];
 	$password = $row["password"];
 }
+
+$usernameSql = "SELECT id, username FROM `databaseUser`";
+$usernameResult = $conn->query($usernameSql) or die(mysqli_error($conn));
 
 ?>
 
@@ -116,7 +120,7 @@ if($row) {
 				</li>
 				<li class='kop auto-databases-kopdown'>
 					<a href='#'><img src="../../images/dedicated.png"
-									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
+									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn active">Databases</span></a>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
@@ -160,17 +164,53 @@ if($row) {
 					</div>
 					<div class="div">
 						<form method="post" class="form" action="edit_update.php" enctype="multipart/form-data">
-							<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							<label for="databaseName">Database name</label><?= $databaseNameErr ?><br>
-							<input type="text" id="databaseName" name="databaseName" placeholder="Domain name" class="input" value="<?php echo $databaseName; ?>">
-							<br>
-							<input class="blue-button" type="submit" value="Create / Modify" name="submit" />
-						</form>
+							<input type="hidden" name="id" value="<?php echo $id; ?>"/> <label for="databaseName">Database
+																												  name</label><?= $databaseNameErr ?>
+							<br> <input type="text"
+										id="databaseName"
+										name="databaseName"
+										placeholder="Domain name"
+										class="input"
+										value="<?php echo $databaseName; ?>"> <label for="username">Users</label>
+							<select name="username"
+									class="background-grey"
+									id="username">
+								<option value="0" selected disabled>Please select a user</option>
+								<?php
+								if ($usernameResult->num_rows > 0):
+									while ($row = $usernameResult->fetch_array(MYSQLI_ASSOC)):?>
+										<option value="<?= $row['id'] ?>">
+											<?= $row['username'] ?>
+										</option>
+										<?php
+									endwhile;
+								endif;
+								?>
+							</select>
+
+							<p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
+					</div>
+					<div class="div" style="position: absolute;">
+						<label for="password">Password</label>
+						<?= $passwordErr; ?>
+						<br> <input type="password"
+									id="password"
+									name="password"
+									placeholder="*********"
+									class="input"> <br> <label for="password1">Password again</label> <br>
+						<input type="password"
+							   id="password1"
+							   name="password1"
+							   placeholder="*********"
+							   class="input"> <br><?= $passwordCheck ?>
+						<br> <input class="blue-button float-right"
+									type="submit"
+									value="Create / Modify"
+									name="submit"/>						</form>
 					</div>
 				</div>
 			</div>
-
-
+		</div>
 		</div>
 
 	</body>

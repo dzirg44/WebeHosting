@@ -11,12 +11,19 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$fromErr = $subjectErr = $bodyErr = $startDateTimeErr = $endDateTimeErr = "";
-$from = $subject = $body = $startDateTime = $endDateTime = "";
+$characterErr = $fromErr = $subjectErr = $bodyErr = $startDateTimeErr = $endDateTimeErr = "";
+$character = $from = $subject = $body = $startDateTime = $endDateTime = "";
 
 //check of alle vakken er zijn
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	if (isset($_POST["from"], $_POST["subject"], $_POST["body"], $_POST["startDateTime"], $_POST["endDateTime"])) {
+	if (isset($_POST["character"], $_POST["from"], $_POST["subject"], $_POST["body"], $_POST["startDateTime"], $_POST["endDateTime"])) {
+
+		/* character */
+		if (empty($_POST["character"])) {
+			echo $character;
+		} else {
+			$character = ($_POST["character"]);
+		}
 
 		/* from */
 		if (empty($_POST["from"])) {
@@ -54,9 +61,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		}
 	}
 
-	$sql = "INSERT INTO unavailable(`from`, mailboxId, subject, body, startDateTime, endDateTime)
-                VALUES ('$from', '" . $_POST['mailAddress'] . "', '$subject', '$body', '$startDateTime', '$endDateTime')";
-
+	$sql = "INSERT INTO unavailable(`character`, `from`, mailboxId, subject, body, startDateTime, endDateTime)
+                VALUES ('$character', '$from', '" . $_POST['mailAddress'] . "', '$subject', '$body', '$startDateTime', '$endDateTime')";
 
 	if ($conn->query($sql)) {
 		header('location: autoresponders.php');
@@ -71,13 +77,13 @@ $mailBoxResult = $conn->query($mailBoxSql) or die(mysqli_error($conn));
 $domainSql = "SELECT id, `domain` FROM `domain`";
 $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 
-function databaseDate ($date)
-{
-	if ($date != '') {
-		$date = new DateTime($date);
-		return $date->format('Y-m-d');
-	}
-}
+//function databaseDate ($date)
+//{
+//	if ($date != '') {
+//		$date = new DateTime($date);
+//		return $date->format('Y-m-d');
+//	}
+//}
 
 ?>
 
@@ -111,7 +117,7 @@ function databaseDate ($date)
 				</li>
 				<li class='kop auto-email-kopdown'>
 					<a href='#'><img src="../../images/mail.png" class="nav-img"><span
-							class="hidden-xs menu-text auto-email-kopdownn">E-mail</span></a>
+							class="hidden-xs menu-text auto-email-kopdownn active">E-mail</span></a>
 					<ul class="auto-email-subdown">
 						<li><a href='#' class="subkop">Mail Account</a></li>
 						<li><a href='#' class="subkop">Forward Mail</a></li>
@@ -167,7 +173,7 @@ function databaseDate ($date)
 						<form method="post" class="form" action="" enctype="multipart/form-data">
 							<label for="character">Character</label> <select class="background-grey"
 																			 id="character"
-																			 name="charactr">
+																			 name="character">
 								<option value="0" selected disabled>Please select a character</option>
 								<option value="utf-8">UTF-8</option>
 							</select>

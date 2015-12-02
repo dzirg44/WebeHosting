@@ -52,7 +52,7 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 				</li>
 				<li class='kop auto-email-kopdown'>
 					<a href='#'><img src="../../images/mail.png"
-									 class="nav-img"><span class="hidden-xs menu-text auto-email-kopdownn">E-mail</span></a>
+									 class="nav-img"><span class="hidden-xs menu-text auto-email-kopdownn active">E-mail</span></a>
 					<ul class="auto-email-subdown">
 						<li><a href='#' class="subkop">Mail Account</a></li>
 						<li><a href='#' class="subkop">Forward Mail</a></li>
@@ -62,7 +62,7 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 				</li>
 				<li class='kop auto-databases-kopdown'>
 					<a href='../database/database.php'><img src="../../images/dedicated.png"
-									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
+															class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
@@ -108,11 +108,14 @@ $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
 						<p class="eleven">Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja
 										  ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali
 										  testausteksti jo 1500-luvulta asti.</p>
-						<input type='text' placeholder='Search' id='search-text-input'/>
 
-						<div id='button-holder'>
-							<img src='../../images/search.png'/>
-						</div>
+						<form action="/search" method="get">
+							<input type='text' placeholder='Search' id='search-text-input'/>
+
+							<div id='button-holder'>
+								<img src='../../images/search.png'/>
+							</div>
+						</form>
 						<table class="auto">
 							<tr>
 								<th class="thText">

@@ -82,7 +82,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					</a>
 				</li>
 				<li class='kop'>
-					<a href='#'><img src="" class="nav-img"><span class="hidden-xs menu-text ">Domainen</span></a>
+					<a href='#'><img src="" class="nav-img"><span class="hidden-xs menu-text active">Domainen</span></a>
 				</li>
 				<li class='kop auto-email-kopdown'>
 					<a href='#'><img src="../../images/mail.png"
@@ -162,11 +162,14 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 						<p class="eleven">Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja
 										  ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali
 										  testausteksti jo 1500-luvulta asti.</p>
-						<input type='text' placeholder='Search' id='search-text-input'/>
 
-						<div id='button-holder'>
-							<img src='../../images/search.png'/>
-						</div>
+						<form action="/search" method="get">
+							<input type='text' placeholder='Search' id='search-text-input'/>
+
+							<div id='button-holder'>
+								<img src='../../images/search.png'/>
+							</div>
+						</form>
 						<table class="auto">
 							<tr>
 								<th class="th">

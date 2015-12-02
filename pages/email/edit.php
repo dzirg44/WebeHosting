@@ -34,20 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 			$interval = ($_POST["interval"]);
 		}
 
-//        /* domein */
-//        if (empty($_POST["domain"])) {
-//            echo $domainErr;
-//        } else {
-//            $domain = ($_POST["domain"]);
-//        }
-//
-//        /* mailAddress */
-//        if (empty($_POST["mailAddress"])) {
-//            echo $mailAddressErr;
-//        } else {
-//            $mailAddress = ($_POST["mailAddress"]);
-//        }
-
 		/* from */
 		if (empty($_POST["from"])) {
 			$fromErr = " filling in";
@@ -161,7 +147,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 				</li>
 				<li class='kop auto-email-kopdown'>
 					<a href='#'><img src="../../images/mail.png"
-									 class="nav-img"><span class="hidden-xs menu-text auto-email-kopdownn">E-mail</span></a>
+									 class="nav-img"><span class="hidden-xs menu-text auto-email-kopdownn active">E-mail</span></a>
 					<ul class="auto-email-subdown">
 						<li><a href='#' class="subkop">Mail Account</a></li>
 						<li><a href='#' class="subkop">Forward Mail</a></li>
@@ -171,7 +157,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 				</li>
 				<li class='kop auto-databases-kopdown'>
 					<a href='../database/database.php'><img src="../../images/dedicated.png"
-									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
+															class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
@@ -216,8 +202,8 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 						<form method="post" class="form" action="edit_update.php" enctype="multipart/form-data">
 							<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							<label for="character">Character</label> <select name="charachter"
-																	   id="character"
-																	   class="background-grey">
+																			 id="character"
+																			 class="background-grey">
 								<?php
 								if ($characterResult->num_rows > 0):
 									while ($row = $characterResult->fetch_array(MYSQLI_ASSOC)):?>
@@ -235,8 +221,8 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 
 							<p class="nine">je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem </p>
 							<label for="interval">Interval</label> <select name="interval"
-																	   id="interval"
-																	   class="background-white">
+																		   id="interval"
+																		   class="background-white">
 								<?php
 								if ($intervalResult->num_rows > 0):
 									while ($row = $intervalResult->fetch_array(MYSQLI_ASSOC)):?>

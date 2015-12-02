@@ -35,23 +35,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	if ($noError) {
 
 
-		$query = "SELECT * FROM subDomain WHERE subDomain = '$subDomain' AND domainId = '".$_POST['domain']."'";
+		$query = "SELECT * FROM subDomain WHERE subDomain = '$subDomain' AND domainId = '" . $_POST['domain'] . "'";
 		$result = $conn->query($query);
 
-		if($result->num_rows === 1) {
+		if ($result->num_rows === 1) {
 			$row = mysqli_fetch_array($result);
 
-			if($row['active'] == 0) {
+			if ($row['active'] == 0) {
 				$sql = "UPDATE subDomain SET active = 1 WHERE subdomain = '$subDomain'";
 			} else {
 				echo "Subdomain already exist";
 				$sql = "";
 			}
 
-		}
-		else {
+		} else {
 			$sql = "INSERT INTO subDomain(`subDomain`, domainId)
-                VALUES ('$subDomain', '".$_POST['domain']."')";
+                VALUES ('$subDomain', '" . $_POST['domain'] . "')";
 		}
 
 
@@ -107,7 +106,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					</a>
 				</li>
 				<li class='kop'>
-					<a href='#'><img src="" class="nav-img"><span class="hidden-xs menu-text ">Domainen</span></a>
+					<a href='#'><img src="" class="nav-img"><span class="hidden-xs menu-text active">Domainen</span></a>
 				</li>
 				<li class='kop auto-email-kopdown'>
 					<a href='#'><img src="../../images/mail.png"
@@ -121,7 +120,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 				</li>
 				<li class='kop auto-databases-kopdown'>
 					<a href='../database/database.php'><img src="../../images/dedicated.png"
-									 class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
+															class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
@@ -194,8 +193,10 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 									endwhile;
 								endif;
 								?>
-							</select>
-							<br><br><input class="blue-button" type="submit" value="Create / Modify" name="submit"/>
+							</select> <br><br><input class="blue-button"
+													 type="submit"
+													 value="Create / Modify"
+													 name="submit"/>
 						</form>
 						<h2>Current subdomains</h2>
 
@@ -222,8 +223,9 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 									<td class="ed">
 										<a href="edit_subdomain.php?id=<?= $row['id'] ?>" class="ed-padding">
 											<img src="../../images/edit.png" class="edImg"></a>
-										<a href="delete_subdomain.php?id=<?= $row['id'] ?>" onclick="return confirm_delete();">
-											<img src="../../images/brullenbak.png" class="edImg"></a>
+										<a href="delete_subdomain.php?id=<?= $row['id'] ?>"
+										   onclick="return confirm_delete();"> <img src="../../images/brullenbak.png"
+																					class="edImg"></a>
 									</td>
 								</tr>
 							<?php endwhile; ?>

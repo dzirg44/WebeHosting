@@ -40,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 
-
 $id = $_GET['id'];
 $sql = 'SELECT `subDomain`
         FROM `subDomain`
@@ -49,7 +48,7 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 
 
-if($row) {
+if ($row) {
 	$subDomain = $row["subDomain"];
 }
 
@@ -81,14 +80,16 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					<img src="../../images/WeBeHosting.png" class="logo">
 				</li>
 				<li class='kop'>
-					<a href='../../index.php'><img src="../../images/home.jpg" class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
+					<a href='../../index.php'><img src="../../images/home.jpg"
+												   class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
 					</a>
 				</li>
 				<li class='kop'>
-					<a href='#'><img src="" class="nav-img"><span class="hidden-xs menu-text ">Domainen</span></a>
+					<a href='#'><img src="" class="nav-img"><span class="hidden-xs menu-text active">Domainen</span></a>
 				</li>
 				<li class='kop auto-email-kopdown'>
-					<a href='#'><img src="../../images/mail.png" class="nav-img"><span class="hidden-xs menu-text auto-email-kopdownn">E-mail</span></a>
+					<a href='#'><img src="../../images/mail.png"
+									 class="nav-img"><span class="hidden-xs menu-text auto-email-kopdownn">E-mail</span></a>
 					<ul class="auto-email-subdown">
 						<li><a href='#' class="subkop">Mail Account</a></li>
 						<li><a href='#' class="subkop">Forward Mail</a></li>
@@ -97,7 +98,8 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					</ul>
 				</li>
 				<li class='kop auto-databases-kopdown'>
-					<a href='../database/database.php'><img src="../../images/dedicated.png" class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
+					<a href='../database/database.php'><img src="../../images/dedicated.png"
+															class="nav-img"><span class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span class="hidden-xs menu-text">Server</span></a>
@@ -116,12 +118,15 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 			<p class="red">
 				<img src="../../images/kruis-red.png" class="red-icon"> CRITICAL EVENTS
 			</p>
+
 			<p class="green">
 				<img src="../../images/green-vink.png" class="green-icon"> ACTIVE TICKET
 			</p>
+
 			<p class="orange">
 				<img src="../../images/orange-server.png" class="orange-icon"> DEDICATED SERVER
 			</p>
+
 			<p class="blue">
 				<img src="../../images/blue-cloud.png" class="blue-icon"> CLOUD SERVER
 			</p>
@@ -135,33 +140,37 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 							<li class="active"><a href="#">Edit Domain</a></li>
 						</ul>
 					</div>
-					<div class="div">
-						<form method="post" class="form" action="edit_update_subdomain.php" enctype="multipart/form-data">
-							<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							<label for="subDomain">subdomain</label><?= $subDomainErr ?><br>
-							<input type="text" id="subDomain" name="subDomain" placeholder="Subdomain name" class="inputsubdomain" value="<?php echo $subDomain; ?>">
-							<select name="domain"
-									class="selectSubdomain"
-									id="domain">
-								<option value="0" selected disabled>Please select a domain</option>
-								<?php
-								if ($domainResult->num_rows > 0):
-									while ($row = $domainResult->fetch_array(MYSQLI_ASSOC)):?>
-										<option value="<?= $row['id'] ?>">
-											<?= $row['domain'] ?>
-										</option>
-										<?php
-									endwhile;
-								endif;
-								?>
-							</select>
-							<br>
-							<input class="blue-button" type="submit" value="Create / Modify" name="submit" />
-						</form>
-					</div>
+					<form method="post"
+						  class="red-icon"
+						  action="edit_update_subdomain.php"
+						  enctype="multipart/form-data">
+						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
+						<label for="subDomain">Subdomain</label><?= $subDomainErr ?><br> <input type="text"
+																								id="subDomain"
+																								name="subDomain"
+																								placeholder="Subdomain name"
+																								class="inputSubdomain"
+																								value="<?php echo $subDomain; ?>">
+						<select name="domein"
+								id="domein"
+								class="selectSubdomain">
+							<?php
+							if ($domainResult->num_rows > 0):
+								while ($row = $domainResult->fetch_array(MYSQLI_ASSOC)):?>
+									<?php if ($row['id'] == $domainId): ?>
+										<option value="<?php echo $row['id']; ?>"
+												selected><?php echo $row['domain']; ?></option>
+									<?php else: ?>
+										<option value="<?php echo $row['id']; ?>"><?php echo $row['domain']; ?></option>
+									<?php endif; ?>
+									<?php
+								endwhile;
+							endif;
+							?>
+						</select> <br> <input class="blue-button" type="submit" value="Create / Modify" name="submit"/>
+					</form>
 				</div>
 			</div>
-
 
 
 		</div>

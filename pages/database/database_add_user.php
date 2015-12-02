@@ -45,6 +45,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		} else {
 			$createAccount = $_POST["createAccount"];
 		}
+
+		/* password check */
+		if ($password != $password1) {
+			$passwordCheck = "Oops! Password did not match! Try again. ";
+		}
 	}
 
 
@@ -58,17 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		$sqlone = "INSERT INTO `databaseUser` (username, password, createAccount)
 				   VALUES ('$_POST[username]', '$_POST[password]', 1);";
 
-		$sqlCreate = "CREATE USER '" . $username . "'@'" . $servername . " IDENTIFIED BY '" . $password . "';";
-					 "CREATE DATABASE IF NOT EXISTS `" . $username . "`;";
-			    	 "GRANT ALL PRIVILEGES on `" . $username . "`.* TO '" . $username . "'@'" . $servername . "';";
-
-die();
-
-//		$this->db->query("CREATE USER '" . $username . "'@'" . $host . "' IDENTIFIED BY '" . $password . "';");
-//		$this->db->query("CREATE DATABASE IF NOT EXISTS `" . $dbName . "`;");
-//		$this->db->query("GRANT ALL PRIVILEGES on `" . $dbName . "`.* TO '" . $username . "'@'" . $host . "';");
+		$sqlCreate = "CREATE USER '" . $username . "'@'" . $servername . "' IDENTIFIED BY '" . $password . "';";
+		$sqlCreate1 = "CREATE DATABASE IF NOT EXISTS `" . $username . "`;";
+		$sqlCreate2 = "GRANT ALL PRIVILEGES on `" . $username . "`.* TO '" . $username . "'@'" . $servername . "';";
 	}
-
 
 
 	if ($conn->query($sql)) {
@@ -87,6 +85,18 @@ die();
 		header('location: database.php');
 	} else {
 		echo "Error: " . $sqlCreate . "<br>" . mysqli_error($conn);
+	}
+
+	if ($conn->query($sqlCreate1)) {
+		header('location: database.php');
+	} else {
+		echo "Error: " . $sqlCreate1 . "<br>" . mysqli_error($conn);
+	}
+
+	if ($conn->query($sqlCreate2)) {
+		header('location: database.php');
+	} else {
+		echo "Error: " . $sqlCreate2 . "<br>" . mysqli_error($conn);
 	}
 }
 
@@ -118,7 +128,7 @@ die();
 				</li>
 				<li class='kop'>
 					<a href='../domain/domain.php'><img src="" class="nav-img"><span
-							class="hidden-xs menu-text ">Domainen</span></a>
+							class="hidden-xs menu-text">Domainen</span></a>
 				</li>
 				<li class='kop auto-email-kopdown'>
 					<a href='#'><img src="../../images/mail.png" class="nav-img"><span
@@ -132,7 +142,7 @@ die();
 				</li>
 				<li class='kop auto-databases-kopdown'>
 					<a href='#'><img src="../../images/dedicated.png" class="nav-img"><span
-							class="hidden-xs menu-text auto-databases-kopdownn">Databases</span></a>
+							class="hidden-xs menu-text auto-databases-kopdownn active">Databases</span></a>
 				</li>
 				<li class='kop'>
 					<a href='#'><img src="../../images/cloud.jpg" class="nav-img"><span
