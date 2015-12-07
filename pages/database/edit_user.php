@@ -5,26 +5,19 @@ $password = "";
 $dbname = "WebeHosting";
 
 /* connectie maken */
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 /* check connectie */
 if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$databaseNameErr = $usernameErr = $passwordErr = $password1Err = "";
-$databaseName = $username = $password = $password1 = "";
+$usernameErr = $passwordErr = $password1Err = "";
+$username = $password = $password1 = $createAccount = "";
 $passwordCheck = "";
 
 //check of alle vakken er zijn
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	if (isset($_POST["databaseName"], $_POST["username"], $_POST["password"], $_POST["password1"])) {
-
-		/* database name */
-		if (empty($_POST["databaseName"])) {
-			echo $databaseNameErr;
-		} else {
-			$databaseName = ($_POST["databaseName"]);
-		}
+	if (isset($_POST["username"], $_POST["password"], $_POST["password1"])) {
 
 		/* user name */
 		if (empty($_POST["username"])) {
@@ -50,22 +43,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 $id = $_GET['id'];
-$sql = "SELECT id, databaseName, password
-        FROM `database`
+$sql = "SELECT id, username, password
+        FROM databaseUser
         WHERE id = " . $id;
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 
 
 if ($row) {
-	$databaseName = $row["databaseName"];
+	$username = $row["username"];
 	$password = $row["password"];
 }
-
-$usernameSql = "SELECT id, username
-				FROM `databaseUser`
-				WHERE active = 1";
-$usernameResult = $conn->query($usernameSql) or die(mysqli_error($conn));
 
 ?>
 
@@ -148,56 +136,41 @@ $usernameResult = $conn->query($usernameSql) or die(mysqli_error($conn));
 							<li><a href='database.php'>Databases</a></li>
 							<li><a href='database_add.php'>Add database</a></li>
 							<li><a href="database_add_user.php">Add user</a></li>
-							<li class="active"><a href="#">Edit database</a></li>
+							<li class="active"><a>Edit user</a></li>
 						</ul>
 					</div>
 					<div class="div">
-						<form method="post" class="form" action="edit_update.php" enctype="multipart/form-data">
-							<input type="hidden" name="id" value="<?php echo $id; ?>"/> <label for="databaseName">Database
-																												  name</label><?= $databaseNameErr ?>
-							<br> <input type="text"
-										id="databaseName"
-										name="databaseName"
-										placeholder="Database name"
-										class="input"
-										value="<?php echo $databaseName; ?>"> <label for="username">Users</label>
-							<select name="username"
-									class="background-grey"
-									id="username">
-								<option value="0" selected disabled>Please select a user</option>
-								<?php
-								if ($usernameResult->num_rows > 0):
-									while ($row = $usernameResult->fetch_array(MYSQLI_ASSOC)):?>
-										<option value="<?= $row['id'] ?>">
-											<?= $row['username'] ?>
-										</option>
-										<?php
-									endwhile;
-								endif;
-								?>
-							</select>
+						<form method="post" class="form" action="edit_update_user.php" enctype="multipart/form-data">
+							<input type="hidden" name="id" value="<?php echo $id; ?>"/>
+							<label for="username">Username</label>
+							<?= $usernameErr; ?>
+							<input id="username" type="text" name="username" placeholder="username" class="input" value="<?= $username ?>">
 
-							<p class="nine">Hold the shift key to select the users you want to use</p>
+							<label for="password">Password</label>
+							<?= $passwordErr; ?>
+							<br> <input type="password"
+										id="password"
+										name="password"
+										placeholder="*********"
+										class="input"> <br> <label for="password1">Password again</label>
+							<?= $password1Err; ?>
+							<br> <input type="password"
+										id="password1"
+										name="password1"
+										placeholder="*********"
+										class="input"><br><?= $passwordCheck ?>
 					</div>
 					<div class="div" style="position: absolute;">
-						<label for="password">Password</label>
-						<?= $passwordErr; ?>
-						<br> <input type="password"
-									id="password"
-									name="password"
-									placeholder="*********"
-									class="input"> <br> <label for="password1">Password again</label> <br>
-						<input type="password"
-							   id="password1"
-							   name="password1"
-							   placeholder="*********"
-							   class="input"> <br><?= $passwordCheck ?><br> <input class="blue-button float-right"
-																				   type="submit"
-																				   value="Create / Modify"
-																				   name="submit"/>                        </form>
+						<input
+							class="blue-button float-right"
+							type="submit"
+							value="Save"
+							name="submit"/>                        </form>
+
 					</div>
 				</div>
 			</div>
+
 		</div>
 		</div>
 

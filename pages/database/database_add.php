@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 		/* password check */
 		if ($password != $password1) {
-			$passwordCheck = "Oops! Password did not match! Try again. ";
+			$passwordCheck = '<p>' . "Oops! Password did not match! Try again." . '</p>';
 		} else {
 			$sql = "INSERT INTO `database`(databaseName, `collation`, password)
                 VALUES ('$databaseName', '$collation', '$password')";

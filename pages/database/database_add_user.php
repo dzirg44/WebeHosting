@@ -13,6 +13,7 @@ if (!$conn) {
 
 $usernameErr = $passwordErr = $password1Err = "";
 $username = $password = $password1 = $createAccount = "";
+$passwordCheck = "";
 
 //check of alle vakken er zijn
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -45,16 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		} else {
 			$createAccount = $_POST["createAccount"];
 		}
-
-		/* password check */
-		if ($password != $password1) {
-			$passwordCheck = "Oops! Password did not match! Try again. ";
-		}
 	}
 
-
 	$sql = "INSERT INTO `databaseUser` (username, password)
-				VALUES ('$_POST[username]', '$_POST[password]');";
+			VALUES ('$_POST[username]', '$_POST[password]');";
 
 	if ($createAccount == 1) {
 		$sql = "INSERT INTO `database` (databaseName, `collation`, password)
@@ -66,8 +61,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		$sqlCreate = "CREATE USER '" . $username . "'@'" . $servername . "' IDENTIFIED BY '" . $password . "';";
 		$sqlCreate1 = "CREATE DATABASE IF NOT EXISTS `" . $username . "`;";
 		$sqlCreate2 = "GRANT ALL PRIVILEGES on `" . $username . "`.* TO '" . $username . "'@'" . $servername . "';";
+
+		$sqltwo = "INSERT INTO databaseUserLink
+				   VALUES ( . " . $_POST[''] . ", " . $_POST[''] . ")";
 	}
 
+	var_dump($_POST);
+	die();
+
+	$conn->insert_id;
 
 	if ($conn->query($sql)) {
 		header('location: database.php');
@@ -98,6 +100,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	} else {
 		echo "Error: " . $sqlCreate2 . "<br>" . mysqli_error($conn);
 	}
+
+	if ($conn->query($sqltwo)) {
+		header('location: database.php');
+	} else {
+		echo "Error: " . $sqltwo . "<br>" . mysqli_error($conn);
+	}
+
 }
 
 ?>
@@ -203,7 +212,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 										id="password1"
 										name="password1"
 										placeholder="*********"
-										class="input">
+										class="input"><br><?= $passwordCheck ?>
 					</div>
 					<div class="div" style="position: absolute;"><br> <input type="checkbox"
 																			 id="createAccount"

@@ -12,13 +12,12 @@ if (!$conn) {
 }
 
 /* laten zien */
-$unavailableSql = "SELECT unavailable.id, subject, startDateTime, endDateTime,mailAddress
+$unavailableSql = "SELECT unavailable.id, subject, startDateTime, endDateTime, mailAddress
                    FROM unavailable
                    INNER JOIN mailbox
                    ON unavailable.mailboxId=mailbox.id
                    WHERE unavailable.active = 1";
 $unavailableResult = $conn->query($unavailableSql) or die(mysqli_error($conn));
-
 
 ?>
 

@@ -13,16 +13,20 @@ if (!$conn) {
 
 /* laten zien */
 $databaseSql = "SELECT id, databaseName
-                   FROM `database`
-                   WHERE active = 1";
+                FROM `database`
+            	WHERE active = 1";
 $databaseResult = $conn->query($databaseSql) or die(mysqli_error($conn));
+
+$usernameSql = "SELECT id, username
+                FROM databaseUser
+            	WHERE active = 1";
+$usernameResult = $conn->query($usernameSql) or die(mysqli_error($conn));
 
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +37,6 @@ $databaseResult = $conn->query($databaseSql) or die(mysqli_error($conn));
 		<script src="../../js/script.js"></script>
 		<script type="text/javascript"></script>
 	</head>
-
 	<body>
 		<nav id='cssmenu' class="inner">
 			<ul>
@@ -129,6 +132,28 @@ $databaseResult = $conn->query($databaseSql) or die(mysqli_error($conn));
 									<td class="nine padding-elf"><?= $row["databaseName"] ?></td>
 									<td class="ed">
 										<a href="edit.php?id=<?= $row['id'] ?>" class="ed-padding">
+											<img src="../../images/edit.png" class="edImg"></a>
+										<a href="delete.php?id=<?= $row['id'] ?>" onclick="return confirm_delete();">
+											<img src="../../images/brullenbak.png" class="edImg"></a>
+									</td>
+								</tr>
+							<?php endwhile; ?>
+						</table>
+
+						<table class="auto">
+							<tr>
+								<th class="thText">
+									<p class="eleven-table">Users</p>
+								</th>
+								<th class="thIcon">
+									<p class="eleven-table ">Action</p>
+								</th>
+							</tr>
+							<?php while ($row = mysqli_fetch_array($usernameResult)): ?>
+								<tr>
+									<td class="nine padding-elf"><?= $row["username"] ?></td>
+									<td class="ed">
+										<a href="edit_user.php?id=<?= $row['id'] ?>" class="ed-padding">
 											<img src="../../images/edit.png" class="edImg"></a>
 										<a href="delete.php?id=<?= $row['id'] ?>" onclick="return confirm_delete();">
 											<img src="../../images/brullenbak.png" class="edImg"></a>
