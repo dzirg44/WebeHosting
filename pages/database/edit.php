@@ -36,6 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		/* password */
 		if (empty($_POST["password"])) {
 			echo $passwordErr;
+		} elseif ($password != $password1) {
+				$passwordCheck = '<p>' . "Oops! Password did not match! Try again." . '</p>';
 		} else {
 			$password = $_POST["password"];
 		}
@@ -43,6 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		/* password1 */
 		if (empty($_POST["password1"])) {
 			echo $password1Err;
+		} elseif ($password1 != $password) {
+			$passwordCheck = '<p>' . "Oops! Password did not match! Try again." . '</p>';
 		} else {
 			$password1 = $_POST["password1"];
 		}
@@ -161,9 +165,9 @@ $usernameResult = $conn->query($usernameSql) or die(mysqli_error($conn));
 										placeholder="Database name"
 										class="input"
 										value="<?php echo $databaseName; ?>"> <label for="username">Users</label>
-							<select name="username"
+							<select name="username[]"
 									class="background-grey"
-									id="username">
+									id="username" multiple>
 								<option value="0" selected disabled>Please select a user</option>
 								<?php
 								if ($usernameResult->num_rows > 0):

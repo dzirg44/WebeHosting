@@ -39,6 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		} else {
 			$password1 = $_POST["password1"];
 		}
+
+		/* password check */
+		if ($password != $password1) {
+			$passwordCheck = '<p>' . "Oops! Password did not match! Try again." . '</p>';
+		} else {
+			return false;
+		}
 	}
 }
 

@@ -1,5 +1,6 @@
 <?php
 $databaseName = $_POST['databaseName'];
+$username = $_POST['username'];
 $password = $_POST['password'];
 
 $servername = "localhost";
@@ -25,8 +26,10 @@ if (!empty($password)) {
         WHERE id = '$id'";
 }
 
-$sqltwo = "INSERT INTO databaseUserLink
-VALUES (" . $id . ", " . $_POST['username'] . ")";
+for($i=1; $i <= $_POST['username']; $i++) {
+	$sqltwo = "INSERT INTO databaseUserLink
+			   VALUES (" . $id . ", " . $_POST['username'] . ")";
+}
 
 if (mysqli_query($conn, $sql)) {
 	header('location: database.php');
@@ -40,11 +43,11 @@ if (mysqli_query($conn, $sqlone)) {
 	echo "Error updating record: " . mysqli_error($conn);
 }
 
-if (mysqli_query($conn, $sqltwo)) {
-	header('location: database.php');
-} else {
-	echo "Error updating record: " . mysqli_error($conn);
-}
+//if (mysqli_query($conn, $sqltwo)) {
+//	header('location: database.php');
+//} else {
+//	echo "Error updating record: " . mysqli_error($conn);
+//}
 
 mysqli_close($conn);
 ?>
