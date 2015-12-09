@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		if (empty($_POST["password"])) {
 			echo $passwordErr;
 		} elseif ($password != $password1) {
-				$passwordCheck = '<p>' . "Oops! Password did not match! Try again." . '</p>';
+			$passwordCheck = '<p>' . "Oops! Password did not match! Try again." . '</p>';
 		} else {
 			$password = $_POST["password"];
 		}
@@ -52,24 +52,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		}
 	}
 }
-
 $id = $_GET['id'];
-$sql = "SELECT id, databaseName, password
+$sql = "SELECT `database`.id, databaseName, password, databaseUserId
         FROM `database`
-        WHERE id = " . $id;
+        INNER JOIN databaseUserLink
+        ON `database`.id = databaseUserLink.databaseId
+        WHERE `database`.id = " . $id;
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
-
 
 if ($row) {
 	$databaseName = $row["databaseName"];
 	$password = $row["password"];
+	$databaseUserId = $row["databaseUserId"];
 }
 
-$usernameSql = "SELECT id, username
-				FROM `databaseUser`
-				WHERE active = 1";
-$usernameResult = $conn->query($usernameSql) or die(mysqli_error($conn));
+$databaseUserIdSql = "SELECT id, username
+					  FROM `databaseUser`
+					  WHERE active = 1";
+$databaseUserIdResult = $conn->query($databaseUserIdSql) or die(mysqli_error($conn));
 
 ?>
 
@@ -164,24 +165,26 @@ $usernameResult = $conn->query($usernameSql) or die(mysqli_error($conn));
 										name="databaseName"
 										placeholder="Database name"
 										class="input"
-										value="<?php echo $databaseName; ?>"> <label for="username">Users</label>
-							<select name="username[]"
-									class="background-grey"
-									id="username" multiple>
-								<option value="0" selected disabled>Please select a user</option>
+										value="<?php echo $databaseName; ?>"> <label for="databaseUserId">Users</label>
+							<select name="databaseUserId"
+									class="databaseSelect"
+									id="databaseUserId" multiple>
 								<?php
-								if ($usernameResult->num_rows > 0):
-									while ($row = $usernameResult->fetch_array(MYSQLI_ASSOC)):?>
-										<option value="<?= $row['id'] ?>">
-											<?= $row['username'] ?>
-										</option>
+								if ($databaseUserIdResult->num_rows > 0):
+									while ($row = $databaseUserIdResult->fetch_array(MYSQLI_ASSOC)):?>
+										<?php if ($row['id'] == $databaseUserId): ?>
+											<option value="<?php echo $row['id']; ?>"
+													selected><?php echo $row['username']; ?></option>
+										<?php else: ?>
+											<option value="<?php echo $row['id']; ?>"><?php echo $row['username']; ?></option>
+										<?php endif; ?>
 										<?php
 									endwhile;
 								endif;
 								?>
 							</select>
 
-							<p class="nine">Hold the shift key to select the users you want to use</p>
+							<p class="nine">Hold the shift key to select multiple users you want to use</p>
 					</div>
 					<div class="div" style="position: absolute;">
 						<label for="password">Password</label>

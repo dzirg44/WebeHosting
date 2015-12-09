@@ -1,15 +1,15 @@
 <?php
 $databaseName = $_POST['databaseName'];
-$username = $_POST['username'];
+$databaseUserId = $_POST['databaseUserId'];
 $password = $_POST['password'];
 
 $servername = "localhost";
-$username = "root";
+$un = "root";
 $pw = "";
 $dbname = "WebeHosting";
 
 // connectie maken
-$conn = mysqli_connect($servername, $username, $pw, $dbname);
+$conn = mysqli_connect($servername, $un, $pw, $dbname);
 // check connectie
 if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
@@ -26,9 +26,16 @@ if (!empty($password)) {
         WHERE id = '$id'";
 }
 
-for($i=1; $i <= $_POST['username']; $i++) {
+if (is_array($username)) {
 	$sqltwo = "INSERT INTO databaseUserLink
-			   VALUES (" . $id . ", " . $_POST['username'] . ")";
+			   VALUES ";
+	foreach ($databaseUserId as $u) {
+		$sqltwo .= "(" . $id . ", " . $u . "),";
+	}
+	$sqltwo = substr($sqltwo, 0, strlen($sqltwo) - 1);
+} else {
+	$sqltwo = "INSERT INTO databaseUserLink
+			   VALUES (" . $id . ", " . $databaseUserId . ")";
 }
 
 if (mysqli_query($conn, $sql)) {
@@ -43,11 +50,11 @@ if (mysqli_query($conn, $sqlone)) {
 	echo "Error updating record: " . mysqli_error($conn);
 }
 
-//if (mysqli_query($conn, $sqltwo)) {
-//	header('location: database.php');
-//} else {
-//	echo "Error updating record: " . mysqli_error($conn);
-//}
+if (mysqli_query($conn, $sqltwo)) {
+	header('location: database.php');
+} else {
+	echo "Error updating record: " . mysqli_error($conn);
+}
 
 mysqli_close($conn);
 ?>

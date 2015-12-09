@@ -17,7 +17,7 @@ $passwordCheck = "";
 
 //check of alle vakken er zijn
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	if (isset($_POST["username"], $_POST["password"], $_POST["password1"], $_POST["createAccount"])) {
+	if (isset($_POST["username"], $_POST["password"], $_POST["password1"])) {
 
 		/* username */
 		if (empty($_POST["username"])) {
@@ -52,46 +52,54 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 			$passwordCheck = '<p>' . "Oops! Password did not match! Try again." . '</p>';
 		} elseif ($createAccount == 1) {
 			$sql = "INSERT INTO `database` (databaseName, `collation`, password)
-				VALUES ('$_POST[username]', 'utf-8', '$_POST[password]');";
+				 	VALUES ('$_POST[username]', 'utf-8', '$_POST[password]');";
 
 			$sqlone = "INSERT INTO `databaseUser` (username, password, createAccount)
-				   VALUES ('$_POST[username]', '$_POST[password]', 1);";
+					   VALUES ('$_POST[username]', '$_POST[password]', 1);";
 
-//		$sqlCreate = "CREATE USER '" . $username . "'@'" . $servername . "' IDENTIFIED BY '" . $password . "';";
-//		$sqlCreate1 = "CREATE DATABASE IF NOT EXISTS `" . $username . "`;";
-//		$sqlCreate2 = "GRANT ALL PRIVILEGES on `" . $username . "`.* TO '" . $username . "'@'" . $servername . "';";
-
+			$sqlCreate = "CREATE USER '" . $username . "'@'" . $servername . "' IDENTIFIED BY '" . $password . "';";
+			$sqlCreate1 = "CREATE DATABASE IF NOT EXISTS `" . $username . "`;";
+			$sqlCreate2 = "GRANT ALL PRIVILEGES on `" . $username . "`.* TO '" . $username . "'@'" . $servername . "';";
 
 			if ($conn->query($sql)) {
-//		$varId = $conn->insert_id;
-				header('location: database.php');
+				$varId = $conn->insert_id;
 			} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 			}
 
 			if ($conn->query($sqlone)) {
-				header('location: database.php');
+				$varIdOne = $conn->insert_id;
+
+				$sqlIdOne = "INSERT INTO databaseUserLink (databaseId, databaseUserId)
+						     VALUES ('$varId', '$varIdOne')";
+
+				if ($conn->query($sqlIdOne)) {
+					header('location: database.php');
+				} else {
+					echo "Error: " . $sqlIdOne . "<br>" . mysqli_error($conn);
+				}
+
 			} else {
 				echo "Error: " . $sqlone . "<br>" . mysqli_error($conn);
 			}
 
-//	if ($conn->query($sqlCreate)) {
-//		header('location: database.php');
-//	} else {
-//		echo "Error: " . $sqlCreate . "<br>" . mysqli_error($conn);
-//	}
-//
-//	if ($conn->query($sqlCreate1)) {
-//		header('location: database.php');
-//	} else {
-//		echo "Error: " . $sqlCreate1 . "<br>" . mysqli_error($conn);
-//	}
-//
-//	if ($conn->query($sqlCreate2)) {
-//		header('location: database.php');
-//	} else {
-//		echo "Error: " . $sqlCreate2 . "<br>" . mysqli_error($conn);
-//	}
+			if ($conn->query($sqlCreate)) {
+				header('location: database.php');
+			} else {
+				echo "Error: " . $sqlCreate . "<br>" . mysqli_error($conn);
+			}
+
+			if ($conn->query($sqlCreate1)) {
+				header('location: database.php');
+			} else {
+				echo "Error: " . $sqlCreate1 . "<br>" . mysqli_error($conn);
+			}
+
+			if ($conn->query($sqlCreate2)) {
+				header('location: database.php');
+			} else {
+				echo "Error: " . $sqlCreate2 . "<br>" . mysqli_error($conn);
+			}
 
 		} else {
 			$sql = "INSERT INTO `databaseUser` (username, password)

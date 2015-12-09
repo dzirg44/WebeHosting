@@ -67,7 +67,7 @@ label {
 	font-size : 0.9em;
 }
 
-/* Navigation */
+/* Navigation left*/
 
 #cssmenu,
 #cssmenu ul,
@@ -490,15 +490,13 @@ div.offer {
 	}
 }
 
-/* autoresponder
-   tabs*/
+/* tabs menu */
 .tab {
 	float         : left;
 	margin-bottom : 20;
 	width         : 90%;
 }
 
-/* tabs menu */
 #tabmenu,
 #tabmenu ul,
 #tabmenu ul li,
@@ -512,8 +510,6 @@ div.offer {
 	position    : relative;
 }
 
-/* line onder */
-
 #tabmenu:after,
 #tabmenu > ul:after {
 	content     : ".";
@@ -524,27 +520,19 @@ div.offer {
 	height      : 0;
 }
 
-/* style */
-
 #tabmenu {
 	width         : auto;
 	border-bottom : 1px solid #dddddd;
 	line-height   : 1;
 }
 
-/* achtergrond none active */
-
 #tabmenu ul {
 	background : #ffffff;
 }
 
-/* positie */
-
 #tabmenu > ul > li {
 	float : left;
 }
-
-/* style */
 
 #tabmenu > ul > li > a {
 	z-index            : 2;
@@ -561,8 +549,6 @@ div.offer {
 	margin-right       : -4px;
 }
 
-/* tab vormgeving */
-
 #tabmenu > ul > li > a:after {
 	position         : absolute;
 	left             : 0;
@@ -575,15 +561,13 @@ div.offer {
 	transform-origin : bottom;
 }
 
-/* tab kleur */
-
 #tabmenu > ul > li.active > a:after {
 	background : #ffffff;
 	border     : 2px solid #dddddd;
 }
 
 /* autoresponder
-   formulier*/
+   form */
 
 .input {
 	font-size     : 0.83em;
@@ -656,6 +640,9 @@ tr {
 	padding-top   : 10px;
 	width         : 200px;
 }
+
+/* autoresponder
+   search */
 
 #search-text-input {
 	border-top    : thin solid #e5e5e5;
@@ -752,5 +739,12 @@ textarea {
 	height        : 30px;
 	margin-bottom : 20px;
 	width         : 50%;
+}
+
+/* database */
+
+.databaseSelect {
+	background : #efefef;
+	height     : 67px;
 }
 

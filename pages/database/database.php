@@ -131,6 +131,8 @@ $usernameResult = $conn->query($usernameSql) or die(mysqli_error($conn));
 								<tr>
 									<td class="nine padding-elf"><?= $row["databaseName"] ?></td>
 									<td class="ed">
+										<a href="phpMyAdmin/phpMyAdmin.php" class="ed-padding">
+											<img src="" class="edImg"></a>
 										<a href="edit.php?id=<?= $row['id'] ?>" class="ed-padding">
 											<img src="../../images/edit.png" class="edImg"></a>
 										<a href="delete.php?id=<?= $row['id'] ?>" onclick="return confirm_delete();">
