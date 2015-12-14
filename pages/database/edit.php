@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $id = $_GET['id'];
 $sql = "SELECT `database`.id, databaseName, password, databaseUserId
         FROM `database`
-        INNER JOIN databaseUserLink
+        LEFT JOIN databaseUserLink
         ON `database`.id = databaseUserLink.databaseId
         WHERE `database`.id = " . $id;
 $result = mysqli_query($conn, $sql);
@@ -71,7 +71,6 @@ $databaseUserIdSql = "SELECT id, username
 					  FROM `databaseUser`
 					  WHERE active = 1";
 $databaseUserIdResult = $conn->query($databaseUserIdSql) or die(mysqli_error($conn));
-
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +94,7 @@ $databaseUserIdResult = $conn->query($databaseUserIdSql) or die(mysqli_error($co
 					<img src="../../images/WeBeHosting.png" class="logo">
 				</li>
 				<li class='kop'>
-					<a href='../../index.php'><img src="../../images/home.jpg"
+					<a href='../../indexx.php'><img src="../../images/home.jpg"
 												   class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
 					</a>
 				</li>
@@ -165,7 +164,7 @@ $databaseUserIdResult = $conn->query($databaseUserIdSql) or die(mysqli_error($co
 										name="databaseName"
 										placeholder="Database name"
 										class="input"
-										value="<?php echo $databaseName; ?>"> <label for="databaseUserId">Users</label>
+										value="<?= $databaseName; ?>"> <label for="databaseUserId">Users</label>
 							<select name="databaseUserId"
 									class="databaseSelect"
 									id="databaseUserId" multiple>

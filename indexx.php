@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["login"]))
+{
+	header('location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +55,7 @@
 					<a href='#'><img src="images/account.png" class="nav-img"><span class="hidden-xs menu-text">Mijn account</span></a>
 				</li>
 				<li class='kop'>
-					<a href='#'><img src="images/logout.jpg"
+					<a href="logout.php"><img src="images/logout.jpg"
 									 class="nav-img"><span class="hidden-xs menu-text">Uitloggen</span></a>
 				</li>
 			</ul>

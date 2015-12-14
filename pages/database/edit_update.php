@@ -26,7 +26,7 @@ if (!empty($password)) {
         WHERE id = '$id'";
 }
 
-if (is_array($username)) {
+if (is_array($databaseUserId)) {
 	$sqltwo = "INSERT INTO databaseUserLink
 			   VALUES ";
 	foreach ($databaseUserId as $u) {
@@ -36,6 +36,16 @@ if (is_array($username)) {
 } else {
 	$sqltwo = "INSERT INTO databaseUserLink
 			   VALUES (" . $id . ", " . $databaseUserId . ")";
+}
+
+if (!empty ($databaseUserId)) {
+	$databaseUser = "SELECT id, username
+					  FROM `databaseUser`
+					  WHERE id = '$databaseUserId'";
+	$databaseUserResult = $conn->query($databaseUser) or die(mysqli_error($conn));
+	$row = mysqli_fetch_array($databaseUserResult);
+
+	$sqlCreate2 = "GRANT ALL PRIVILEGES on `" . $databaseName . "`.* TO '" . $row["username"] . "'@'" . $servername . "';";
 }
 
 if (mysqli_query($conn, $sql)) {
@@ -51,6 +61,12 @@ if (mysqli_query($conn, $sqlone)) {
 }
 
 if (mysqli_query($conn, $sqltwo)) {
+	header('location: database.php');
+} else {
+	echo "Error updating record: " . mysqli_error($conn);
+}
+
+if (mysqli_query($conn, $sqlCreate2)) {
 	header('location: database.php');
 } else {
 	echo "Error updating record: " . mysqli_error($conn);

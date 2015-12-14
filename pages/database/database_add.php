@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 					<img src="../../images/WeBeHosting.png" class="logo">
 				</li>
 				<li class='kop'>
-					<a href='../../index.php'><img src="../../images/home.jpg" class="nav-img"><span
+					<a href='../../indexx.php'><img src="../../images/home.jpg" class="nav-img"><span
 							class="hidden-xs menu-text">Dashboard</span> </a>
 				</li>
 				<li class='kop'>

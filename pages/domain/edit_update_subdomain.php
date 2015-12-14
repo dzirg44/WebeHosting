@@ -1,7 +1,6 @@
 <?php
 $subDomain = $_POST['subDomain'];
 
-
 $servername = "localhost";
 $username = "root";
 $password = "";

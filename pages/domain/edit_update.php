@@ -1,7 +1,6 @@
 <?php
 $domain = $_POST['domain'];
 
-
 $servername = "localhost";
 $username = "root";
 $password = "";

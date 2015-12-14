@@ -163,6 +163,22 @@ CREATE TABLE `unavailable` (
 
 
 
+# Dump of table admin
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `admin`;
+
+CREATE TABLE `admin` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Postfix Admin - Virtual Admins';
+
+
+
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

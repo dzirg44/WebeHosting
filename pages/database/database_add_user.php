@@ -105,10 +105,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 			$sql = "INSERT INTO `databaseUser` (username, password)
 			VALUES ('$_POST[username]', '$_POST[password]');";
 
+			$sqlCreate = "CREATE USER '" . $username . "'@'" . $servername . "' IDENTIFIED BY '" . $password . "';";
+
 			if ($conn->query($sql)) {
 				header('location: database.php');
 			} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			}
+
+			if ($conn->query($sqlCreate)) {
+				header('location: database.php');
+			} else {
+				echo "Error: " . $sqlCreate . "<br>" . mysqli_error($conn);
 			}
 		}
 	}
@@ -137,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 					<img src="../../images/WeBeHosting.png" class="logo">
 				</li>
 				<li class='kop'>
-					<a href='../../index.php'><img src="../../images/home.jpg" class="nav-img"><span
+					<a href='../../indexx.php'><img src="../../images/home.jpg" class="nav-img"><span
 							class="hidden-xs menu-text">Dashboard</span> </a>
 				</li>
 				<li class='kop'>

@@ -77,7 +77,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					<img src="../../images/WeBeHosting.png" class="logo">
 				</li>
 				<li class='kop'>
-					<a href='../../index.php'><img src="../../images/home.jpg"
+					<a href='../../indexx.php'><img src="../../images/home.jpg"
 												   class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
 					</a>
 				</li>

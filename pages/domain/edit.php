@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -80,7 +79,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					<img src="../../images/WeBeHosting.png" class="logo">
 				</li>
 				<li class='kop'>
-					<a href='../../index.php'><img src="../../images/home.jpg"
+					<a href='../../indexx.php'><img src="../../images/home.jpg"
 												   class="nav-img"><span class="hidden-xs menu-text">Dashboard</span>
 					</a>
 				</li>
@@ -142,13 +141,13 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					</div>
 					<div class="div">
 						<form method="post" class="form" action="edit_update.php" enctype="multipart/form-data">
-							<input type="hidden" name="id" value="<?php echo $id; ?>"/>
+							<input type="hidden" name="id" value="<?= $id; ?>"/>
 							<label for="domain">Domain</label><?= $domainErr ?><br> <input type="text"
 																						   id="domain"
 																						   name="domain"
 																						   placeholder="Domain name"
 																						   class="input"
-																						   value="<?php echo $domain; ?>">
+																						   value="<?= $domain; ?>">
 							<br> <input class="blue-button" type="submit" value="Create / Modify" name="submit"/>
 						</form>
 					</div>
