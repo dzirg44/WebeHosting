@@ -1,4 +1,6 @@
 <?php
+require_once('../../login_check.php');
+
 $databaseName = $_POST['databaseName'];
 $databaseUserId = $_POST['databaseUserId'];
 $password = $_POST['password'];

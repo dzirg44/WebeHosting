@@ -5,39 +5,38 @@
 		<title>Login</title>
 		<link rel="stylesheet" type="css" href="css/layout.css">
 	</head>
-	<body style="text-align: center; background: #f6f6f6;">
-		<img src="images/webehosting.png" style="width: 270px;">
+	<body class="login">
+		<img src="images/webehosting.png" class="login-img">
 
 		<form action="login_process.php" method="post">
-			<table style="width: auto;
-  margin: 10px auto; background: #fff;">
+			<table class="login-table">
 				<tr>
-					<td>
+					<td class="left">
 						<label for="username" class="white">Username:</label>
 					</td>
 					<td>
-						<input type="text" name="username" id="username" maxlength="40"/>
+						<input type="text" name="username" id="username" class="login-text"/>
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td class="left">
 						<label for="password" class="white">Password:</label>
 					</td>
 					<td>
-						<input type="password" name="password" id="password"/>
+						<input type="password" name="password" id="password" class="login-text"/>
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td class="left">
 						<input type="checkbox" name="remember" value="password" checked>
-						Remember data<br>
+						Remember me<br>
 					</td>
 					<td>
-						<input type="submit" value="OK" name=""/>
+						<input type="submit" value="Login" name="" class="blue-button"/>
 					</td>
 				</tr>
 			</table>
 		</form>
-		<a href="#" style="color: #000;">Forgot Password?</a><a href="#" style="color: #000;">Register</a>
+		<a href="forgot_password.php" class="login-a">Forgot Password?</a><a href="register.php" class="login-a">Register</a>
 	</body>
 </html>

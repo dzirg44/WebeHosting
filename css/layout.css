@@ -748,3 +748,30 @@ textarea {
 	height     : 67px;
 }
 
+/* Login */
+
+.login {
+	text-align: center;
+	background: #f6f6f6;
+}
+
+.login-img {
+	width: 270px;
+}
+
+.login-table {
+	width: auto;
+	margin: 10px auto;
+	background: #fff;
+}
+
+.login-a {
+	color: #000;
+	margin: 20px;
+}
+
+.login-text {
+	font-size     : 0.83em;
+	height        : 30px;
+	width         : 100%;
+}

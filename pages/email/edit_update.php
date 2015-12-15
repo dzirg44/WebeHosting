@@ -1,4 +1,6 @@
 <?php
+require_once('../../login_check.php');
+
 $character = $_POST['character'];
 $interval = $_POST['interval'];
 $from = $_POST['from'];

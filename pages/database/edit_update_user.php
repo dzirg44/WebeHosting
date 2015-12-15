@@ -1,4 +1,6 @@
 <?php
+require_once('../../login_check.php');
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 

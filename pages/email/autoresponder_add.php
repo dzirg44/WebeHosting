@@ -1,4 +1,6 @@
 <?php
+require_once('../../login_check.php');
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -137,7 +139,7 @@ $domainResult = $conn->query($domainSql) or die(mysqli_error($conn));
 					<a href='#'><img src="../../images/account.png" class="nav-img"><span class="hidden-xs menu-text">Mijn account</span></a>
 				</li>
 				<li class='kop'>
-					<a href='#'><img src="../../images/logout.jpg" class="nav-img"><span
+					<a href='../../logout.php'><img src="../../images/logout.jpg" class="nav-img"><span
 							class="hidden-xs menu-text">Uitloggen</span></a>
 				</li>
 			</ul>

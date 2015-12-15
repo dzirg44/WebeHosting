@@ -30,11 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		$_SESSION["username"] = $username;
 		header("location: indexx.php");
 	} else {
-		die ("Oops you filt in the wrong username and password<br />Make a choice: <br /><br />
-            <a href=\"login.php\">Try again to login</a><br />
-            <a href=\"registreren\">Register</a>");
+		header("location: login.php");
+
 	}
-} else {
-	header("location: login.php");
 }
 ?>

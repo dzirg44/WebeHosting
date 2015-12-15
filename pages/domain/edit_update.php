@@ -1,4 +1,6 @@
 <?php
+require_once('../../login_check.php');
+
 $domain = $_POST['domain'];
 
 $servername = "localhost";
